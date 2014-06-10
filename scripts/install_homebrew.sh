@@ -5,7 +5,7 @@ function main() {
 
   platform_check;
 
-  if [[ $? ]]; then
+  if [[ $? -eq 'Darwin' ]]; then
     echo "OS X found, beginning installation"
     if install_homebrew; then
       echo "Homebrew installed!"
