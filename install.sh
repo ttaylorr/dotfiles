@@ -12,11 +12,8 @@ function do_greeting() {
 }
 
 function gather_details() {
-  echo "Please enter your name and hit [ENTER]"
-  read name
-
-  echo "Please enter your email and hit [ENTER]"
-  read email
+  read -p "What is your name? " name
+  read -p "What is your email? " email
 }
 
 function do_install() {
