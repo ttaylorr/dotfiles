@@ -21,6 +21,8 @@ function install_git() {
 
 function configure_git() {
   copy_user_details $name $email
+  # set a reasonable push default
+  `git config --global push.default currrent`
 }
 
 # arg1 -> user.name
