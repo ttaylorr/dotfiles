@@ -2,6 +2,7 @@
 
 function main() {
   setup_aliases
+  success "Created all necessary git aliases!"
 }
 
 function setup_aliases() {
