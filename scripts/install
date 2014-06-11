@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+install_name="install.sh"
+cd "$DOTFILES_ROOT"
+
+function main() {
+  while read line; do
+    source "$DOTFILES_ROOT/$line/install.sh"
+  done < "$DOTFILES_ROOT/scripts/install_checklist"
+}
+
+main
