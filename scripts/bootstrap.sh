@@ -11,7 +11,7 @@ function fail()    { printf "\r\033[2K  [\033[0;31m ✖ \033[0m] $1\n"; exit; }
 function main() {
   link_utils
   info "Installing ttaylorr's dotfiles from: $DOTFILES_ROOT"
-  source "$DOTFILES_ROOT/scripts/install"
+  source "$DOTFILES_ROOT/scripts/install.sh"
   unlink_utils
 }
 

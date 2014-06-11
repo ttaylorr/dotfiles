@@ -10,7 +10,7 @@ function main() {
     cd "$DOTFILES_ROOT/$line"
     source "./install.sh"
     cd ..
-  done < "$DOTFILES_ROOT/scripts/install_checklist"
+  done < "$DOTFILES_ROOT/scripts/utils/install_checklist"
 }
 
 main
