@@ -3,6 +3,7 @@
 function main() {
   info "Attempting installation of git..."
   install_git
+  source "./aliases.sh"
 }
 
 function install_git() {

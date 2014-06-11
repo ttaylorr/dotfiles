@@ -7,7 +7,9 @@ cd "$DOTFILES_ROOT"
 
 function main() {
   while read line; do
-    source "$DOTFILES_ROOT/$line/install.sh"
+    cd "$DOTFILES_ROOT/$line"
+    source "./install.sh"
+    cd ..
   done < "$DOTFILES_ROOT/scripts/install_checklist"
 }
 
