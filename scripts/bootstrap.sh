@@ -11,6 +11,10 @@ function fail()    { printf "\r\033[2K  [\033[0;31m ✖ \033[0m] $1\n"; exit; }
 function main() {
   link_utils
   info "Installing ttaylorr's dotfiles from: $DOTFILES_ROOT"
+
+  read -p "Enter your GitHub name: " github_name
+  read -p "Enter your GitHub email: " github_email
+
   source "$DOTFILES_ROOT/scripts/install.sh"
   unlink_utils
 }
