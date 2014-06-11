@@ -16,7 +16,7 @@ function setup_aliases() {
 
 function make_alias() {
   `git config --global alias.$1 "$2"`
-  success "Aliased 'git $1' to 'git $2'"
+  info "Aliased 'git $1' to 'git $2'"
 }
 
 main
