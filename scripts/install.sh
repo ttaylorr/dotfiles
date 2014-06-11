@@ -2,14 +2,12 @@
 
 set -e
 
-install_name="install.sh"
-cd "$DOTFILES_ROOT"
+INSTALL_SCRIPT="install.sh"
 
 function main() {
   while read line; do
     cd "$DOTFILES_ROOT/$line"
-    source "./install.sh"
-    cd ..
+    source "./$INSTALL_SCRIPT"
   done < "$DOTFILES_ROOT/scripts/utils/install_checklist"
 }
 
