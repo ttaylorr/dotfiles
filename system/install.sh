@@ -16,6 +16,7 @@ function init_tmp_bashrc() {
 }
 
 function copy_bashrc() {
+  cp "./assets/.bash_profile" "$HOME/.bash_profile"
   cp "./tmp/.bashrc" "$HOME/.bashrc"
   if [ $? -eq 0 ]; then
     success "Copied over the new .bashrc!"
