@@ -16,6 +16,14 @@ function main() {
   read -p "Enter your GitHub email: " github_email
 
   source "$DOTFILES_ROOT/scripts/install.sh"
+  success=$?
+
+  if [ $success -eq 0 ]; then
+    success ".dotfiles installed!"
+  else
+    fail "Could not install .dotfiles :("
+  fi
+
   unlink_utils
 }
 
