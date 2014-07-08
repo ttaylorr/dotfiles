@@ -13,7 +13,7 @@ function install_homebrew() {
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   if [ $? -eq 0 ]; then
     success "Homebrew installed!"
-    brew_doctor()
+    brew_doctor
   else
     fail "Could not install homebrew :("
   fi
