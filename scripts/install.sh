@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 INSTALL_SCRIPT="install.sh"
 
 function main() {
