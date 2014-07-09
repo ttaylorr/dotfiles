@@ -2,7 +2,6 @@
 
 function main() {
   install_vim
-  install_mvim
 
   cp ./assets/.vimrc ~/.vimrc
   success 'Copied over .vimrc!'
