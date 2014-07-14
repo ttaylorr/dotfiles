@@ -4,7 +4,7 @@ These are Taylor's dotfiles.  They may not be that useful to you, but they are u
 
 To begin, `git clone` this repo into your home directory.
 
-Once cloned, simply execute the `./scripts/bootstrap.sh` script to create all symlinks and install necessary things.
+Once cloned, simply execute `sh ./install.sh` to create all symlinks and install necessary things.
 
 ### contributing
 
