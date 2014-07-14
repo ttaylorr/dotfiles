@@ -5,6 +5,13 @@ function main() {
   install_git
   source "./authors.sh"
   source "./aliases.sh"
+  source "./configs.sh"
+  copy_default_gitignore
+}
+
+function copy_default_gitignore() {
+  `cp ./assets/.gitignore ~`
+  success "Copied over .gitignore succesfully!"
 }
 
 function install_git() {

@@ -1,0 +1,9 @@
+# OS X file clutter
+.DS_Store
+
+# Maven clutter
+dependency-reduced-pom.xml
+
+# IntelliJ clutter
+*.iml
+.idea/
