@@ -4,7 +4,6 @@ set -e
 
 function main() {
   old_branch=$(git name-rev HEAD 2> /dev/null | awk "{ print \$2 }")
-  echo "OLD BRANCH: >>>>> $old_branch"
   update_master
   sync_master
 }
