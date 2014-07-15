@@ -13,6 +13,7 @@ function setup_aliases() {
   make_alias "co"  "checkout"
   make_alias "di"  "diff"
   make_alias "pom" "push origin master"
+  make_alias "udm" "update-master"
 }
 
 function make_alias() {
