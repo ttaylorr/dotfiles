@@ -7,11 +7,17 @@ function main() {
   source "./aliases.sh"
   source "./configs.sh"
   copy_default_gitignore
+  copy_commands
 }
 
 function copy_default_gitignore() {
   `cp ./assets/.gitignore ~`
   success "Copied over .gitignore succesfully!"
+}
+
+function copy_commands() {
+  `sudo cp ./assets/git-update-master /usr/bin/`
+  success "Copied over custom git commands"
 }
 
 function install_git() {
