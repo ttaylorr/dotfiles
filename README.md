@@ -1,8 +1,12 @@
-## .dotfiles
+## dotfiles
 
 These are Taylor's dotfiles.  They may not be that useful to you, but they are useful to him!
 
-To begin, `git clone` this repo into your home directory.
+To begin, clone this repo into your home directory.
+
+```
+$ git clone https://github.com/ttaylorr/dotfiles.git .dotfiles
+```
 
 Once cloned, simply execute `sh ./install.sh` to create all symlinks and install necessary things.
 
