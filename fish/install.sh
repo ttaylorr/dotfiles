@@ -6,6 +6,7 @@ function main() {
   install_fish
   add_to_shells
   set_default_shell
+  symlink_bashrc
 }
 
 function install_fish() {
@@ -20,9 +21,17 @@ function add_to_shells() {
 }
 
 function set_default_shell() {
-  if [ "$fish_dir" -ne "$SHELL" ]; then
+  if [[ "$fish_dir" != "$SHELL" ]]; then
     `chsh -s $fish_dir`
   fi
+}
+
+function symlink_bashrc() {
+  fishrc_path="~/.config/fish/config.fish"
+  if [ -e "$fishrc_path" ]; then
+    rm $fishrc_path
+  fi
+  ln -s "$fishrc_path" "~/.bashrc" 
 }
 
 main
