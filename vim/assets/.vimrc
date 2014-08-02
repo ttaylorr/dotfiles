@@ -2,6 +2,8 @@
 
 syntax on
 
+set backspace=indent,eol,start
+
 cmap w!! %!sudo tee > /dev/null %
 
 if has("gui_running")
