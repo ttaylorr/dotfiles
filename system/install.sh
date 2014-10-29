@@ -4,7 +4,7 @@ function main() {
   info "Installing system things (mainly .bashrc)"
   init_tmp_bashrc
   source "./aliases.sh"
-  echo "export JAVA_HOME=$(/usr/libexec/java_home)" >> ./tmp/.bashrc
+  echo "set -x JAVA_HOME $(/usr/libexec/java_home)" >> ./tmp/.bashrc
   copy_bashrc
   cleanup
 }

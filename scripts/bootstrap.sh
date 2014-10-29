@@ -12,13 +12,14 @@ function main() {
   link_utils
   info "Installing ttaylorr's dotfiles from: $DOTFILES_ROOT"
 
-  read -p "Enter your GitHub name: " github_name
-  read -p "Enter your GitHub email: " github_email
+  if [ -z "`git config --global user.name`" ]; then
+    read -p "Enter your GitHub name: " github_name
+    read -p "Enter your GitHub email: " github_email
+  fi
 
   source "$DOTFILES_ROOT/scripts/install.sh"
-  success=$?
 
-  if [ $success -eq 0 ]; then
+  if [ $? -eq 0 ]; then
     success ".dotfiles installed!"
   else
     fail "Could not install .dotfiles :("
