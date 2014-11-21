@@ -12,8 +12,10 @@ function main() {
   link_utils
   info "Installing ttaylorr's dotfiles from: $DOTFILES_ROOT"
 
-  read -p "Enter your GitHub name: " github_name
-  read -p "Enter your GitHub email: " github_email
+  if [ -z "$(git config user.name)" ]; then
+    read -p "Enter your GitHub name: " github_name
+    read -p "Enter your GitHub email: " github_email
+  fi
 
   source "$DOTFILES_ROOT/scripts/install.sh"
   success=$?
