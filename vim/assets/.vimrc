@@ -2,8 +2,19 @@
 
 syntax on
 
+set nocompatible
 set backspace=indent,eol,start
 
+set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
+call vundle#begin()
+
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+" Plugins go here
 cmap w!! %!sudo tee > /dev/null %
 
 if has("gui_running")
