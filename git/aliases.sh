@@ -14,6 +14,7 @@ function setup_aliases() {
   make_alias "di"  "diff"
   make_alias "pom" "push origin master"
   make_alias "udm" "update-master"
+  make_alias "sl"  "shortlog"
 }
 
 function make_alias() {
