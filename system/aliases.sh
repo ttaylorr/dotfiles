@@ -3,6 +3,7 @@
 function main() {
   write_alias "g" "git"
   write_alias "ls" "ls -G"
+  write_alias "jsc" "node"
 }
 
 function write_alias() {
