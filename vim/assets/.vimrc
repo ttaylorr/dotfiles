@@ -11,12 +11,27 @@ set backspace=indent,eol,start
 let mapleader=","
 
 " Reasonable space delimeters
-set tabstop=4
-set shiftwidth=3
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 set smarttab
 set expandtab
+
+" Better handling of errant whitespace
+match ErrorMsg '\s\+$'
+
+function! TrimWhitespace()
+  %s/\s\+$//e
+endfunction
+
+" Map <Leader>rt to remove trailing whitespace
+noremap <silent> <Leader>rt :call TrimWhitespace()<CR>
+
+autocmd FileWritePre   * :call TrimWhitespace()
+autocmd FileAppendPre  * :call TrimWhitespace()
+autocmd FilterWritePre * :call TrimWhitespace()
+autocmd BufWritePre    * :call TrimWhitespace()
 
 " Vundle Stuff
 set rtp+=~/.vim/bundle/Vundle.vim
