@@ -41,6 +41,7 @@ call vundle#begin()
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()
 filetype plugin indent on
@@ -48,6 +49,12 @@ filetype plugin indent on
 " Colors!
 set background=dark
 colorscheme base16-ocean
+
+" rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpecFile()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Map <leader>f to use selecta
 function! SelectaCommand(choice_command, selecta_args, vim_command)
