@@ -28,6 +28,7 @@ endfunction
 " Map <Leader>rt to remove trailing whitespace
 noremap <silent> <Leader>rt :call TrimWhitespace()<CR>
 
+" Remove trailing whitespace before several operations
 autocmd FileWritePre   * :call TrimWhitespace()
 autocmd FileAppendPre  * :call TrimWhitespace()
 autocmd FilterWritePre * :call TrimWhitespace()
