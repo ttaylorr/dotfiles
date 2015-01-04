@@ -1,3 +1,5 @@
+# Global .gitignore
+
 # OS X file clutter
 .DS_Store
 
@@ -7,3 +9,6 @@ dependency-reduced-pom.xml
 # IntelliJ clutter
 *.iml
 .idea/
+
+# Ignore vim files
+*.swp
