@@ -40,9 +40,14 @@ filetype off
 call vundle#begin()
 
 Plugin 'kien/ctrlp.vim'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
+
+" Colors!
+set background=dark
+colorscheme base16-ocean
 
 " Map <leader>f to use selecta
 function! SelectaCommand(choice_command, selecta_args, vim_command)
