@@ -47,6 +47,7 @@ call vundle#end()
 filetype plugin indent on
 
 " Colors!
+set cursorline
 set background=dark
 colorscheme base16-ocean
 
