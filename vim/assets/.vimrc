@@ -1,14 +1,19 @@
 " ttaylorr's .vimrc
+set nocompatible
 
 " Turn on syntax highlighting
 syntax on
 
 " Allow backspacing anywhere
-set nocompatible
 set backspace=indent,eol,start
 
 " Remap the leader key
 let mapleader=","
+
+" Word-processing-type stuff
+set textwidth=80
+set colorcolumn=+1
+set ruler
 
 " Reasonable space delimeters
 set tabstop=2
