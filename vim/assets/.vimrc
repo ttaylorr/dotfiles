@@ -69,6 +69,8 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+noremap <Leader>b :!rake<CR>
+
 " Map <leader>f to use selecta
 function! SelectaCommand(choice_command, selecta_args, vim_command)
   try
