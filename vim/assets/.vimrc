@@ -53,6 +53,7 @@ call vundle#begin()
 Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'vim-scripts/TeX-PDF'
 
 call vundle#end()
 filetype plugin indent on
