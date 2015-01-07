@@ -14,6 +14,7 @@ let mapleader=","
 set textwidth=80
 set colorcolumn=+1
 set ruler
+set number
 
 " Reasonable space delimeters
 set tabstop=2
