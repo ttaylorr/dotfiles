@@ -55,6 +55,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'vim-scripts/TeX-PDF'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,6 +70,9 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+" testing with npm
+map <Leader>nt :!npm test<CR>
 
 noremap <Leader>b :!rake<CR>
 
