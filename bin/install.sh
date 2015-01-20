@@ -5,8 +5,8 @@ LOCAL_BIN_PATH=$HOME/.bin/
 function main() {
   if [ ! -d "$LOCAL_BIN_PATH" ]; then
     create_local_bin_folder;
+    place_in_path;
   fi
-  place_in_path;
 
   for file in `ls`; do
     if [ $file != "install.sh" ];
