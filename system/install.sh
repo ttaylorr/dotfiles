@@ -5,6 +5,7 @@ function main() {
   init_tmp_bashrc
   source "./aliases.sh"
   echo "export JAVA_HOME=$(/usr/libexec/java_home)" >> ./tmp/.bashrc
+  echo "export PATH='$PATH:$HOME/.bin'" >> ./tmp/.bashrc
   copy_bashrc
   cleanup
 }
