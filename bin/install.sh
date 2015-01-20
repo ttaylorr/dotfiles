@@ -12,8 +12,11 @@ function main() {
     if [ $file != "install.sh" ];
     then
       cp $file $LOCAL_BIN_PATH
+      info "Copied $file to ~/.bin"
     fi
   done
+
+  success "Copied all scripts into ~/.bin and sourced"
 }
 
 function create_local_bin_folder() {
