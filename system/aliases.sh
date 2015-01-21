@@ -4,6 +4,7 @@ function main() {
   write_alias "g" "git"
   write_alias "ls" "ls -G"
   write_alias "jsc" "node"
+  write_alias "v" "vagrant"
 }
 
 function write_alias() {
