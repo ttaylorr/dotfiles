@@ -3,6 +3,7 @@
 function main() {
   info "Setting up all git config defaults..."
   set_val 'push.default' 'current'
+  set_val 'pull.default' 'current'
   set_val 'branch.autosetuprebase' 'always'
   set_val 'core.excludesfile' '~/.gitignore'
   success "Configured all git defaults!"
