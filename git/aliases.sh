@@ -16,6 +16,7 @@ function setup_aliases() {
   make_alias "pom" "push origin master"
   make_alias "udm" "update-master"
   make_alias "sl"  "shortlog"
+  make_alias "lb"  "checkout -"
 }
 
 function make_alias() {
