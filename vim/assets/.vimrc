@@ -60,6 +60,8 @@ Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 filetype plugin indent on
 
+let ctrlp_custom_ignore = 'node_modules/|bower_components/'
+
 " Colors!
 set cursorline
 set background=dark
