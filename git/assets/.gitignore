@@ -3,6 +3,12 @@
 # OS X file clutter
 .DS_Store
 
+# Java Stuff
+*.class
+*.jar
+*.ear
+*.war
+
 # Maven clutter
 dependency-reduced-pom.xml
 
@@ -12,3 +18,14 @@ dependency-reduced-pom.xml
 
 # Ignore vim files
 *.swp
+
+# Python
+*.pyc
+
+# Ruby
+*.gem
+*.rbc
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
