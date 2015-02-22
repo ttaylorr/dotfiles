@@ -7,7 +7,8 @@ function CurrentlyPlaying (opts) {
     delay: 5000, // delay in milliseconds
     debug: false,
     path: '~/.current_song',
-    template: "'%t' by %a on '%m'\n" // %t - track, %a - artist, %m album
+    template: "'%t' by %a on '%m'\n", // %t - track, %a - artist, %m album
+    dry: process.argv[2] === '--dry' || process.argv[2] === '-d'
   }, (opts || {}));
 
   for (var prop in opts) {
@@ -18,7 +19,7 @@ function CurrentlyPlaying (opts) {
 CurrentlyPlaying.prototype.startLoop = function () {
   var self = this;
 
-  return setInterval(function () {
+  var update = function () {
     self._getTrack(function (track, err) {
       if (track) {
         self._saveFile(track);
@@ -26,7 +27,10 @@ CurrentlyPlaying.prototype.startLoop = function () {
         return;
       }
     });
-  }, this.delay);
+  }
+
+  if (this.dry) return update.call();
+  else return setInterval(update, this.delay);
 }
 
 CurrentlyPlaying.prototype._saveFile = function (track) {
