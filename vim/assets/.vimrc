@@ -54,8 +54,15 @@ Plug 'chriskempson/base16-vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'vim-scripts/TeX-PDF'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-surround'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise'
+Plug 'Shougo/neocomplcache.vim'
 
 call plug#end()
+
+let g:neocomplcache_enable_at_startup = 1
 
 let ctrlp_custom_ignore = 'node_modules/|bower_components/'
 
