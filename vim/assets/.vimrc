@@ -46,19 +46,16 @@ autocmd FileAppendPre  * :call TrimWhitespace()
 autocmd FilterWritePre * :call TrimWhitespace()
 autocmd BufWritePre    * :call TrimWhitespace()
 
-" Vundle Stuff
-set rtp+=~/.vim/bundle/Vundle.vim
-filetype off
-call vundle#begin()
+" Plug Stuff
+call plug#begin('~/.vim/plugged')
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'vim-scripts/TeX-PDF'
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'vim-scripts/TeX-PDF'
+Plug 'editorconfig/editorconfig-vim'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 let ctrlp_custom_ignore = 'node_modules/|bower_components/'
 
