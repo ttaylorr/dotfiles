@@ -64,13 +64,14 @@ CurrentlyPlaying.prototype._getTrack = function (callback) {
       var parsedBody = JSON.parse(body);
 
       if (parsedBody.recenttracks) {
-        var track = parsedBody.recenttracks.track;
-
-        callback({
+        var track = parsedBody.recenttracks.track[0];
+        var parsedTrack = {
           title:  track.name,
           artist: track.artist["#text"],
           album:  track.album["#text"]
-        }, undefined);
+        };
+
+        callback(parsedTrack, undefined);
       } else {
         callback(undefined, "no response given");
       }
