@@ -5,6 +5,7 @@ function main() {
   write_alias "ls" "ls -G"
   write_alias "jsc" "node"
   write_alias "v" "vagrant"
+  write_alias "compose" "docker-compose"
 }
 
 function write_alias() {
