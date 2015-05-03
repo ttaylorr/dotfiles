@@ -6,6 +6,7 @@ function main() {
   source "./authors.sh"
   source "./aliases.sh"
   source "./configs.sh"
+  source "./install_lfs.sh"
   copy_default_gitignore
   copy_commands
 }
