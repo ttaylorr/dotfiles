@@ -61,6 +61,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'Shougo/neocomplcache.vim'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
