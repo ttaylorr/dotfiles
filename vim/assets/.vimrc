@@ -62,6 +62,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'Shougo/neocomplcache.vim'
 Plug 'fatih/vim-go'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
