@@ -64,6 +64,7 @@ Plug 'Shougo/neocomplcache.vim'
 Plug 'fatih/vim-go'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
