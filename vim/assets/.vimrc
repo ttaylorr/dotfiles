@@ -77,6 +77,9 @@ set cursorline
 set background=dark
 colorscheme base16-ocean
 
+" Better tab-completion mappings
+imap <Tab> <C-P>
+
 " rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
