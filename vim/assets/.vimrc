@@ -23,6 +23,7 @@ set softtabstop=2
 
 set smarttab
 set expandtab
+set hlsearch
 
 " Better pane switching
 set splitright
