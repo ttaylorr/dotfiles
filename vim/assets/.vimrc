@@ -106,6 +106,18 @@ endfunction
 
 noremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
 
+function! NumberToggle()
+  set number
+
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunction
+
+noremap <C-n> :call NumberToggle()<cr>
+
 cmap w!! %!sudo tee > /dev/null %
 
 " Remap arrow-keys to no-ops
