@@ -78,8 +78,18 @@ set cursorline
 set background=dark
 colorscheme base16-ocean
 
-" Better tab-completion mappings
-imap <Tab> <C-P>
+" Better tab-completion mappings (credit:
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc)
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col-1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
 
 " rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
