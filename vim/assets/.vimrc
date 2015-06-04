@@ -55,9 +55,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'thoughtbot/vim-rspec'
-Plug 'vim-scripts/TeX-PDF'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
@@ -66,6 +64,7 @@ Plug 'fatih/vim-go'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
@@ -73,13 +72,15 @@ let g:neocomplcache_enable_at_startup = 1
 
 let ctrlp_custom_ignore = 'node_modules/|bower_components/'
 
+map <C-o> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+
 " Colors!
 set cursorline
 set background=dark
 colorscheme base16-ocean
 
-" Better tab-completion mappings (credit:
-" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc)
+" Better tab-completion mappings
 function! InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col-1] !~ '\k'
