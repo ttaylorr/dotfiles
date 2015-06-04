@@ -12,7 +12,6 @@ let mapleader=","
 
 " Word-processing-type stuff
 set textwidth=80
-set colorcolumn=+1
 set ruler
 set number
 
@@ -115,7 +114,7 @@ function! SelectaCommand(choice_command, selecta_args, vim_command)
   exec a:vim_command . " " . selection
 endfunction
 
-noremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
+noremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<CR>
 
 function! NumberToggle()
   set number
@@ -127,7 +126,7 @@ function! NumberToggle()
   endif
 endfunction
 
-noremap <C-n> :call NumberToggle()<cr>
+noremap <C-n> :call NumberToggle()<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 
