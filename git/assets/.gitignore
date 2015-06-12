@@ -50,3 +50,9 @@ dependency-reduced-pom.xml
 /_yardoc/
 /doc/
 /rdoc/
+
+# --------------------- #
+# Node.js
+# --------------------- #
+node_modules/
+.nodemon-find-ref
