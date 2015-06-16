@@ -51,19 +51,19 @@ autocmd BufWritePre    * :call TrimWhitespace()
 " Plug Stuff
 call plug#begin('~/.vim/plugged')
 
-Plug 'kien/ctrlp.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'thoughtbot/vim-rspec'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-endwise'
 Plug 'Shougo/neocomplcache.vim'
-Plug 'fatih/vim-go'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdcommenter'
+Plug 'chriskempson/base16-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go'
+Plug 'kien/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/nerdtree'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 
