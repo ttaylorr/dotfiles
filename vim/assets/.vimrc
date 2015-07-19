@@ -1,122 +1,94 @@
-" ttaylorr's .vimrc
-set nocompatible
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 1) General tweaks
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader = ","
 
-" Turn on syntax highlighting
-syntax on
-
-" Allow backspacing anywhere
-set backspace=indent,eol,start
-
-" Remap the leader key
-let mapleader=","
-
-" Word-processing-type stuff
+"" 1.a) Text styling
 set textwidth=80
 set ruler
 set number
 
-" Reasonable space delimeters
+"" 1.b) Tab preferences (prefer .editorconfig)
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
 set smarttab
 set expandtab
+
+"" 1.c) Misc. preferences
+set cursorline
 set hlsearch
+syntax on
 
-" Better pane switching
-set splitright
 
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 2) Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 2.a) Initalize plugin manager
+call plug#begin('~/.vim/plugged')
 
-" Better handling of errant whitespace
-match ErrorMsg '\s\+$'
+"" 2.b) Hook in all plugins
+Plug 'airblade/vim-gitgutter'
+Plug 'chriskempson/base16-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'scrooloose/nerdtree'
+Plug 'Shougo/neocomplcache.vim'
+Plug 'tpope/vim-endwise'
 
+"" 2.c) Done!
+call plug#end()
+
+"" 2.d) Plugin-level customization
+"" 2.d.a) NERDTree
+map <C-o> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 3) Key rebindings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 3.a) Disable arrow keys
+for prefix in ['i', 'n', 'v']
+  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+    exe prefix . "noremap " . key . " <Nop>"
+  endfor
+endfor
+
+"" 3.b) Pane-switching
+for direction in ['j', 'k', 'h', 'l']
+  exe "map <C-".direction."> <C-W>".direction
+endfor
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 4) Formatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 4.a) Trailing whitespace
 function! TrimWhitespace()
   %s/\s\+$//e
 endfunction
 
-" Map <Leader>rt to remove trailing whitespace
-noremap <silent> <Leader>rt :call TrimWhitespace()<CR>
-
-" Remove trailing whitespace before several operations
+"" 4.b) Remove trailing whitespace on events
 autocmd FileWritePre   * :call TrimWhitespace()
 autocmd FileAppendPre  * :call TrimWhitespace()
 autocmd FilterWritePre * :call TrimWhitespace()
 autocmd BufWritePre    * :call TrimWhitespace()
 
-" Plug Stuff
-call plug#begin('~/.vim/plugged')
+"" 4.c) Mark trailing whitespace as an error
+match ErrorMsg '\s\+$'
 
-Plug 'Shougo/neocomplcache.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'evanmiller/nginx-vim-syntax'
-Plug 'fatih/vim-go'
-Plug 'kien/ctrlp.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'scrooloose/nerdtree'
-Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-endwise'
-Plug 'vim-ruby/vim-ruby'
 
-call plug#end()
-
-let g:neocomplcache_enable_at_startup = 1
-
-let ctrlp_custom_ignore = 'node_modules/|bower_components/'
-
-map <C-o> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-
-" Colors!
-set cursorline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 5) Misc.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" 5.a) Colorscheme
 set background=dark
 colorscheme base16-ocean
 
-" Better tab-completion mappings
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col-1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
-
-" rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-" testing with npm
-map <Leader>nt :!npm test<CR>
-
-noremap <Leader>b :!rake<CR>
-
-" Map <leader>f to use selecta
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
-
-noremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<CR>
-
+"" 5.b) Relative/absolute number switch with <C-n>
 function! NumberToggle()
   set number
 
@@ -126,14 +98,4 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunction
-
 noremap <C-n> :call NumberToggle()<CR>
-
-cmap w!! %!sudo tee > /dev/null %
-
-" Remap arrow-keys to no-ops
-for prefix in ['i', 'n', 'v']
-  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-    exe prefix . "noremap " . key . " <Nop>"
-  endfor
-endfor
