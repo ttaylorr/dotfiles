@@ -46,6 +46,9 @@ call plug#end()
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
+"" 2.d.b) vim-go (use goimports)
+let g:go_fmt_command = "goimports"
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 3) Key rebindings
