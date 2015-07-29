@@ -33,6 +33,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
+Plug 'kien/ctrlp.vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neocomplcache.vim'
@@ -48,6 +49,9 @@ let NERDTreeQuitOnOpen = 1
 
 "" 2.d.b) vim-go (use goimports)
 let g:go_fmt_command = "goimports"
+
+"" 2.d.c) ctrlp.vim
+set wildignore+=*/node_modules/*,*/bower_components/*
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
