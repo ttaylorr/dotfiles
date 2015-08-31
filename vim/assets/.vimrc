@@ -69,10 +69,14 @@ for direction in ['j', 'k', 'h', 'l']
   exe "map <C-".direction."> <C-W>".direction
 endfor
 
-
 "" 3.c) Window scrolling
 noremap <c-j> <c-e>
 noremap <c-k> <c-y>
+
+"" 3.d) Testing
+map <leader>tu :!./script/test<cr>
+map <leader>ti :!./script/integration<cr>
+map <leader>tci :!./script/cibuild<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
