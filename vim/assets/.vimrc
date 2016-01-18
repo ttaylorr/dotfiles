@@ -18,6 +18,7 @@ set expandtab
 "" 1.c) Misc. preferences
 set cursorline
 set hlsearch
+set backspace=indent,eol,start
 syntax on
 
 
