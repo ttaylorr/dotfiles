@@ -79,6 +79,9 @@ map <leader>tu :!./script/test<cr>
 map <leader>ti :!./script/integration<cr>
 map <leader>tci :!./script/cibuild<cr>
 
+"" 3.e) Spell-Checking
+map <leader>sc :setlocal spell! spelllang=en_us<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
