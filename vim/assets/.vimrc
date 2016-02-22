@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
 "" 2.b) Hook in all plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
@@ -66,20 +67,20 @@ for prefix in ['i', 'n', 'v']
 endfor
 
 "" 3.b) Pane-switching
-for direction in ['j', 'k', 'h', 'l']
-  exe "map <C-".direction."> <C-W>".direction
-endfor
+let g:tmux_navigator_no_mappings = 1
 
-"" 3.c) Window scrolling
-noremap <c-j> <c-e>
-noremap <c-k> <c-y>
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+"" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
-"" 3.d) Testing
+"" 3.c) Testing
 map <leader>tu :!./script/test<cr>
 map <leader>ti :!./script/integration<cr>
 map <leader>tci :!./script/cibuild<cr>
 
-"" 3.e) Spell-Checking
+"" 3.d) Spell-Checking
 map <leader>sc :setlocal spell! spelllang=en_us<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -105,7 +106,7 @@ match ErrorMsg '\s\+$'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 5.a) Colorscheme
 set background=dark
-colorscheme base16-ocean
+colorscheme torte
 
 "" 5.b) Relative/absolute number switch with <C-n>
 function! NumberToggle()
