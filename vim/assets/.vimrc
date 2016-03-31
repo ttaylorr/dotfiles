@@ -79,6 +79,12 @@ map <leader>tu :!./script/test<cr>
 map <leader>ti :!./script/integration<cr>
 map <leader>tci :!./script/cibuild<cr>
 
+"" 3.c.i) Testing (Golang)
+autocmd FileType go map <leader>t  :GoTest<cr>
+autocmd FileType go map <leader>tt :GoTestFunc<cr>
+autocmd FileType go map <leader>tc :GoCoverage<cr>
+autocmd FileType go map <leader>ga :GoAlternate<cr>
+
 "" 3.d) Spell-Checking
 map <leader>sc :setlocal spell! spelllang=en_us<cr>
 
