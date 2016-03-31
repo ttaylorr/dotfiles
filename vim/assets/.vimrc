@@ -21,7 +21,6 @@ set hlsearch
 set backspace=indent,eol,start
 syntax on
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 2) Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -124,3 +123,18 @@ function! NumberToggle()
   endif
 endfunction
 noremap <C-n> :call NumberToggle()<CR>
+
+"" 5.c) Selecta (credit: github.com/garybernhardt/selecta)
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    redraw!
+    return
+  endtry
+
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+
+nnoremap <c-p> :call SelectaCommand("find * -type f", "", ":e")<cr>
