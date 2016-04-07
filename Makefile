@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: zsh git vim tmux editorconfig
-.PHONY: zsh git vim tmux editorconfig
+all: bash zsh git vim tmux editorconfig
+.PHONY: bash zsh git vim tmux editorconfig
 
 git:
 	ln -fs $(DOTFILES_ROOT)/git/.gitconfig ${HOME}/.gitconfig
@@ -24,6 +24,9 @@ tmux:
 
 zsh:
 	ln -fs $(DOTFILES_ROOT)/zsh/.zshrc ${HOME}/.zshrc
+
+bash:
+	ln -fs $(DOTFILES_ROOT)/bash/.bash_profile ${HOME}/.bash_profile
 
 define install-if-missing
 	@brew list $1 > /dev/null 2>&1 || brew install $1
