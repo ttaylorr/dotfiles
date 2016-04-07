@@ -56,3 +56,8 @@ dependency-reduced-pom.xml
 # --------------------- #
 node_modules/
 .nodemon-find-ref
+
+# --------------------- #
+# Redis
+# --------------------- #
+*.rdb

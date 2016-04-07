@@ -1,0 +1,26 @@
+[user]
+	name = Taylor Blau
+	email = me@ttaylorr.com
+	signingkey = 0B49E885
+[alias]
+	st = status
+	a = add
+	aa = add --all
+	ci = commit
+	br = branch
+	co = checkout
+	di = diff
+	pom = push origin master
+	udm = update-master
+	sl = shortlog
+	lb = checkout -
+[push]
+	default = current
+[pull]
+	default = current
+[branch]
+	autosetuprebase = always
+[core]
+	excludesfile = ~/.gitignore
+[credential]
+	helper = osxkeychain
