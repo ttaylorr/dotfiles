@@ -8,7 +8,16 @@ abbrev_path() {
 }
 
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  branch="$(git branch 2>/dev/null | grep '*' | cut -d ' ' -f 2)"
+  if [[ -z "$branch" ]]; then
+    return
+  fi
+
+  if ! [[ -z "$(git status -s)" ]]; then
+    branch="$branch!"
+  fi
+
+  echo " ($branch)"
 }
 
 export PS1='$fg[green]$(abbrev_path)$(parse_git_branch) $ '
