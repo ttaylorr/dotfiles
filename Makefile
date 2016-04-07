@@ -19,7 +19,7 @@ editorconfig:
 	ln -fs $(DOTFILES_ROOT)/editorconfig/.editorconfig ${HOME}/.editorconfig
 
 tmux:
-	$(call install-if-missing, "pstree")
+	$(call install-if-missing, "tmux")
 	ln -fs $(DOTFILES_ROOT)/tmux/.tmux.conf ${HOME}/.tmux.conf
 
 zsh:
