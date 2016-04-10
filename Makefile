@@ -23,6 +23,7 @@ tmux:
 	ln -fs $(DOTFILES_ROOT)/tmux/.tmux.conf ${HOME}/.tmux.conf
 
 zsh:
+	$(call install-if-missing, "zsh")
 	ln -fs $(DOTFILES_ROOT)/zsh/.zshrc ${HOME}/.zshrc
 
 bash:
