@@ -20,6 +20,8 @@ editorconfig:
 
 tmux:
 	$(call install-if-missing, "tmux")
+	mkdir -p ${HOME}/.tmux/plugins
+	ln -fs $(DOTFILES_ROOT)/tmux/tpm ${HOME}/.tmux/plugins/
 	ln -fs $(DOTFILES_ROOT)/tmux/.tmux.conf ${HOME}/.tmux.conf
 
 zsh:
