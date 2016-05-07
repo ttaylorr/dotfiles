@@ -23,4 +23,4 @@ parse_git_branch() {
   echo " ($branch$reset_color)"
 }
 
-export PS1='$(abbrev_path)$(parse_git_branch) $ '
+export PS1='$(abbrev_path)$(parse_git_branch) %{$ %}'
