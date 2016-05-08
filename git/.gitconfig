@@ -10,9 +10,6 @@
 	br = branch
 	co = checkout
 	di = diff
-	pom = push origin master
-	udm = update-master
-	sl = shortlog
 	lb = checkout -
 [push]
 	default = current
