@@ -3,7 +3,7 @@ export GOPATH=$HOME/dev/go
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-export PATH="$PATH:$GOPATH/bin:$HOME/.rvm/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/.rvm/bin:/Library/TeX/texbin"
 
 alias g=git
 alias ls="ls -G"
