@@ -2,7 +2,9 @@
 source $HOME/.bash_profile
 
 setopt PROMPT_SUBST
+
 autoload -U colors && colors
+autoload -Uz compinit && compinit
 
 abbrev_path() {
   sed "s:\([^/]\)[^/]*/:\1/:g" <<<$(sed s:$HOME:\~:g <<<$PWD)
