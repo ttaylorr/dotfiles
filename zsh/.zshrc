@@ -15,14 +15,14 @@ parse_git_branch() {
   if [[ -z "$branch" ]]; then
     return
   else
-    branch="$fg[green]$branch"
+    branch="%{$fg[green]%}$branch"
   fi
 
   if ! [[ -z "$(git status -s)" ]]; then
-    branch="$branch$fg[red]!"
+    branch="$branch%{$fg[red]%}!"
   fi
 
-  echo " ($branch$reset_color)"
+  echo " ($branch%{$reset_color%})"
 }
 
-export PS1='$(abbrev_path)$(parse_git_branch) %{$ %}'
+export PS1='$(abbrev_path)$(parse_git_branch) $ '
