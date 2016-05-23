@@ -5,6 +5,7 @@ tap 'homebrew/tex'
 
 brew 'cloc'
 brew 'git'
+brew 'glide'
 brew 'openssl'
 brew 'ffmpeg'
 brew 'go'
