@@ -8,6 +8,10 @@ insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 
+[*.go]
+indent_size = 8
+indent_style = tab
+
 [*.{js,json}]
 indent_size = 4
 indent_style = space
