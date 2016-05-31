@@ -1,3 +1,6 @@
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 1) General tweaks
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -123,6 +126,9 @@ autocmd FileType go map <leader>ga :GoAlternate<cr>
 
 "" 3.d) Spell-Checking
 map <leader>sc :setlocal spell! spelllang=en_us<cr>
+
+"" 3.e) Quickly disable hlsearch
+nnoremap <space> :nohl<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
