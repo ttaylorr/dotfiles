@@ -32,7 +32,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'pbrisbin/vim-mkdir'
@@ -55,7 +54,43 @@ let g:go_fmt_command = "goimports"
 "" 2.d.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
 
+"" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
+function! Smart_TabComplete()
+  if pumvisible() != 0
+    return "\<C-N>"
+  endif
 
+  let line = getline('.')
+  let substr = matchstr(strpart(line, -1, col('.')+1), "[^ \t]*$")
+
+  if (strlen(substr) == 0)
+    return "\<tab>"
+  endif
+
+  let has_period = match(substr, '\.') != -1
+  let has_slash = match(substr, '\/') != -1
+
+  if (!has_period && !has_slash)
+    return "\<C-X>\<C-P>"
+  elseif (has_slash)
+    return "\<C-X>\<C-F>"
+  else
+    return "\<C-X>\<C-O>"
+  endif
+endfunction
+
+function! Smart_ShiftTab()
+  if pumvisible() != 0
+    return "\<C-P>"
+  endif
+
+  return "\<C-d>"
+endfunction
+
+inoremap <tab> <c-r>=Smart_TabComplete()<CR>
+inoremap <s-tab> <c-r>=Smart_ShiftTab()<CR>
+set completeopt+=menuone
+set completeopt-=preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 3) Key rebindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
