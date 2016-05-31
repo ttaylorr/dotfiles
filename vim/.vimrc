@@ -34,6 +34,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
