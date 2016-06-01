@@ -130,6 +130,10 @@ map <leader>sc :setlocal spell! spelllang=en_us<cr>
 "" 3.e) Quickly disable hlsearch
 nnoremap <space> :nohl<cr>
 
+"" 3.f) Tab switching
+nnoremap H gT
+nnoremap L gt
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
