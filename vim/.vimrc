@@ -181,3 +181,6 @@ function! SelectaCommand(choice_command, selecta_args, vim_command)
 endfunction
 
 nnoremap <c-p> :call SelectaCommand("find * -type f", "", ":e")<cr>
+
+"" 5.d) Remove annoying escape delay
+set timeoutlen=1000 ttimeoutlen=0
