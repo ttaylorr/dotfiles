@@ -60,7 +60,7 @@ set wildignore+=*/node_modules/*,*/bower_components/*
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
   if pumvisible() != 0
-    return "\<C-N>"
+    return "\<C-P>"
   endif
 
   let line = getline('.')
@@ -84,7 +84,7 @@ endfunction
 
 function! Smart_ShiftTab()
   if pumvisible() != 0
-    return "\<C-P>"
+    return "\<C-N>"
   endif
 
   return "\<C-d>"
