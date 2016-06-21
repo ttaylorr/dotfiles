@@ -30,6 +30,7 @@ brew 'vim'
 brew 'zsh'
 
 cask '1password'
+cask 'amethyst'
 cask 'google-chrome'
 cask 'intellij-idea'
 cask 'mactex'
