@@ -21,3 +21,5 @@
 	excludesfile = ~/.gitignore
 [credential]
 	helper = osxkeychain
+[diff]
+	compactionHeuristic = true
