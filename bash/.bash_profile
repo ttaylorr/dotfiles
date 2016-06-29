@@ -3,6 +3,8 @@ export GOPATH=$HOME/dev/go
 export EDITOR="$(which vim)"
 alias e="$EDITOR"
 
+d() { e $@ . }
+
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
