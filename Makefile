@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew git vim tmux editorconfig
-.PHONY: bash zsh brew git vim tmux editorconfig
+all: bash zsh brew git vim tmux editorconfig ctags
+.PHONY: bash zsh brew git vim tmux editorconfig ctags
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -34,6 +34,9 @@ zsh:
 
 bash:
 	ln -fs $(DOTFILES_ROOT)/bash/.bash_profile ${HOME}/.bash_profile
+
+ctags:
+	ln -fs $(DOTFILES_ROOT)/ctags/.ctags ${HOME}/.ctags
 
 define install-if-missing
 	@brew list $1 > /dev/null 2>&1 || brew install $1
