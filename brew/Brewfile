@@ -4,6 +4,7 @@ tap 'homebrew/core'
 tap 'homebrew/tex'
 
 brew 'cloc'
+brew 'ctags'
 brew 'git'
 brew 'glide'
 brew 'openssl'
