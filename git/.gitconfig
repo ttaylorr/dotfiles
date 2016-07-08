@@ -23,3 +23,5 @@
 	helper = osxkeychain
 [diff]
 	compactionHeuristic = true
+[github]
+	user = ttaylorr
