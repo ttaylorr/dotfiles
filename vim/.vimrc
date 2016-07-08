@@ -31,16 +31,17 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 "" 2.b) Hook in all plugins
+Plug 'Shougo/neocomplcache.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
+Plug 'kshenoy/vim-signature'
 Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/neocomplcache.vim'
 Plug 'tpope/vim-endwise'
 
 "" 2.c) Done!
