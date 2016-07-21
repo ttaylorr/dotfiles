@@ -11,6 +11,7 @@
 	co = checkout
 	di = diff
 	lb = checkout -
+	up = pull --rebase --autostash
 [push]
 	default = current
 [pull]
@@ -25,3 +26,7 @@
 	compactionHeuristic = true
 [github]
 	user = ttaylorr
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	required = true
+	clean = git-lfs clean -- %f
