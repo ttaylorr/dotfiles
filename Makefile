@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew git vim tmux editorconfig
-.PHONY: bash zsh brew git vim tmux editorconfig
+all: bash zsh brew git vim tmux editorconfig karabiner
+.PHONY: bash zsh brew git vim tmux editorconfig karabiner
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -21,6 +21,9 @@ vim:
 
 editorconfig:
 	ln -fs $(DOTFILES_ROOT)/editorconfig/.editorconfig ${HOME}/.editorconfig
+
+karabiner:
+	$(DOTFILES_ROOT)/karabiner/import.sh
 
 tmux:
 	$(call install-if-missing, "tmux")
