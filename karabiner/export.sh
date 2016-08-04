@@ -19,7 +19,7 @@ if [ ! -x "$KARABINER" ]; then
   exit 1
 fi
 
-echo "$($KARABINER export)" > "$EXPORT_TO"
+echo "$($KARABINER export | grep -v "/bin/echo")" > "$EXPORT_TO"
 
 echo "Successfully exported Karabiner settings to $EXPORT_TO"
 exit 0
