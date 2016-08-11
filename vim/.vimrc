@@ -52,6 +52,7 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
+Plug 'ttaylorr/vim-github'
 
 "" 2.c) Done!
 call plug#end()
