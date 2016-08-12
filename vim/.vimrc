@@ -64,6 +64,7 @@ let NERDTreeQuitOnOpen = 1
 
 "" 2.d.b) vim-go (use goimports)
 let g:go_fmt_command = "goimports"
+let g:go_template_autocreate = 0
 
 "" 2.d.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
