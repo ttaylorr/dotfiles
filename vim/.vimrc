@@ -42,7 +42,7 @@ call plug#begin('~/.vim/plugged')
 "" 2.b) Hook in all plugins
 Plug 'Shougo/neocomplcache.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'chriskempson/base16-vim'
+Plug 'atelierbram/vim-colors_atelier-schemes'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
@@ -168,8 +168,8 @@ match ErrorMsg '\s\+$'
 "" 5) Misc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 5.a) Colorscheme
-set background=dark
-colorscheme torte
+set background=light
+colorscheme base16-atelierforest
 
 "" 5.b) Relative/absolute number switch with <C-n>
 function! NumberToggle()
