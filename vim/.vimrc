@@ -1,6 +1,3 @@
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 1) General tweaks
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
