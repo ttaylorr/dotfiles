@@ -6,6 +6,8 @@ setopt PROMPT_SUBST
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+zstyle ':completion:*' menu select
+
 abbrev_path() {
   sed "s:\([^/]\)[^/]*/:\1/:g" <<<$(sed s:$HOME:\~:g <<<$PWD)
 }

@@ -5,9 +5,6 @@ alias e="$EDITOR"
 
 d() { e $@ . }
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.rvm/bin:/Library/TeX/texbin"
 export PATH="$PATH:/usr/local/sbin"

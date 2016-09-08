@@ -4,21 +4,23 @@
 let mapleader = ","
 
 "" 1.a) Text styling
-set textwidth=80
-set ruler
 set number
+set ruler
+set textwidth=80
 
 "" 1.b) Tab preferences (prefer .editorconfig)
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set smarttab
 set expandtab
+set shiftwidth=2
+set smarttab
+set softtabstop=2
+set tabstop=2
 
 "" 1.c) Misc. preferences
+set backspace=indent,eol,start
 set cursorline
 set hlsearch
-set backspace=indent,eol,start
+set lazyredraw
+set ttyfast
 syntax on
 
 "" 1.d) Minimum window sizes
@@ -48,6 +50,7 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' 
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
 Plug 'ttaylorr/vim-github'
 
