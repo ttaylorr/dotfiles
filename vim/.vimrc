@@ -50,6 +50,7 @@ Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' 
 Plug 'pbrisbin/vim-mkdir'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-endwise'
 Plug 'ttaylorr/vim-github'
 
