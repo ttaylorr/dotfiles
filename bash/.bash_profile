@@ -1,4 +1,4 @@
-export GOPATH=$HOME/dev/go
+export GOPATH="$HOME/dev/go"
 
 export EDITOR="$(which vim)"
 alias e="$EDITOR"
