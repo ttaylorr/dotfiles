@@ -1,9 +1,11 @@
-export GOPATH=$HOME/dev/go
+export GOPATH="$HOME/dev/go"
 
 export EDITOR="$(which vim)"
 alias e="$EDITOR"
 
-d() { e $@ . }
+function d() {
+  e $@ .
+}
 
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.rvm/bin:/Library/TeX/texbin"
