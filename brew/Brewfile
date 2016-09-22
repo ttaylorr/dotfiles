@@ -35,6 +35,7 @@ cask 'sequel-pro'
 cask 'transmission'
 cask 'virtualbox'
 cask 'vlc'
+cask 'vmware-fusion'
 cask 'wireshark'
 cask 'zoomus'
 
