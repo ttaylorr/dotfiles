@@ -1,4 +1,5 @@
 export GOPATH="$HOME/dev/go"
+export GPG_TTY="$(tty)"
 
 export EDITOR="$(which vim)"
 alias e="$EDITOR"
