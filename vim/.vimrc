@@ -19,6 +19,7 @@ set tabstop=2
 set backspace=indent,eol,start
 set cursorline
 set hlsearch
+set incsearch
 set lazyredraw
 set ttyfast
 syntax on
@@ -145,6 +146,9 @@ nnoremap <space> :nohl<cr>
 "" 3.f) Tab switching
 nnoremap H gT
 nnoremap L gt
+
+"" 3.g) ; -> :
+nnoremap ; :
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
