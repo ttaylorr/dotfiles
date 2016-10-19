@@ -19,6 +19,7 @@ set tabstop=2
 set backspace=indent,eol,start
 set cursorline
 set hlsearch
+set incsearch
 set lazyredraw
 set ttyfast
 syntax on
