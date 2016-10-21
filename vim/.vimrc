@@ -21,6 +21,7 @@ set cursorline
 set hlsearch
 set incsearch
 set lazyredraw
+set nomodeline
 set ttyfast
 syntax on
 
