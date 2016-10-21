@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Update all sub-modules for a given packname, defaulting to "ttaylorr".
+#
+# USAGE:
+#   $ update_pack [packname]
+
+main() {
+  local packname="${1-ttaylorr}"
+
+  parallel \
+    git submodule update --init \
+    ::: "$(list_submodules_in "vim/pack/$packname")"
+}
+
+list_submodules_in() {
+  local dir="$1"
+
+  git submodule \
+    | awk '{ print $2 }' \
+    | grep -e "^$dir"
+}
+
+main;
