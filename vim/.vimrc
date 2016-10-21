@@ -36,38 +36,16 @@ set winheight=999
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 2) Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 2.a) Initalize plugin manager
-call plug#begin('~/.vim/plugged')
-
-"" 2.b) Hook in all plugins
-Plug 'Shougo/neocomplcache.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'atelierbram/vim-colors_atelier-schemes'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go'
-Plug 'kshenoy/vim-signature'
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'pbrisbin/vim-mkdir'
-Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-endwise'
-Plug 'ttaylorr/vim-github'
-
-"" 2.c) Done!
-call plug#end()
-
-"" 2.d) Plugin-level customization
-"" 2.d.a) NERDTree
+"" 2.a) Plugin-level customization
+"" 2.a.a) NERDTree
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
-"" 2.d.b) vim-go (use goimports)
+"" 2.a.b) vim-go (use goimports)
 let g:go_fmt_command = "goimports"
 let g:go_template_autocreate = 0
 
-"" 2.d.c) ctrlp.vim
+"" 2.a.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)

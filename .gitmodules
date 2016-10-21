@@ -1,3 +1,45 @@
 [submodule "tmux/tpm"]
 	path = tmux/tpm
 	url = git@github.com:tmux-plugins/tpm.git
+[submodule "vim/pack/ttaylorr/start/neocomplcache.vim"]
+	path = vim/pack/ttaylorr/start/neocomplcache.vim
+	url = git@github.com:Shougo/neocomplcache.vim.git
+[submodule "vim/pack/ttaylorr/start/vim-gitgutter"]
+	path = vim/pack/ttaylorr/start/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim/pack/ttaylorr/start/editorconfig-vim"]
+	path = vim/pack/ttaylorr/start/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "vim/pack/ttaylorr/start/vim-go"]
+	path = vim/pack/ttaylorr/start/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "vim/pack/ttaylorr/start/vim-signature"]
+	path = vim/pack/ttaylorr/start/vim-signature
+	url = git@github.com:kshenoy/vim-signature.git
+[submodule "vim/pack/ttaylorr/start/gocode"]
+	path = vim/pack/ttaylorr/start/gocode
+	url = git@github.com:nsf/gocode.git
+[submodule "vim/pack/ttaylorr/start/vim-mkdir"]
+	path = vim/pack/ttaylorr/start/vim-mkdir
+	url = git@github.com:pbrisbin/vim-mkdir.git
+[submodule "vim/pack/ttaylorr/start/rust.vim"]
+	path = vim/pack/ttaylorr/start/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
+[submodule "vim/pack/ttaylorr/start/nerdtree"]
+	path = vim/pack/ttaylorr/start/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/pack/ttaylorr/start/vim-multiple-cursors"]
+	path = vim/pack/ttaylorr/start/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
+[submodule "vim/pack/ttaylorr/start/vim-endwise"]
+	path = vim/pack/ttaylorr/start/vim-endwise
+	url = git@github.com:tpope/vim-endwise.git
+[submodule "vim/pack/ttaylorr/start/vim-github"]
+	path = vim/pack/ttaylorr/start/vim-github
+	url = git@github.com:ttaylorr/vim-github.git
+[submodule "vim/pack/ttaylorr/start/vim-colors_atelier-schemes"]
+	path = vim/pack/ttaylorr/start/vim-colors_atelier-schemes
+	url = git@github.com:atelierbram/vim-colors_atelier-schemes
+[submodule "vim/pack/ttaylorr/start/vim-tmux-navigator"]
+	path = vim/pack/ttaylorr/start/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator

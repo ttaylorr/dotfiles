@@ -13,10 +13,8 @@ git:
 
 vim:
 	$(call install-if-missing, "vim")
-	$(call curl-to-location,\
-		~/.vim/autoload/plug.vim,\
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
-	vim +PlugInstall +qall > /dev/null 2>&1
+	[ ! -L ${HOME}/.vim ] && ln -Ffs $(DOTFILES_ROOT)/vim/ ${HOME}/.vim || true
+	$(DOTFILES_ROOT)/vim/script/update_pack ttaylorr
 	ln -fs $(DOTFILES_ROOT)/vim/.vimrc ${HOME}/.vimrc
 
 editorconfig:
@@ -40,10 +38,4 @@ bash:
 
 define install-if-missing
 	@brew list $1 > /dev/null 2>&1 || brew install $1
-endef
-
-define curl-to-location
-	@if ! [ -f $1 ]; then \
-		curl -fLo $1 --create-dirs $(2) -s; \
-	fi
 endef
