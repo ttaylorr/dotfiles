@@ -43,3 +43,4 @@ cask 'zoomus'
 
 cask 'font-fira-code'
 cask 'font-inconsolata-dz'
+cask 'font-octicons'
