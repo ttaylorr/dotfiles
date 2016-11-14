@@ -1,4 +1,4 @@
-export GOPATH="$HOME/dev/go"
+export GOPATH="$HOME/go"
 export GPG_TTY="$(tty)"
 
 export EDITOR="$(which vim)"
