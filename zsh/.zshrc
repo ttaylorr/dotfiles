@@ -8,6 +8,11 @@ autoload -Uz compinit && compinit
 
 zstyle ':completion:*' menu select
 
+# Enable history-inc-pattern search in vi-mode
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey "^P" vi-up-line-or-history
+bindkey "^N" vi-down-line-or-history
+
 abbrev_path() {
   sed "s:\([^/]\)[^/]*/:\1/:g" <<<$(sed s:$HOME:\~:g <<<$PWD)
 }
