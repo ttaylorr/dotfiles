@@ -9,6 +9,7 @@ function d() {
 }
 
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.rvm/bin:/Library/TeX/texbin"
 export PATH="$PATH:/usr/local/sbin"
 

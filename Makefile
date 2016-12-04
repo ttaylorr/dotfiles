@@ -1,11 +1,14 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew git vim tmux editorconfig karabiner
-.PHONY: bash zsh brew git vim tmux editorconfig karabiner
+all: bash zsh brew bin git vim tmux editorconfig karabiner
+.PHONY: bash zsh brew bin git vim tmux editorconfig karabiner
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
 	brew bundle --global
+
+bin:
+	[ ! -h ${HOME}/.bin ] && ln -fs $(DOTFILES_ROOT)/bin ${HOME}/.bin || true
 
 git:
 	ln -fs $(DOTFILES_ROOT)/git/.gitconfig ${HOME}/.gitconfig
