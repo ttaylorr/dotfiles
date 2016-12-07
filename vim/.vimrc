@@ -50,6 +50,9 @@ let g:go_template_autocreate = 0
 set wildignore+=*/node_modules/*,*/bower_components/*
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
+"" HACK: manually set omnifunc for Go files.
+autocmd BufRead,BufNewFile *.go setlocal omnifunc=go#complete#Complete
+
 function! Smart_TabComplete()
   if pumvisible() != 0
     return "\<C-P>"
