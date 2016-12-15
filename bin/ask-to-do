@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+main() {
+  local cmd="$1"
+
+  if [ -z "$cmd" ]; then
+    echo "usage: ask-to-do <cmd>" >&1
+    exit 1
+  fi
+
+  while read thing; do
+    read -n 1 -p "Do \`$cmd $thing\`? [yN] " < /dev/tty
+    if [ ! -z $REPLY ]; then
+      echo
+    fi
+
+    case $REPLY in
+      [yY])
+        echo `$cmd $thing`
+        ;;
+    esac
+  done
+}
+
+main "$@";

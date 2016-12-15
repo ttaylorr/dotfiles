@@ -32,9 +32,9 @@ main() {
     exit 1
   fi
 
-  for rev in "$(git rev-list "$range")"; do
-    git show -q $rev
-    git checkout -q $rev
+  git rev-list --reverse "$range" | while read rev; do
+    git show -q "$rev"
+    git checkout -q "$rev"
 
     $command;
   done

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+main() {
+  if [ ! -d .git/ ]; then
+    echo "Not in a Git repository!" >&2
+    exit 1
+  fi
+
+  git branch \
+    | grep -v "*" \
+    | awk '{ print $1 }' \
+    | ask-to-do "git branch -D"
+}
+
+main;
