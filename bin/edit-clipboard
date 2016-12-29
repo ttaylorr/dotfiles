@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+main() {
+  if [ ! -x "$(which pbpaste)" ]; then
+    echo "fatal: could not access clipboard, aborting..." >&2
+    exit 1
+  fi
+
+  if [ -z "$EDITOR" ]; then
+    echo "fatal: \$EDITOR is unset, aborting..." >&2
+    exit 1
+  fi
+
+  tmp="$(mktemp)"
+  pbpaste > "$tmp"
+
+  $EDITOR "$tmp"
+
+  if [ "0" -ne "$?" ]; then
+    echo "fatal: $EDITOR exited in a dirty state, aborting..." >&2
+    exit 1
+  fi
+
+  cat "$tmp" | pbcopy
+  rm "$tmp"
+}
+
+main;
