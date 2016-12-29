@@ -12,4 +12,4 @@ main() {
     | ask-to-do "git branch -D"
 }
 
-main;
+main "$@";
