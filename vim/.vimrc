@@ -16,12 +16,14 @@ set softtabstop=2
 set tabstop=2
 
 "" 1.c) Misc. preferences
+set autoindent
 set backspace=indent,eol,start
 set cursorline
 set hlsearch
 set incsearch
 set lazyredraw
 set nomodeline
+set smartindent
 set ttyfast
 syntax on
 
