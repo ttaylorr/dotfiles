@@ -5,3 +5,4 @@ hs.hotkey.bind({'ctrl'}, '`', function()
 end)
 
 require('quit')
+require('esc')
