@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin git vim tmux editorconfig karabiner
-.PHONY: bash zsh brew bin git vim tmux editorconfig karabiner
+all: bash zsh brew bin git vim tmux editorconfig karabiner hammerspoon
+.PHONY: bash zsh brew bin git vim tmux editorconfig karabiner hammerspoon
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -25,6 +25,9 @@ editorconfig:
 
 karabiner:
 	$(DOTFILES_ROOT)/karabiner/import.sh
+
+hammerspoon:
+	[ ! -L ${HOME}/.hammerspoon ] && ln -Fs $(DOTFILES_ROOT)/hammerspoon ${HOME}/.hammerspoon || true
 
 tmux:
 	$(call install-if-missing, "tmux")
