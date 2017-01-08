@@ -4,5 +4,6 @@ hs.hotkey.bind({'ctrl'}, '`', function()
   hs.reload()
 end)
 
+require('prefix')
 require('quit')
 require('esc')
