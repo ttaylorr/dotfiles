@@ -18,6 +18,10 @@ set quit
 unset mark_old
 set beep_new
 
+set sort = threads
+set sort_aux = reverse-last-date-received
+set sort_re
+
 set realname = "Taylor Blau"
 set from = "ttaylorr@github.com"
 
