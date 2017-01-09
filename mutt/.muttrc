@@ -7,6 +7,20 @@ set certificate_file = ~/.mutt/certificates
 set mailcap_path = ~/.mutt/mailcap
 set signature = ~/.mutt/signature
 
+macro index ga "<change-folder>=github.com/archive<enter>" "Go to all mail"
+macro index gd "<change-folder>=github.com/drafts<enter>" "Go to drafts"
+macro index gi "<change-folder>=github.com/INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=github.com/[Gmail].Starred<enter>" "Go to starred"
+macro index gt "<change-folder>=github.com/trash<enter>" "Go to trash"
+macro index,pager e "<save-message>=github.com/archive<enter>" "Archive"
+macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
+
+bind pager k previous-entry
+bind pager j next-entry
+
+bind index,pager I read-thread
+bind index U toggle-new
+
 set wait_key = no
 set mbox_type = Maildir
 set timeout = 3
