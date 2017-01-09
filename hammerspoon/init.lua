@@ -7,4 +7,3 @@ end)
 prefix = require('prefix')
 
 require('quit')
-require('esc')
