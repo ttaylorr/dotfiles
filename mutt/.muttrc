@@ -21,6 +21,14 @@ bind pager j next-entry
 bind index,pager I read-thread
 bind index U toggle-new
 
+color index red white ~N
+color index green white ~R
+
+color normal default brightwhite
+color hdrdefault brightblue brightwhite
+color signature brightgreen brightwhite
+color tree brightblue brightwhite
+
 set wait_key = no
 set mbox_type = Maildir
 set timeout = 3
