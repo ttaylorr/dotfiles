@@ -21,7 +21,7 @@ brew 'openssl'
 brew 'parallel'
 brew 'pyenv'
 brew 'python'
-brew 'reattach-to-user-namespace'
+brew 'reattach-to-user-namespace', args: ['with-wrap-pbcopy-and-pbpaste']
 brew 'redis'
 brew 'rust'
 brew 'selecta'
