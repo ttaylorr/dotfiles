@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin git vim tmux editorconfig karabiner hammerspoon
-.PHONY: bash zsh brew bin git vim tmux editorconfig karabiner hammerspoon
+all: bash zsh brew bin git vim tmux editorconfig hammerspoon
+.PHONY: bash zsh brew bin git vim tmux editorconfig hammerspoon
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -22,9 +22,6 @@ vim:
 
 editorconfig:
 	ln -fs $(DOTFILES_ROOT)/editorconfig/.editorconfig ${HOME}/.editorconfig
-
-karabiner:
-	$(DOTFILES_ROOT)/karabiner/import.sh
 
 hammerspoon:
 	[ ! -L ${HOME}/.hammerspoon ] && ln -Fs $(DOTFILES_ROOT)/hammerspoon ${HOME}/.hammerspoon || true
