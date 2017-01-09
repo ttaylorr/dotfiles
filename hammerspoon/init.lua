@@ -8,3 +8,4 @@ prefix = require('prefix')
 
 require('quit')
 require('mouse')
+require('hyper')
