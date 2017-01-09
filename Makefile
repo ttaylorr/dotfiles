@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin git vim tmux editorconfig hammerspoon
-.PHONY: bash zsh brew bin git vim tmux editorconfig hammerspoon
+all: bash zsh brew bin git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
+.PHONY: bash zsh brew bin git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -22,6 +22,17 @@ vim:
 
 editorconfig:
 	ln -fs $(DOTFILES_ROOT)/editorconfig/.editorconfig ${HOME}/.editorconfig
+
+offlineimap:
+	ln -fs $(DOTFILES_ROOT)/offlineimap/.offlineimaprc ${HOME}/.offlineimaprc
+	ln -fs $(DOTFILES_ROOT)/offlineimap/.offlineimap.py ${HOME}/.offlineimap.py
+
+msmtp:
+	ln -fs $(DOTFILES_ROOT)/msmtp/.msmtprc ${HOME}/.msmtprc
+
+mutt:
+	ln -fs $(DOTFILES_ROOT)/mutt/.muttrc ${HOME}/.muttrc
+	ln -fs $(DOTFILES_ROOT)/mutt/signature ${HOME}/.mutt/signature
 
 hammerspoon:
 	defaults write -g KeyRepeat -int 1

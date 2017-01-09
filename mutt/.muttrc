@@ -1,0 +1,32 @@
+set folder = ~/.mail
+
+set alias_file = ~/.mutt/alias
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set signature = ~/.mutt/signature
+
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set beep_new
+
+set realname = "Taylor Blau"
+set from = "ttaylorr@github.com"
+
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+set spoolfile = "+github.com/INBOX"
+mailboxes +github.com/INBOX
+
+set mbox = "+github.com/archive"
+set postponed = "+github.com/drafts"
