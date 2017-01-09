@@ -1,0 +1,31 @@
+[general]
+accounts = github
+pythonfile = ~/.offlineimap.py
+ui = ttyui
+
+[Account github]
+localrepository = github-local
+remoterepository = github-remote
+status_backend = sqlite
+
+[Repository github-local]
+type = Maildir
+localfolders = ~/.mail/github.com
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository github-remote]
+maxconnections = 3
+type = Gmail
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+remoteuser = ttaylorr@github.com
+remotepasseval = get_keychain_pass(account="ttaylorr@github.com", server="imap.gmail.com")
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':   'drafts',
+                            '[Gmail]/Sent':     'sent',
+                            '[Gmail]/Trash':    'trash',
+                            '[Gmail]/All Mail': 'archive',
+                            }.get(folder, folder)
