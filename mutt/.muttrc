@@ -18,8 +18,8 @@ macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
 bind pager k previous-entry
 bind pager j next-entry
 
-bind index,pager I read-thread
-bind index U toggle-new
+macro index I "<read-thread><previous-entry>"
+macro index U "<toggle-new><previous-entry>"
 
 color index red white ~N
 color index green white ~R
