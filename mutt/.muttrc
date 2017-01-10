@@ -30,7 +30,7 @@ color index green white ~R
 
 color normal default brightwhite
 color hdrdefault brightblue brightwhite
-color signature brightgreen brightwhite
+color signature brightyellow brightwhite
 color tree brightblue brightwhite
 
 color body brightwhite default ^(diff).*
