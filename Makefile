@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
-.PHONY: bash zsh brew bin git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -9,6 +9,9 @@ brew:
 
 bin:
 	[ ! -h ${HOME}/.bin ] && ln -fs $(DOTFILES_ROOT)/bin ${HOME}/.bin || true
+
+launchagents:
+	ln -fs $(DOTFILES_ROOT)/launchagents/com.ttaylorr.offlineimap.plist ${HOME}/Library/LaunchAgents/com.ttaylorr.oflineimap.plist
 
 git:
 	ln -fs $(DOTFILES_ROOT)/git/.gitconfig ${HOME}/.gitconfig
