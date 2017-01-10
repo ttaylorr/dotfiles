@@ -19,7 +19,9 @@ bind pager k previous-entry
 bind pager j next-entry
 
 macro index I "<clear-flag>N<previous-entry>"
+macro pager I "<clear-flag>N<exit>"
 macro index U "<set-flag>N<previous-entry>"
+macro pager U "<set-flag>N<exit>"
 
 bind index R group-reply
 
