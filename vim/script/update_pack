@@ -12,7 +12,7 @@ main() {
     pushd {} >/dev/null
       git submodule update --init
 
-      git checkout master
+      git checkout -q master
       git pull origin master
     popd >/dev/null" \
     ::: "$(list_submodules_in "vim/pack/$packname")"
