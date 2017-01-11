@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+main() {
+  local to="$1"
+
+  case "$to" in
+    airpods)
+      SwitchAudioSource -s "Taylor’s AirPods" 2>&1 >/dev/null
+      ;;
+    macbook)
+      SwitchAudioSource -s "Built-in Output" 2>&1 >/dev/null
+      ;;
+  esac
+
+  echo "Input: $(SwitchAudioSource -t input -c)"
+  echo "Output: $(SwitchAudioSource -t output -c)"
+}
+
+main "$@"
+exit 0
