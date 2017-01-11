@@ -25,6 +25,7 @@ set lazyredraw
 set nomodeline
 set smartindent
 set ttyfast
+filetype plugin on
 syntax on
 
 "" 1.d) Minimum window sizes
