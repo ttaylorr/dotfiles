@@ -15,6 +15,8 @@ macro index gt "<change-folder>=github.com/trash<enter>" "Go to trash"
 macro index,pager e "<save-message>=github.com/archive<enter>" "Archive"
 macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
 
+macro index x "<tag-entry><previous-entry>"
+
 bind pager k previous-entry
 bind pager j next-entry
 
