@@ -90,6 +90,7 @@ endfunction
 
 inoremap <tab> <c-r>=Smart_TabComplete()<CR>
 inoremap <s-tab> <c-r>=Smart_ShiftTab()<CR>
+nnoremap <Leader>a :Ack!<Space>''<Left>
 set completeopt+=menuone
 set completeopt-=preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

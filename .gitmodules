@@ -43,3 +43,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-tmux-navigator"]
 	path = vim/pack/ttaylorr/start/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator
+[submodule "vim/pack/ttaylorr/start/ack.vim"]
+	path = vim/pack/ttaylorr/start/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
