@@ -8,8 +8,13 @@
 main() {
   local packname="${1-ttaylorr}"
 
-  parallel \
-    git submodule update --init \
+  parallel "\
+    pushd {} >/dev/null
+      git submodule update --init
+
+      git checkout master
+      git pull origin master
+    popd >/dev/null" \
     ::: "$(list_submodules_in "vim/pack/$packname")"
 }
 
