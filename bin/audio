@@ -12,8 +12,9 @@ main() {
       ;;
   esac
 
-  echo "Input: $(SwitchAudioSource -t input -c)"
+  echo "Input:  $(SwitchAudioSource -t input -c)"
   echo "Output: $(SwitchAudioSource -t output -c)"
+  echo "System: $(SwitchAudioSource -t system -c)"
 }
 
 main "$@"
