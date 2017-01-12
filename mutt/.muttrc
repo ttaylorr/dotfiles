@@ -61,7 +61,10 @@ unset confirmappend
 set quit
 unset mark_old
 set beep_new
+
 set sendmail=/usr/local/bin/msmtp
+set sendmail_wait = 0
+unset record
 
 set sort = threads
 set sort_aux = reverse-last-date-received
