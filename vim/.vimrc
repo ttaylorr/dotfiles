@@ -127,6 +127,7 @@ autocmd FileType go map <leader>t  :GoTest<cr>
 autocmd FileType go map <leader>tt :GoTestFunc<cr>
 autocmd FileType go map <leader>tc :GoCoverage<cr>
 autocmd FileType go map <leader>ga :GoAlternate<cr>
+autocmd FileType go map <leader>gd :GoDoc<cr>
 
 "" 3.d) Spell-Checking
 map <leader>sc :setlocal spell! spelllang=en_us<cr>
