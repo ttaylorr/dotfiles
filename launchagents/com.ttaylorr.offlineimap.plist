@@ -7,6 +7,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>/usr/local/bin/offlineimap</string>
+    <string>-q</string>
     <string>-u</string>
     <string>quiet</string>
   </array>
