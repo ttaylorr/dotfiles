@@ -1,3 +1,5 @@
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
 set folder = ~/.mail
 
 set alias_file = ~/.mutt/alias

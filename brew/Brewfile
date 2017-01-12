@@ -32,6 +32,7 @@ brew 'sqlite'
 brew 'switchaudio-osx'
 brew 'tmux'
 brew 'tree'
+brew 'urlview'
 brew 'vim'
 brew 'zsh'
 

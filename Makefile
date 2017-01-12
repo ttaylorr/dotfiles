@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
-.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt hammerspoon
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -47,6 +47,9 @@ tmux:
 	mkdir -p ${HOME}/.tmux/plugins
 	ln -fs $(DOTFILES_ROOT)/tmux/tpm ${HOME}/.tmux/plugins/
 	ln -fs $(DOTFILES_ROOT)/tmux/.tmux.conf ${HOME}/.tmux.conf
+
+urlview:
+	ln -fs $(DOTFILES_ROOT)/urlview/.urlview ${HOME}/.urlview
 
 zsh:
 	$(call install-if-missing, "zsh")
