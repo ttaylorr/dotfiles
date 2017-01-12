@@ -1,3 +1,8 @@
+set pager_index_lines = 10
+bind pager k previous-line
+bind pager j next-line
+bind pager R group-reply
+
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
 set folder = ~/.mail
