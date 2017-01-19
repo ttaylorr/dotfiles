@@ -98,6 +98,8 @@ set completeopt+=menuone
 set completeopt-=preview
 
 let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#syntax#conceal#use = 0
+let g:vim_markdown_conceal = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 3) Key rebindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
