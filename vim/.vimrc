@@ -18,6 +18,7 @@ set tabstop=2
 "" 1.c) Misc. preferences
 set autoindent
 set backspace=indent,eol,start
+set conceallevel=0
 set cursorline
 set hlsearch
 set incsearch
@@ -98,6 +99,8 @@ inoremap <s-tab> <c-r>=Smart_ShiftTab()<CR>
 nnoremap <Leader>a :Ack!<Space>''<Left>
 set completeopt+=menuone
 set completeopt-=preview
+
+let g:pandoc#modules#disabled = ["folding"]
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 3) Key rebindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

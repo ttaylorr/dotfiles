@@ -46,3 +46,9 @@
 [submodule "vim/pack/ttaylorr/start/ack.vim"]
 	path = vim/pack/ttaylorr/start/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/pack/ttaylorr/start/vim-pandoc-syntax"]
+	path = vim/pack/ttaylorr/start/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+[submodule "vim/pack/ttaylorr/start/vim-pandoc"]
+	path = vim/pack/ttaylorr/start/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
