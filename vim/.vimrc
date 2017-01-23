@@ -179,7 +179,7 @@ match ErrorMsg '\s\+$'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 5.a) Colorscheme
 set background=light
-colorscheme base16-atelierforest
+colorscheme Atelier_ForestLight
 
 "" 5.b) Relative/absolute number switch with <C-n>
 function! NumberToggle()
