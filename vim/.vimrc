@@ -102,7 +102,7 @@ let g:pandoc#syntax#conceal#use = 0
 let g:vim_markdown_conceal = 0
 
 if strlen(system("which racer")) > 0
-  let g:racer_cmd = "/Users/ttaylorr/.cargo/bin/racer"
+  let g:racer_cmd = system("echo -n $HOME") . "/.cargo/bin/racer"
   let g:racer_experimental_completer = 1
 
   if strlen(system("which rustfmt")) > 0
