@@ -52,3 +52,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-pandoc"]
 	path = vim/pack/ttaylorr/start/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "vim/pack/ttaylorr/start/vim-racer"]
+	path = vim/pack/ttaylorr/start/vim-racer
+	url = https://github.com/racer-rust/vim-racer.git
