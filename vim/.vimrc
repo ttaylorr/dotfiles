@@ -71,10 +71,10 @@ function! Smart_TabComplete()
     return "\<tab>"
   endif
 
-  let has_period = match(substr, '\.') != -1
+  let has_delimeter = match(substr, '\.') != -1 || match(substr, '::') != -1
   let has_slash = match(substr, '\/') != -1
 
-  if (!has_period && !has_slash)
+  if (!has_delimeter && !has_slash)
     return "\<C-X>\<C-P>"
   elseif (has_slash)
     return "\<C-X>\<C-F>"
