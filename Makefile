@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon
-.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -41,6 +41,13 @@ hammerspoon:
 	defaults write -g KeyRepeat -int 1
 	defaults write -g InitialKeyRepeat -int 10
 	[ ! -L ${HOME}/.hammerspoon ] && ln -Fs $(DOTFILES_ROOT)/hammerspoon ${HOME}/.hammerspoon || true
+
+rust:
+	rustup self upgrade-data
+	rustup update stable
+	rustup component add rust-src
+	rustup default stable
+	which racer >/dev/null || cargo install racer
 
 tmux:
 	$(call install-if-missing, "tmux")
