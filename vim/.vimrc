@@ -181,17 +181,9 @@ match ErrorMsg '\s\+$'
 set background=light
 colorscheme Atelier_ForestLight
 
-"" 5.b) Relative/absolute number switch with <C-n>
-function! NumberToggle()
-  set number
-
-  if(&relativenumber == 1)
-    set norelativenumber
-  else
-    set relativenumber
-  endif
-endfunction
-noremap <C-n> :call NumberToggle()<CR>
+"" 5.b) Relative/absolute number switch with <C-t>
+set number
+noremap <C-t> :set relativenumber!<CR>
 
 "" 5.c) Selecta (credit: github.com/garybernhardt/selecta)
 function! SelectaCommand(choice_command, selecta_args, vim_command)
