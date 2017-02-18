@@ -11,6 +11,7 @@ main() {
   pushd "$GIT_ROOT" >/dev/null
     git branch \
       | grep -v "*" \
+      | grep "$1" \
       | awk '{ print $1 }' \
       | ask-to-do "git branch -D"
   popd >/dev/null
