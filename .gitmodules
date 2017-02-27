@@ -55,3 +55,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-racer"]
 	path = vim/pack/ttaylorr/start/vim-racer
 	url = https://github.com/racer-rust/vim-racer.git
+[submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
+	path = vim/pack/ttaylorr/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
