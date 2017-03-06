@@ -21,7 +21,7 @@ main() {
     exit 1
   fi
 
-  cat "$tmp" | pbcopy
+  pbcopy < "$tmp"
   rm "$tmp"
 }
 
