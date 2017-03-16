@@ -25,6 +25,7 @@ set incsearch
 set lazyredraw
 set nomodeline
 set smartindent
+set spell
 set ttyfast
 filetype plugin on
 syntax on
