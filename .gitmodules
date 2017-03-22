@@ -58,3 +58,6 @@
 [submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
 	path = vim/pack/ttaylorr/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/pack/ttaylorr/start/gundo.vim"]
+	path = vim/pack/ttaylorr/start/gundo.vim
+	url = https://github.com/sjl/gundo.vim
