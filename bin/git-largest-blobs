@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+main() {
+  local range="$1"
+
+
+  local blobs="$(all_blobs_in_range $range)"
+  blobs="$(sort_blobs "$blobs")"
+
+  echo "$blobs" \
+    | head -n 3 \
+    | col
+}
+
+all_blobs_in_range() {
+  local range="$1"
+
+  while read sha; do
+    git ls-tree -l -r "$sha"
+  done < <(git log $range --oneline --format="%H")
+}
+
+sort_blobs() {
+  local blobs="$1"
+
+  while read blob; do
+    echo "$blob" | awk '{ print $4 "\t" $0 }'
+  done < <(echo "$blobs") | sort -r -n
+}
+
+main "$@";
