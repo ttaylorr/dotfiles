@@ -34,8 +34,8 @@ macro pager U "<set-flag>N<exit>"
 
 bind index R group-reply
 
-color index red white ~N
-color index green white ~R
+color index brightblue brightwhite ~N
+color index brightwhite black ~D
 
 color normal default brightwhite
 color hdrdefault brightblue brightwhite
