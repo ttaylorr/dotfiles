@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ ! -x "$(which fzf)" ]; then
+  echo >&2 "fatal: unable to find an executable fzf"
+  exit 1
+fi
+
+git branch "$@" \
+  | grep -v '*' \
+  | awk '{ print $1 }' \
+  | fzf --preview 'git log --color --patch {}...HEAD' \
+  | xargs git checkout;
