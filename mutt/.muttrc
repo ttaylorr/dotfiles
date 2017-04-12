@@ -24,8 +24,8 @@ macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
 
 macro index x "<tag-entry><previous-entry>"
 
-bind pager k previous-entry
-bind pager j next-entry
+bind index k previous-entry
+bind index j next-entry
 
 macro index I "<clear-flag>N<previous-entry>"
 macro pager I "<clear-flag>N<exit>"
