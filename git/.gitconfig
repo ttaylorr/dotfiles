@@ -10,6 +10,7 @@
 	br = branch
 	co = checkout
 	coi = checkout-interactive
+	cop = checkout-pr
 	di = diff
 	lb = checkout -
 	up = pull --rebase --autostash
