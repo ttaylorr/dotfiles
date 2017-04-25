@@ -9,6 +9,7 @@
 	ci = commit
 	br = branch
 	co = checkout
+	coi = checkout-interactive
 	di = diff
 	lb = checkout -
 	up = pull --rebase --autostash
