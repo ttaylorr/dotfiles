@@ -61,3 +61,6 @@
 [submodule "vim/pack/ttaylorr/start/gundo.vim"]
 	path = vim/pack/ttaylorr/start/gundo.vim
 	url = https://github.com/sjl/gundo.vim
+[submodule "vim/pack/ttaylorr/start/vim-puppet"]
+	path = vim/pack/ttaylorr/start/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
