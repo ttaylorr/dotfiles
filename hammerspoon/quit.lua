@@ -18,7 +18,11 @@ end
 -- matching "Quit", the exits the modal.
 local function quit()
   local app = hs.application.frontmostApplication()
-  local res = app:selectMenuItem("^Quit.*$")
+  if app:title() == "Messages" then;
+    app:selectMenuItem("^Close Window.*$")
+  else;
+    app:selectMenuItem("^Quit.*$")
+  end
 
   modal:exit()
 end
