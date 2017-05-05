@@ -6,6 +6,10 @@ setopt PROMPT_SUBST
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+# Enable shift-tab reverse-menu-complete
+# XXX(@ttaylorr) is '^[[Z' portable?
+bindkey '^[[Z' reverse-menu-complete
+
 zstyle ':completion:*' menu select
 
 # Enable history-inc-pattern search in vi-mode
