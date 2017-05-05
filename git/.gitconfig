@@ -29,7 +29,7 @@
 [github]
 	user = ttaylorr
 [filter "lfs"]
-	smudge = false
-	required = true
-	clean = false
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+	required = true
