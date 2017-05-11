@@ -40,6 +40,7 @@ mutt:
 hammerspoon:
 	defaults write -g KeyRepeat -int 1
 	defaults write -g InitialKeyRepeat -int 10
+	defaults write -g ApplePressAndHoldEnabled -bool false
 	[ ! -L ${HOME}/.hammerspoon ] && ln -Fs $(DOTFILES_ROOT)/hammerspoon ${HOME}/.hammerspoon || true
 
 rust:
