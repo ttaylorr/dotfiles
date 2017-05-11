@@ -44,6 +44,7 @@ hammerspoon:
 	[ ! -L ${HOME}/.hammerspoon ] && ln -Fs $(DOTFILES_ROOT)/hammerspoon ${HOME}/.hammerspoon || true
 
 rust:
+	[ ! -x "$(which rustup)" ] && curl https://sh.rustup.rs -sSf | sh
 	rustup self upgrade-data
 	rustup update stable
 	rustup component add rust-src
