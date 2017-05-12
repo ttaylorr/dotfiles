@@ -23,6 +23,7 @@ brew 'mutt'
 brew 'offlineimap'
 brew 'openssl'
 brew 'parallel'
+brew 'pigz'
 brew 'pyenv'
 brew 'python'
 brew 'reattach-to-user-namespace', args: ['with-wrap-pbcopy-and-pbpaste']
