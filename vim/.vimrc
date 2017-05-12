@@ -138,6 +138,7 @@ map <leader>tci :!./script/cibuild<cr>
 autocmd FileType go map <leader>t  :GoTest<cr>
 autocmd FileType go map <leader>tt :GoTestFunc<cr>
 autocmd FileType go map <leader>tc :GoCoverage<cr>
+autocmd FileType go map <leader>ta :Tagbar<cr>
 autocmd FileType go map <leader>ga :GoAlternate<cr>
 autocmd FileType go map <leader>gd :GoDoc<cr>
 
