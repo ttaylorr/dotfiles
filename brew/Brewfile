@@ -6,6 +6,7 @@ tap 'homebrew/tex'
 
 brew 'ack'
 brew 'cloc'
+brew 'ctags-exuberant'
 brew 'gdb'
 brew 'fzf'
 brew 'git'
