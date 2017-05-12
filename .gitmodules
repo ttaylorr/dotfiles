@@ -64,3 +64,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-puppet"]
 	path = vim/pack/ttaylorr/start/vim-puppet
 	url = https://github.com/rodjek/vim-puppet
+[submodule "vim/pack/ttaylorr/start/tagbar"]
+	path = vim/pack/ttaylorr/start/tagbar
+	url = https://github.com/majutsushi/tagbar
