@@ -135,8 +135,8 @@ map <leader>ti :!./script/integration<cr>
 map <leader>tci :!./script/cibuild<cr>
 
 "" 3.c.i) Testing (Golang)
-autocmd FileType go map <leader>t  :GoTest<cr>
-autocmd FileType go map <leader>tt :GoTestFunc<cr>
+autocmd FileType go map <leader>t  :GoTestFunc<cr>
+autocmd FileType go map <leader>tt :GoTest<cr>
 autocmd FileType go map <leader>tc :GoCoverage<cr>
 autocmd FileType go map <leader>ta :Tagbar<cr>
 autocmd FileType go map <leader>ga :GoAlternate<cr>
