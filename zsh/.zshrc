@@ -33,8 +33,12 @@ parse_git_branch() {
 
   if [[ -z "$branch" ]]; then
     return
-  else
+  fi
+
+  if [[ -z "$detached" ]]; then
     branch="%{$fg[green]%}$branch"
+  else
+    branch="%{$fg[red]%}$branch"
   fi
 
   if ! [[ -z "$(git status -s)" ]]; then
