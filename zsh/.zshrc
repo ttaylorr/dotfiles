@@ -22,7 +22,15 @@ abbrev_path() {
 }
 
 parse_git_branch() {
-  branch="$(git branch 2>/dev/null | grep '*' | cut -d ' ' -f 2)"
+  branch="$(git branch 2>/dev/null | grep "*")"
+  detached="$(echo "$branch" | grep "detached at")"
+
+  if [[ ! -z "$detached" ]]; then
+    branch="$(echo "$branch" | tr -d '()' | awk '{ print $5 }')"
+  else
+    branch="$(echo "$branch" | awk '{ print $2 }')"
+  fi
+
   if [[ -z "$branch" ]]; then
     return
   else
