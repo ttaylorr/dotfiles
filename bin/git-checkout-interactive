@@ -8,5 +8,5 @@ fi
 git branch "$@" \
   | grep -v '*' \
   | awk '{ print $1 }' \
-  | fzf --preview 'git log --color --patch {}...HEAD' \
+  | fzf --preview 'git log --color {}...HEAD' \
   | xargs git checkout;
