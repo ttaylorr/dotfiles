@@ -9,16 +9,22 @@ main() {
   fi
 
   while read thing; do
-    read -n 1 -p "Do \`$cmd $thing\`? [yN] " < /dev/tty
-    if [ ! -z $REPLY ]; then
-      echo
-    fi
+    while true; do
+      read -n 1 -p "Do \`$cmd $thing\`? [yn] " < /dev/tty
+      if [ ! -z $REPLY ]; then
+        echo
+      fi
 
-    case $REPLY in
-      [yY])
-        echo `$cmd $thing`
-        ;;
-    esac
+      case $REPLY in
+        [yY])
+          echo `$cmd $thing`
+          break;
+          ;;
+        [nN])
+          break;
+          ;;
+      esac
+    done
   done
 }
 
