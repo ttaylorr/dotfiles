@@ -26,6 +26,8 @@ macro index x "<tag-entry><previous-entry>"
 
 bind index k previous-entry
 bind index j next-entry
+bind generic,index,pager \Cd half-down
+bind generic,index,pager \Cu half-up
 
 macro index I "<clear-flag>N<previous-entry>"
 macro pager I "<clear-flag>N<exit>"
