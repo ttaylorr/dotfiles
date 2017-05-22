@@ -3,7 +3,7 @@ bind pager k previous-line
 bind pager j next-line
 bind pager R group-reply
 
-macro pager \Cu "|urlview<enter>" "call urlview to open links"
+macro pager \Co "|urlview<enter>" "call urlview to open links"
 
 set folder = ~/.mail
 
