@@ -6,7 +6,6 @@ ui = ttyui
 [Account github]
 localrepository = github-local
 remoterepository = github-remote
-status_backend = sqlite
 
 [Repository github-local]
 type = Maildir
