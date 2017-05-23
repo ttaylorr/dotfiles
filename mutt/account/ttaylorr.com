@@ -7,6 +7,9 @@ set spoolfile = "+ttaylorr.com/INBOX"
 
 set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"
 
+set header_cache="~/.mail/cache/ttaylorr.com/header"
+set message_cachedir="~/.mail/cache/ttaylorr.com/message"
+
 macro index ga "<change-folder>=ttaylorr.com/archive<enter>" "Go to all mail"
 macro index gd "<change-folder>=ttaylorr.com/drafts<enter>" "Go to drafts"
 macro index gi "<change-folder>=ttaylorr.com/INBOX<enter>" "Go to inbox"

@@ -7,6 +7,9 @@ set spoolfile = "+github.com/INBOX"
 
 set sendmail="/usr/local/bin/msmtp -a github.com"
 
+set header_cache="~/.mail/cache/github.com/header"
+set message_cachedir="~/.mail/cache/github.com/message"
+
 macro index ga "<change-folder>=github.com/archive<enter>" "Go to all mail"
 macro index gd "<change-folder>=github.com/drafts<enter>" "Go to drafts"
 macro index gi "<change-folder>=github.com/INBOX<enter>" "Go to inbox"
