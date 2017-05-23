@@ -1,56 +1,40 @@
 [general]
-accounts = github,ttaylorr
+accounts   = github,ttaylorr
 pythonfile = ~/.offlineimap.py
-ui = ttyui
+ui         = ttyui
 
 [Account github]
-localrepository = github-local
+localrepository  = github-local
 remoterepository = github-remote
 
 [Repository github-local]
-type = Maildir
+type         = Maildir
 localfolders = ~/.mail/github.com
-nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-                            'sent':    '[Gmail]/Sent',
-                            'trash':   '[Gmail]/Trash',
-                            'archive': '[Gmail]/All Mail',
-                            }.get(folder, folder)
+nametrans    = forward_nametrans
 
 [Repository github-remote]
 maxconnections = 3
-type = Gmail
-sslcacertfile = /usr/local/etc/openssl/cert.pem
-remoteuser = ttaylorr@github.com
+type           = Gmail
+sslcacertfile  = /usr/local/etc/openssl/cert.pem
+remoteuser     = ttaylorr@github.com
 remotepasseval = get_keychain_pass(account="ttaylorr@github.com", server="imap.gmail.com")
-realdelete = no
-nametrans = lambda folder: {'[Gmail]/Drafts':   'drafts',
-                            '[Gmail]/Sent':     'sent',
-                            '[Gmail]/Trash':    'trash',
-                            '[Gmail]/All Mail': 'archive',
-                            }.get(folder, folder)
+realdelete     = no
+nametrans      = reverse_nametrans
 
 [Account ttaylorr]
-localrepository = ttaylorr-local
+localrepository  = ttaylorr-local
 remoterepository = ttaylorr-remote
 
 [Repository ttaylorr-local]
-type = Maildir
+type         = Maildir
 localfolders = ~/.mail/ttaylorr.com
-nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
-                            'sent':    '[Gmail]/Sent',
-                            'trash':   '[Gmail]/Trash',
-                            'archive': '[Gmail]/All Mail',
-                            }.get(folder, folder)
+nametrans    = forward_nametrans
 
 [Repository ttaylorr-remote]
 maxconnections = 3
-type = Gmail
-sslcacertfile = /usr/local/etc/openssl/cert.pem
-remoteuser = me@ttaylorr.com
+type           = Gmail
+sslcacertfile  = /usr/local/etc/openssl/cert.pem
+remoteuser     = me@ttaylorr.com
 remotepasseval = get_keychain_pass(account="me@ttaylorr.com", server="imap.gmail.com")
-realdelete = no
-nametrans = lambda folder: {'[Gmail]/Drafts':   'drafts',
-                            '[Gmail]/Sent':     'sent',
-                            '[Gmail]/Trash':    'trash',
-                            '[Gmail]/All Mail': 'archive',
-                            }.get(folder, folder)
+realdelete     = no
+nametrans      = reverse_nametrans
