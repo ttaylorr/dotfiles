@@ -14,13 +14,13 @@ set certificate_file = ~/.mutt/certificates
 set mailcap_path = ~/.mutt/mailcap
 set signature = ~/.mutt/signature
 
-macro index ga "<change-folder>=github.com/archive<enter>" "Go to all mail"
-macro index gd "<change-folder>=github.com/drafts<enter>" "Go to drafts"
-macro index gi "<change-folder>=github.com/INBOX<enter>" "Go to inbox"
-macro index gs "<change-folder>=github.com/[Gmail].Starred<enter>" "Go to starred"
-macro index gt "<change-folder>=github.com/trash<enter>" "Go to trash"
-macro index,pager e "<save-message>=github.com/archive<enter>" "Archive"
-macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
+folder-hook github.com/ source ~/.mutt/account/github.com
+folder-hook ttaylorr.com/ source ~/.mutt/account/ttaylorr.com
+
+source ~/.mutt/account/github.com
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account/github.com<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account/ttaylorr.com<enter><change-folder>!<enter>'
 
 macro index x "<tag-entry><previous-entry>"
 
@@ -64,7 +64,6 @@ set quit
 unset mark_old
 set beep_new
 
-set sendmail=/usr/local/bin/msmtp
 set sendmail_wait = 0
 unset record
 
@@ -73,14 +72,7 @@ set sort_aux = last-date-received
 set sort_re
 
 set realname = "Taylor Blau"
-set from = "ttaylorr@github.com"
 
 ignore *
 unignore from: to: cc: date: subject:
 hdr_order from: to: cc: date: subject:
-
-set spoolfile = "+github.com/INBOX"
-mailboxes +github.com/INBOX
-
-set mbox = "+github.com/archive"
-set postponed = "+github.com/drafts"
