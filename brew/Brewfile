@@ -40,6 +40,7 @@ brew 'tmux'
 brew 'tree'
 brew 'urlview'
 brew 'vim'
+brew 'watch'
 brew 'zsh'
 
 cask '1password'
