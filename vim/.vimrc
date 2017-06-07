@@ -183,9 +183,13 @@ match ErrorMsg '\s\+$'
 set background=light
 colorscheme Atelier_ForestLight
 
-"" 5.b) Relative/absolute number switch with <C-t>
 set number
-noremap <C-t> :set relativenumber!<CR>
+
+"" 5.b) Tab creation with ^T.
+noremap <C-t> :tabnew<CR>
+
+"" 5.c) Tab deletion with ^w.
+noremap <C-w> :tabclose<CR>
 
 "" 5.d) Remove annoying escape delay
 set timeoutlen=1000 ttimeoutlen=0
