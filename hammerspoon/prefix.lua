@@ -1,5 +1,5 @@
 local module = {}
-local modal = hs.hotkey.modal.new('ctrl', 'space')
+local modal = hs.hotkey.modal.new('ctrl alt', 'space')
 
 function modal:entered()
   modal.alert = hs.alert.show('Prefix Mode', 9999)
@@ -25,6 +25,5 @@ function module.bind(mod, key, fn)
 end
 
 module.bind('', 'escape', function() end)
-module.bind('ctrl', 'space', function() end)
 
 return module
