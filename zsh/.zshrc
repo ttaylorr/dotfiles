@@ -24,8 +24,9 @@ abbrev_path() {
 parse_git_branch() {
   branch="$(git branch 2>/dev/null | grep "*")"
   detached="$(echo "$branch" | grep "detached at")"
+  rebasing="$(echo "$branch" | grep "no branch, rebasing")"
 
-  if [[ ! -z "$detached" ]]; then
+  if [[ ! -z "$detached" ]] || [[ ! -z "$rebasing" ]]; then
     branch="$(echo "$branch" | tr -d '()' | awk '{ print $5 }')"
   else
     branch="$(echo "$branch" | awk '{ print $2 }')"
@@ -35,10 +36,12 @@ parse_git_branch() {
     return
   fi
 
-  if [[ -z "$detached" ]]; then
-    branch="%{$fg[green]%}$branch"
-  else
+  if [[ ! -z "$detached" ]]; then
     branch="%{$fg[red]%}$branch"
+  elif [[ ! -z "$rebasing" ]]; then
+    branch="%{$fg[red]%}~$branch"
+  else
+    branch="%{$fg[green]%}$branch"
   fi
 
   if ! [[ -z "$(git status -s)" ]]; then
