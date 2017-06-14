@@ -27,6 +27,7 @@ set nomodeline
 set smartindent
 set spell
 set ttyfast
+set wildmenu
 filetype plugin on
 syntax on
 
