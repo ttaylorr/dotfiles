@@ -194,3 +194,7 @@ noremap <C-w> :tabclose<CR>
 
 "" 5.d) Remove annoying escape delay
 set timeoutlen=1000 ttimeoutlen=0
+
+"" 5.e) Macvim
+autocmd! GUIEnter * set vb t_vb=
+autocmd! GUIEnter * set guifont=Fira\ Code\ Retina:h13
