@@ -17,6 +17,9 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey "^P" vi-up-line-or-history
 bindkey "^N" vi-down-line-or-history
 
+# Bind backspace to delete keys outside of last insert operation.
+bindkey '^?' backward-delete-char
+
 abbrev_path() {
   sed "s:\([^/]\)[^/]*/:\1/:g" <<<$(sed s:$HOME:\~:g <<<$PWD)
 }
