@@ -1,7 +1,7 @@
 export GOPATH="$HOME/go"
 export GPG_TTY="$(tty)"
 
-export EDITOR="$(which vim)"
+export EDITOR="$(which mvim) --nofork"
 alias e="$EDITOR"
 
 function d() {
