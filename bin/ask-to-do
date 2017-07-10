@@ -23,6 +23,9 @@ main() {
         [nN])
           break;
           ;;
+        [qQ])
+          exit 0;
+          ;;
       esac
     done
   done
