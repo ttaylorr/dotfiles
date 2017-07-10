@@ -1,7 +1,7 @@
 [user]
 	name = Taylor Blau
 	email = me@ttaylorr.com
-	signingkey = E7052108
+	signingkey = 8E49643D9EC651770C52C78522A953E9A217D0CE
 [alias]
 	st = status
 	a = add
@@ -33,3 +33,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[gpg]
+	program = gpg
