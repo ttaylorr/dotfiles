@@ -22,6 +22,8 @@ local function quit()
 
   if title == "Messages" then;
     app:selectMenuItem("^Close Window.*$")
+  elseif title == "Things" then;
+    app:selectMenuItem("^Close$")
   else;
     app:selectMenuItem("^Quit.*$")
   end
