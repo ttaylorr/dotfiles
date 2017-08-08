@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust
-.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust eclim
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust eclim
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -25,6 +25,15 @@ vim:
 
 editorconfig:
 	ln -fs $(DOTFILES_ROOT)/editorconfig/.editorconfig ${HOME}/.editorconfig
+
+eclim:
+	mkdir -p $(DOTFILES_ROOT)/.tmp && \
+	curl -L https://github.com/ervandew/eclim/releases/download/2.7.0/eclim_2.7.0.jar > $(DOTFILES_ROOT)/.tmp/eclim_2.7.0.jar && \
+	[ `shasum -a 256 $(DOTFILES_ROOT)/.tmp/eclim_2.7.0.jar | awk '{ print $$1 }'` = "95cdf8608fd4f11602adde8f04e51a986af99722f1e9a34b1ee18669bbb3903e" ] && \
+	java \
+		-Dvim.files=$(HOME)/.vim \
+		-Declipse.home=/Applications/Eclipse\ Java.app/Contents/Eclipse \
+		-jar $(DOTFILES_ROOT)/.tmp/eclim_2.7.0.jar install
 
 offlineimap:
 	ln -fs $(DOTFILES_ROOT)/offlineimap/.offlineimaprc ${HOME}/.offlineimaprc
