@@ -17,7 +17,7 @@ main() {
 
       case $REPLY in
         [yY])
-          echo `$cmd $thing`
+          echo `$cmd "$thing"`
           break;
           ;;
         [nN])
