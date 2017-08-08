@@ -66,6 +66,7 @@ tmux:
 	mkdir -p ${HOME}/.tmux/plugins
 	ln -fs $(DOTFILES_ROOT)/tmux/tpm ${HOME}/.tmux/plugins/
 	ln -fs $(DOTFILES_ROOT)/tmux/.tmux.conf ${HOME}/.tmux.conf
+	${HOME}/.tmux/plugins/tpm/bindings/install_plugins
 
 urlview:
 	ln -fs $(DOTFILES_ROOT)/urlview/.urlview ${HOME}/.urlview
