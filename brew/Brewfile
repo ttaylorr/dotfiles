@@ -6,6 +6,7 @@ tap 'homebrew/tex'
 tap 'go-delve/delve'
 
 brew 'ack'
+brew 'bash'
 brew 'cloc'
 brew 'ctags-exuberant'
 brew 'delve'
