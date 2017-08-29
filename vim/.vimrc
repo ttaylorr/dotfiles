@@ -159,6 +159,9 @@ nnoremap ; :
 "" 3.h) map `,r` to redraw! buffer
 map <leader>r :redraw!<cr>
 
+"" 3.i) map `,to` to open tag buffer
+map <leader>to :TagbarOpen<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
