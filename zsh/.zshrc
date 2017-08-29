@@ -54,4 +54,34 @@ parse_git_branch() {
   echo " ($branch%{$reset_color%})"
 }
 
-export PS1='$(abbrev_path)$(parse_git_branch) $ '
+function exec_after_prompt() {
+  set -e
+
+  exec 1>/dev/null
+  exec 2>/dev/null
+
+  if ! [[ -z $TMUX ]]; then
+    local pane_count="$(tmux list-panes | wc -l | awk '{ print $1 }')"
+    if [[ $pane_count -gt 1 ]]; then
+      exit 0
+    fi
+
+    local pane_id="${TMUX_PANE}"
+    local dir="$PWD"
+
+    if [ "$HOME" = "$dir" ]; then
+      local window_title="~"
+    else
+      local git_root="$(git rev-parse --show-toplevel 2>/dev/null)"
+      if ! [ -z "$git_root" ]; then
+        dir="$git_root"
+      fi
+
+      local window_title="$(basename $dir)"
+    fi
+
+    tmux rename-window -t "$pane_id" "$window_title"
+  fi
+}
+
+export PS1='$(abbrev_path)$(parse_git_branch) $ $(exec_after_prompt)'
