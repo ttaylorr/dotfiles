@@ -1,6 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" 1) General tweaks
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","
 
 "" 1.a) Text styling
@@ -24,6 +22,7 @@ set hlsearch
 set incsearch
 set lazyredraw
 set nomodeline
+set noswapfile
 set smartindent
 set spell
 set ttyfast
