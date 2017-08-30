@@ -47,6 +47,7 @@ brew 'zsh'
 
 cask '1password'
 cask 'amethyst'
+cask 'anki'
 cask 'arq'
 cask 'aware'
 cask 'caffeine'
