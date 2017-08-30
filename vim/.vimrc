@@ -197,3 +197,4 @@ set timeoutlen=1000 ttimeoutlen=0
 "" 5.d) Macvim
 autocmd! GUIEnter * set vb t_vb=
 autocmd! GUIEnter * set guifont=Fira\ Code\ Retina:h13
+autocmd VimResized * redraw!
