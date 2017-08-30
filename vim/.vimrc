@@ -189,15 +189,12 @@ colorscheme Atelier_ForestLight
 
 set number
 
-"" 5.b) Tab creation with ^T.
-noremap <C-t> :tabnew<CR>
-
-"" 5.c) Tab deletion with ^w.
+"" 5.b) Tab deletion with ^w.
 noremap <C-w> :tabclose<CR>
 
-"" 5.d) Remove annoying escape delay
+"" 5.c) Remove annoying escape delay
 set timeoutlen=1000 ttimeoutlen=0
 
-"" 5.e) Macvim
+"" 5.d) Macvim
 autocmd! GUIEnter * set vb t_vb=
 autocmd! GUIEnter * set guifont=Fira\ Code\ Retina:h13
