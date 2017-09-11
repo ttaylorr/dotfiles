@@ -58,6 +58,10 @@ let g:go_template_autocreate = 0
 
 "" 2.a.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
+if executable('rg')
+  let g:ctrlp_user_command = 'rg --files %s'
+  let g:ackprg = 'rg --vimgrep --no-heading'
+endif
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
