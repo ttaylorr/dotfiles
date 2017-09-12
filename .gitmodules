@@ -67,3 +67,6 @@
 [submodule "vim/pack/ttaylorr/start/tagbar"]
 	path = vim/pack/ttaylorr/start/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "vim/pack/ttaylorr/start/vim-better-sml"]
+	path = vim/pack/ttaylorr/start/vim-better-sml
+	url = https://github.com/jez/vim-better-sml.git
