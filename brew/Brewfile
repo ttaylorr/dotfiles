@@ -36,6 +36,7 @@ brew 'python'
 brew 'reattach-to-user-namespace', args: ['with-wrap-pbcopy-and-pbpaste']
 brew 'redis'
 brew 'selecta'
+brew 'smlnj'
 brew 'sqlite'
 brew 'switchaudio-osx'
 brew 'tmux'
