@@ -165,6 +165,9 @@ map <leader>r :redraw!<cr>
 "" 3.i) map `,to` to open tag buffer
 map <leader>to :TagbarOpen<cr>
 
+autocmd FileType sml nnoremap <c-[> :SMLTypeQuery
+autocmd FileType sml nnoremap <c-]> :SMLJumpToDef
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
