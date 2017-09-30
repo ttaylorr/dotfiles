@@ -35,3 +35,8 @@
 	required = true
 [gpg]
 	program = gpg
+[sendemail]
+  from = Taylor Blau <me@ttaylorr.com>
+  smtpserver = "/usr/local/bin/msmtp"
+  smtpserveroption = "-a"
+  smtpserveroption = "ttaylorr.com"
