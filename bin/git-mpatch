@@ -1,0 +1,67 @@
+#!/bin/sh
+
+upstream_branch() {
+  current=`git symbolic-ref HEAD`
+  upstream=`git for-each-ref --format='%(upstream)' "$current"`
+  if test -n "$upstream"; then
+    echo $upstream
+  else
+    echo origin
+  fi
+}
+
+get_reply_headers() {
+  perl -ne '
+    if (defined $opt && /^\s+(.*)/) {
+      $val .= " $1";
+      next;
+    }
+    if (defined $opt) {
+      print "--$opt=", quotemeta($val), " ";
+      $opt = $val = undef;
+    }
+    if (/^(cc|to):\s*(.*)/i) {
+      $opt = lc($1);
+      $val = $2;
+    }
+    elsif (/^message-id:\s*(.*)/i) {
+      $opt = "in-reply-to";
+      $val = $1;
+    }
+  '
+}
+
+has_nonoption=
+for i in "$@"; do
+  case "$i" in
+    -[0-9]) has_nonoption=yes ;;
+    -*) ;;
+     *) has_nonoption=yes
+  esac
+done
+
+: ${REPLY:=$HOME/patch}
+test -n "$REPLY" && eval "set -- `get_reply_headers <\"$REPLY\"` \"\$@\""
+test "$has_nonoption" = "yes" || set -- "$@" `upstream_branch`
+
+git format-patch -s --stdout --from "$@" >.mbox
+if test -t 1; then
+  mutt -f .mbox
+else
+  perl -lne '
+    if (/^Subject: (.*)/) {
+      $subject = $1;
+    }
+    elsif ($subject && /^\s+(.*)/) {
+      $subject .= " $1";
+    }
+    elsif ($subject) {
+      print $subject;
+      $subject = undef;
+    }
+  ' .mbox |
+  sed -e 's/\[PATCH /[/' \
+      -e 's/]/]:/' \
+      -e 's/^/  /'
+fi
+rm -f .mbox
