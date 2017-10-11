@@ -68,6 +68,9 @@ let g:syntastic_mode_map = {
         \ "mode": "active",
         \ "passive_filetypes": ["dafny"] }
 
+"" 2.a.e) vim-loves-dafny
+autocmd FileType dafny noremap <Leader>c :w<CR>:SyntasticCheck dafny<CR>
+
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
   if pumvisible() != 0
