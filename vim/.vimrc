@@ -66,10 +66,11 @@ endif
 "" 2.a.d) Syntastic
 let g:syntastic_mode_map = {
         \ "mode": "active",
-        \ "passive_filetypes": ["dafny"] }
+        \ "passive_filetypes": ["dafny", "sml"] }
 
 "" 2.a.e) vim-loves-dafny
 autocmd FileType dafny noremap <Leader>c :w<CR>:SyntasticCheck dafny<CR>
+autocmd FileType sml noremap <Leader>c :w<CR>:SyntasticCheck smlnj<CR>
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
