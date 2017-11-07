@@ -1,5 +1,6 @@
 #!/bin/zsh
 source $HOME/.bash_profile
+source $HOME/.opam_init
 
 setopt PROMPT_SUBST
 
