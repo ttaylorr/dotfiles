@@ -72,6 +72,9 @@ let g:syntastic_mode_map = {
 autocmd FileType dafny noremap <Leader>c :w<CR>:SyntasticCheck dafny<CR>
 autocmd FileType sml noremap <Leader>c :w<CR>:SyntasticCheck smlnj<CR>
 
+"" 2.a.f) vim-better-sml
+au Filetype sml setlocal conceallevel=2
+
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
   if pumvisible() != 0
