@@ -73,6 +73,3 @@
 [submodule "vim/pack/ttaylorr/start/vim-loves-dafny"]
 	path = vim/pack/ttaylorr/start/vim-loves-dafny
 	url = https://github.com/mlr-msft/vim-loves-dafny.git
-[submodule "vim/pack/ttaylorr/start/syntastic"]
-	path = vim/pack/ttaylorr/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git

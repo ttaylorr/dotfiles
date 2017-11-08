@@ -63,16 +63,7 @@ if executable('rg')
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
-"" 2.a.d) Syntastic
-let g:syntastic_mode_map = {
-        \ "mode": "active",
-        \ "passive_filetypes": ["dafny", "sml"] }
-
-"" 2.a.e) vim-loves-dafny
-autocmd FileType dafny noremap <Leader>c :w<CR>:SyntasticCheck dafny<CR>
-autocmd FileType sml noremap <Leader>c :w<CR>:SyntasticCheck smlnj<CR>
-
-"" 2.a.f) vim-better-sml
+"" 2.a.d) vim-better-sml
 au Filetype sml setlocal conceallevel=2
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
