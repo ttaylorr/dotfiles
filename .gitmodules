@@ -75,4 +75,4 @@
 	url = https://github.com/mlr-msft/vim-loves-dafny.git
 [submodule "vim/pack/ttaylorr/start/ale"]
 	path = vim/pack/ttaylorr/start/ale
-	url = git@github.com:ttaylorr/ale.git
+	url = git@github.com:w0rp/ale.git
