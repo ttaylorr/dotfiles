@@ -66,6 +66,11 @@ endif
 "" 2.a.d) vim-better-sml
 au Filetype sml setlocal conceallevel=2
 
+au Filetype dafny setlocal conceallevel=2
+if has('conceal') && &enc == 'utf-8'
+  au Filetype dafny syntax match dafnyElementOperator "\<in\>" conceal cchar=∈
+endif
+
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
   if pumvisible() != 0
