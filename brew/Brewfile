@@ -59,3 +59,4 @@ cask 'wireshark'
 cask 'zoomus'
 
 cask 'font-fira-code'
+cask 'font-computer-modern'
