@@ -173,6 +173,9 @@ map <leader>r :redraw!<cr>
 "" 3.i) map `,to` to open tag buffer
 map <leader>to :TagbarOpen<cr>
 
+"" 3.j) map `,m` to make
+map <leader>m to :make<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
