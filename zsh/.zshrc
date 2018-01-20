@@ -24,6 +24,10 @@ fi
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # Enable shift-tab reverse-menu-complete
 # XXX(@ttaylorr) is '^[[Z' portable?
 bindkey '^[[Z' reverse-menu-complete
