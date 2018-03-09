@@ -213,3 +213,7 @@ set timeoutlen=1000 ttimeoutlen=0
 autocmd! GUIEnter * set vb t_vb=
 autocmd! GUIEnter * set guifont=Fira\ Code\ Retina:h16
 autocmd VimResized * redraw!
+
+if system("echo $TERM_PROGRAM") == "iTerm.app"
+  set mouse=a
+endif
