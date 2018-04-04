@@ -36,7 +36,7 @@ macro index I "<clear-flag>N<previous-entry>"
 macro pager I "<clear-flag>N<exit>"
 macro index U "<set-flag>N<previous-entry>"
 macro pager U "<set-flag>N<exit>"
-macro index,pager e ":set edit_headers=yes<enter><edit>:set edit_headers=no<enter>"
+macro index,pager e ":set edit_headers=yes<enter><edit>:set edit_headers=no<enter><sync-mailbox>"
 
 macro pager,index D '<shell-escape>rm -rf $HOME/patch<enter>'
 macro pager,index A '<pipe-message>cat > ~/patch<enter>'
