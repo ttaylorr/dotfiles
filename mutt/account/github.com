@@ -17,3 +17,6 @@ macro index gs "<change-folder>=github.com/[Gmail].Starred<enter>" "Go to starre
 macro index gt "<change-folder>=github.com/trash<enter>" "Go to trash"
 macro index,pager e "<save-message>=github.com/archive<enter>" "Archive"
 macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
+
+send2-hook '~C git@vger.kernel.org' 'set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"'
+send2-hook '~C git@vger.kernel.org' 'my_hdr From: Taylor Blau <me@ttaylorr.com>'
