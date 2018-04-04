@@ -41,6 +41,7 @@ macro index,pager e ":set edit_headers=yes<enter><edit>:set edit_headers=no<ente
 macro pager,index D '<shell-escape>rm -rf $HOME/patch<enter>'
 macro pager,index A '<pipe-message>cat > ~/patch<enter>'
 macro index,pager b ":set edit_headers=yes<enter><resend-message>:set edit_headers=no<enter>"
+macro index,pager B ":set editor=true<enter><resend-message><send-message>:set editor=$EDITOR<enter>"
 
 bind index R group-reply
 
