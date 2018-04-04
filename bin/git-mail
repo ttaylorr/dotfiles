@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+mbox=$(mktemp -t "git-mutt-$(git rev-parse --abbrev-ref HEAD | tr -s '/' '-')")
+git format-patch --thread --stdout $@ >"$mbox"
+mutt -f "$mbox"
