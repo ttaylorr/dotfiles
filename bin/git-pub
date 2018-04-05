@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ 1 -ne $# ]; then
+  echo >&2 "fatal: expected public-inbox URL, aborting ..."
+  exit 1
+fi
+
+mbox=$(mktemp)
+curl "$(echo $1 | sed -e 's/\/T\/.*//')/t.mbox.gz" | gunzip >mbox
+mutt -f mbox
