@@ -27,5 +27,3 @@ alias ls="ls -G"
 if [ -x "$(which ssh-add)" ]; then
   ssh-add &> /dev/null
 fi
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
