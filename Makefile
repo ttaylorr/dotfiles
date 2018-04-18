@@ -67,6 +67,7 @@ zsh:
 	ln -fs $(DOTFILES_ROOT)/zsh/.zshrc ${HOME}/.zshrc
 
 bash:
+	ln -fs $(DOTFILES_ROOT)/bash/.bashrc ${HOME}/.bashrc
 	ln -fs $(DOTFILES_ROOT)/bash/.bash_profile ${HOME}/.bash_profile
 
 define install-if-missing
