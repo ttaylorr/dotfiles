@@ -22,17 +22,6 @@ fi
 alias g=git
 alias ls="ls -G"
 
-tmux-status-right() {
-  local battery="$(
-    pmset -g batt \
-      | tail -1 \
-      | sed 's/;/ /g' \
-      | awk '{print $2 " (" $3 ")"}'
-  )";
-
-  echo "$battery";
-}
-
 # macOS Sierra does not auto-load your `ssh-agent` like all previous versions of
 # OS X.
 if [ -x "$(which ssh-add)" ]; then
