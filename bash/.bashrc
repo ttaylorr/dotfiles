@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export GOPATH="$HOME/go"
 export GPG_TTY="$(tty)"
 
