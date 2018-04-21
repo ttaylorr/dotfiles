@@ -1,9 +1,9 @@
 tap 'caskroom/cask'
 tap 'caskroom/homebrew-fonts'
+tap 'go-delve/delve'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/tex'
-tap 'go-delve/delve'
 
 brew 'ack'
 brew 'asciidoc'
