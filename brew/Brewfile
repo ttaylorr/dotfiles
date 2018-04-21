@@ -4,6 +4,7 @@ tap 'go-delve/delve'
 tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'homebrew/tex'
+tap 'ttaylorr/homebrew-mutt'
 
 brew 'ack'
 brew 'asciidoc'
@@ -21,7 +22,7 @@ brew 'gpg'
 brew 'graphviz'
 brew 'mono'
 brew 'msmtp', args: ['with-macosx-keyring']
-brew 'mutt'
+brew 'ttaylorr/homebrew-mutt/mutt', args: ['with-retain-messageid']
 brew 'ocaml'
 brew 'offlineimap'
 brew 'opam'
