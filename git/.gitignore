@@ -67,5 +67,14 @@ node_modules/
 # --------------------- #
 ~\$*.docx
 
+# --------------------- #
+# LaTeX
+# --------------------- #
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+
 /patch/
 /mbox
