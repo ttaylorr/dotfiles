@@ -3,18 +3,18 @@
 	email = me@ttaylorr.com
 	signingkey = 8E49643D9EC651770C52C78522A953E9A217D0CE
 [alias]
-	st = status
 	a = add
 	aa = add --all
-	ci = commit
 	br = branch
+	ci = commit
 	co = checkout
 	coi = checkout-interactive
 	cop = checkout-pr
 	di = diff
 	lb = checkout -
-	up = pull --rebase --autostash
 	lg = log --oneline
+	st = status
+	up = pull --rebase --autostash
 [push]
 	default = current
 [pull]
