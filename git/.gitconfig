@@ -14,6 +14,7 @@
 	di = diff
 	lb = checkout -
 	up = pull --rebase --autostash
+	lg = log --oneline
 [push]
 	default = current
 [pull]
