@@ -110,6 +110,12 @@ nnoremap <Leader>a :Ack!<Space>''<Left>
 set completeopt+=menuone
 set completeopt-=preview
 
+function InlineCommand(cmd)
+  let l:output = system(a:cmd)
+  let l:output = substitute(l:output, '[\r\n]*$', '', '')
+  execute 'normal i' . l:output
+endfunction
+
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
 let g:vim_markdown_conceal = 0
