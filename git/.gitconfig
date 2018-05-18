@@ -5,6 +5,7 @@
 [alias]
 	a = add
 	aa = add --all
+	always = "!git rev-parse 2>/dev/null || cd ~/github/git; git"
 	br = branch
 	ci = commit
 	co = checkout
