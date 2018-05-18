@@ -116,6 +116,8 @@ function InlineCommand(cmd)
   execute 'normal i' . l:output
 endfunction
 
+command! -nargs=* Git :call InlineCommand("git always <args>")
+
 let g:pandoc#modules#disabled = ["folding"]
 let g:pandoc#syntax#conceal#use = 0
 let g:vim_markdown_conceal = 0
