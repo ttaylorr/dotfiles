@@ -112,7 +112,7 @@ set completeopt-=preview
 
 function InlineCommand(cmd)
   let l:output = system(a:cmd)
-  let l:output = substitute(l:output, '[\r\n]*$', '', '')
+  let l:output = substitute(' '.l:output, '[\r\n]*$', '', '')
   execute 'normal i' . l:output
 endfunction
 
