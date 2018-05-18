@@ -174,7 +174,7 @@ map <leader>r :redraw!<cr>
 map <leader>to :TagbarOpen<cr>
 
 "" 3.j) map `,m` to make
-map <leader>m to :make<cr>
+map <leader>m :term ++close ++rows=5 make<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 4) Formatting
