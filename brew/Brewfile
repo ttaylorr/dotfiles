@@ -22,6 +22,7 @@ brew 'gpg'
 brew 'graphviz'
 brew 'mono'
 brew 'msmtp', args: ['with-macosx-keyring']
+brew 'mu'
 brew 'ttaylorr/homebrew-mutt/mutt', args: ['with-retain-messageid']
 brew 'ocaml'
 brew 'offlineimap'
