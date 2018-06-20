@@ -29,6 +29,7 @@
 	helper = osxkeychain
 [diff]
 	compactionHeuristic = true
+	algorithm = patience
 [github]
 	user = ttaylorr
 [filter "lfs"]
