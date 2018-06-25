@@ -44,3 +44,5 @@
   smtpserver = "/usr/local/bin/msmtp"
   smtpserveroption = "-a"
   smtpserveroption = "ttaylorr.com"
+[merge]
+	conflictstyle = diff3
