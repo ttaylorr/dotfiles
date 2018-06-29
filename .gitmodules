@@ -4,9 +4,6 @@
 [submodule "vim/pack/ttaylorr/start/neocomplcache.vim"]
 	path = vim/pack/ttaylorr/start/neocomplcache.vim
 	url = https://github.com/Shougo/neocomplcache.vim.git
-[submodule "vim/pack/ttaylorr/start/vim-gitgutter"]
-	path = vim/pack/ttaylorr/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "vim/pack/ttaylorr/start/editorconfig-vim"]
 	path = vim/pack/ttaylorr/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
