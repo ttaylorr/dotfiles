@@ -73,3 +73,6 @@
 [submodule "vim/pack/ttaylorr/start/whitespaste.vim"]
 	path = vim/pack/ttaylorr/start/whitespaste.vim
 	url = https://github.com/AndrewRadev/whitespaste.vim.git
+[submodule "vim/pack/ttaylorr/start/vim-gitgutter"]
+	path = vim/pack/ttaylorr/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
