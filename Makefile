@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust
-.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview hammerspoon rust
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults rust
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults rust
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -38,11 +38,10 @@ mutt:
 	[ ! -L ${HOME}/.mutt/account ] && ln -fs $(DOTFILES_ROOT)/mutt/account/ ${HOME}/.mutt/account || true
 	ln -fs $(DOTFILES_ROOT)/mutt/signature ${HOME}/.mutt/signature
 
-hammerspoon:
+defaults:
 	defaults write -g KeyRepeat -int 1
 	defaults write -g InitialKeyRepeat -int 10
 	defaults write -g ApplePressAndHoldEnabled -bool false
-	[ ! -L ${HOME}/.hammerspoon ] && ln -Fs $(DOTFILES_ROOT)/hammerspoon ${HOME}/.hammerspoon || true
 
 rust:
 	[ ! -x "$(which rustup)" ] && curl https://sh.rustup.rs -sSf | sh
