@@ -20,7 +20,7 @@ set signature = ~/.mutt/signature
 folder-hook github.com/ source ~/.mutt/account/github.com
 folder-hook ttaylorr.com/ source ~/.mutt/account/ttaylorr.com
 
-source ~/.mutt/account/ttaylorr.com
+source ~/.mutt/account/github.com
 
 macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account/github.com<enter><change-folder>!<enter>'
 macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account/ttaylorr.com<enter><change-folder>!<enter>'
