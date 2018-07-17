@@ -2,17 +2,23 @@
 import re, subprocess
 
 def forward_nametrans(folder):
-    return {'drafts':  '[Gmail]/Drafts',
-            'sent':    '[Gmail]/Sent',
-            'trash':   '[Gmail]/Trash',
-            'archive': '[Gmail]/All Mail',
+    return {'archive':   '[Gmail]/All Mail',
+            'important': '[Gmail]/Important',
+            'sent':      '[Gmail]/Sent Mail',
+            'spam':      '[Gmail]/Spam',
+            'starred':   '[Gmail]/Starred',
+            'trash':     '[Gmail]/Trash',
+            'drafts':    '[Gmail]/Drafts',
            }.get(folder, folder)
 
 def reverse_nametrans(folder):
-    return {'[Gmail]/Drafts':   'drafts',
-            '[Gmail]/Sent':     'sent',
-            '[Gmail]/Trash':    'trash',
-            '[Gmail]/All Mail': 'archive',
+    return {'[Gmail]/All Mail':  'archive',
+            '[Gmail]/Drafts':    'drafts',
+            '[Gmail]/Important': 'important',
+            '[Gmail]/Sent Mail': 'sent',
+            '[Gmail]/Spam':      'spam',
+            '[Gmail]/Starred':   'starred',
+            '[Gmail]/Trash':     'trash',
            }.get(folder, folder)
 
 
