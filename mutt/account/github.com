@@ -1,4 +1,16 @@
-mailboxes +github.com/INBOX
+mailboxes +github.com/INBOX \
+          +github.com/@git-core \
+          +github.com/@git-ecosystem \
+          +github.com/@git-infrastructure \
+          +github.com/@me \
+          +github.com/git-lfs \
+          +github.com/git.git \
+          +github.com/archive \
+          +github.com/drafts \
+          +github.com/sent \
+          +github.com/spam \
+          +github.com/starred \
+          +github.com/trash \
 
 set from = "ttaylorr@github.com"
 set mbox = "+github.com/archive"
