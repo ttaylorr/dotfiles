@@ -2,6 +2,7 @@
 accounts   = github,ttaylorr
 pythonfile = ~/.offlineimap.py
 ui         = ttyui
+fsync      = false
 
 [Account github]
 localrepository  = github-local
