@@ -1,7 +1,7 @@
 [user]
 	name = Taylor Blau
 	email = me@ttaylorr.com
-	signingkey = 8E49643D9EC651770C52C78522A953E9A217D0CE
+	signingkey = 4DEFFDEA0FB41081E5DD1EC892F6843753180A31
 [alias]
 	a = add
 	aa = add --all
