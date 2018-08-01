@@ -17,6 +17,8 @@ set mailcap_path = ~/.mutt/mailcap
 set sig_dashes = no
 set signature = ~/.mutt/signature
 
+set query_command = "mu cfind --format=mutt-ab '%s'"
+
 folder-hook github.com/ source ~/.mutt/account/github.com
 folder-hook ttaylorr.com/ source ~/.mutt/account/ttaylorr.com
 
