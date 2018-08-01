@@ -27,6 +27,11 @@ source ~/.mutt/account/github.com
 macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account/github.com<enter><change-folder>!<enter>'
 macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account/ttaylorr.com<enter><change-folder>!<enter>'
 
+macro index <f5> "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/search " \
+  "mu find"
+macro index <f6> "<change-folder-readonly>~/.mail/search" \
+  "mu find results"
+
 bind index gg first-entry
 bind index G last-entry
 
