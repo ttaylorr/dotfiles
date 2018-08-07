@@ -1,0 +1,22 @@
+mailboxes +cs.washington.edu/INBOX
+
+set from = "ttaylorr@cs.washington.edu"
+set mbox = "+cs.washington.edu/archive"
+set postponed = "+cs.washington.edu/drafts"
+set spoolfile = "+cs.washington.edu/INBOX"
+
+set sendmail="/usr/local/bin/msmtp -a cs.washington.edu"
+
+set header_cache="~/.mail/cache/cs.washington.edu/header"
+set message_cachedir="~/.mail/cache/cs.washington.edu/message"
+
+macro index ga "<change-folder>=cs.washington.edu/archive<enter>" "Go to all mail"
+macro index gd "<change-folder>=cs.washington.edu/drafts<enter>" "Go to drafts"
+macro index gi "<change-folder>=cs.washington.edu/INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=cs.washington.edu/[Gmail].Starred<enter>" "Go to starred"
+macro index gt "<change-folder>=cs.washington.edu/trash<enter>" "Go to trash"
+macro index,pager e "<save-message>=cs.washington.edu/archive<enter>" "Archive"
+macro index,pager d "<save-message>=cs.washington.edu/trash<enter>" "Trash"
+
+bind index O "<shell-escape>offlineimap -qa uw<enter>"
+

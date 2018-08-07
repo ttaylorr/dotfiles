@@ -41,3 +41,22 @@ remoteuser     = me@ttaylorr.com
 remotepasseval = get_keychain_pass(account="me@ttaylorr.com", server="imap.gmail.com")
 realdelete     = no
 nametrans      = reverse_nametrans
+
+[Account uw]
+localrepository  = uw-local
+remoterepository = uw-remote
+postsynchook     = mu index -m ~/.mail/cs.washington.edu
+
+[Repository uw-local]
+type         = Maildir
+localfolders = ~/.mail/cs.washington.edu
+nametrans    = forward_nametrans
+
+[Repository uw-remote]
+maxconnections = 3
+type           = Gmail
+sslcacertfile  = /usr/local/etc/openssl/cert.pem
+remoteuser     = ttaylorr@cs.washington.edu
+remotepasseval = get_keychain_pass(account="ttaylorr@cs.washington.edu", server="imap.gmail.com")
+realdelete     = no
+nametrans      = reverse_nametrans
