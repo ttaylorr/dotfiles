@@ -1,5 +1,5 @@
-# macOS Sierra does not auto-load your `ssh-agent` like all previous versions of
-# OS X.
+#!/usr/bin/env bash
 if [ -x "$(which ssh-add)" ]; then
   ssh-add &> /dev/null
 fi
+eval `ssh-agent`
