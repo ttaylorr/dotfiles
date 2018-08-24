@@ -67,7 +67,6 @@ zsh:
 
 bash:
 	ln -fs $(DOTFILES_ROOT)/bash/.bashrc ${HOME}/.bashrc
-	ln -fs $(DOTFILES_ROOT)/bash/.bash_profile ${HOME}/.bash_profile
 
 define install-if-missing
 	@brew list $1 > /dev/null 2>&1 || brew install $1

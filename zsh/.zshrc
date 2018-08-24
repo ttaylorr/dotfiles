@@ -1,5 +1,4 @@
 #!/bin/zsh
-source $HOME/.bash_profile
 source $HOME/.bashrc
 
 setopt PROMPT_SUBST
