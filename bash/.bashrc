@@ -22,4 +22,4 @@ alias ls="ls -G"
 if [ -x "$(which ssh-add)" ]; then
   ssh-add &> /dev/null
 fi
-eval `ssh-agent`
+eval `ssh-agent` &>/dev/null
