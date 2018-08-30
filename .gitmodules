@@ -16,12 +16,6 @@
 [submodule "vim/pack/ttaylorr/start/gocode"]
 	path = vim/pack/ttaylorr/start/gocode
 	url = https://github.com/nsf/gocode.git
-[submodule "vim/pack/ttaylorr/start/vim-mkdir"]
-	path = vim/pack/ttaylorr/start/vim-mkdir
-	url = https://github.com/pbrisbin/vim-mkdir.git
-[submodule "vim/pack/ttaylorr/start/rust.vim"]
-	path = vim/pack/ttaylorr/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim.git
 [submodule "vim/pack/ttaylorr/start/nerdtree"]
 	path = vim/pack/ttaylorr/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -43,33 +37,15 @@
 [submodule "vim/pack/ttaylorr/start/ack.vim"]
 	path = vim/pack/ttaylorr/start/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/pack/ttaylorr/start/vim-pandoc-syntax"]
-	path = vim/pack/ttaylorr/start/vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
-[submodule "vim/pack/ttaylorr/start/vim-pandoc"]
-	path = vim/pack/ttaylorr/start/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc.git
-[submodule "vim/pack/ttaylorr/start/vim-racer"]
-	path = vim/pack/ttaylorr/start/vim-racer
-	url = https://github.com/racer-rust/vim-racer.git
 [submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
 	path = vim/pack/ttaylorr/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
 [submodule "vim/pack/ttaylorr/start/gundo.vim"]
 	path = vim/pack/ttaylorr/start/gundo.vim
 	url = https://github.com/sjl/gundo.vim
-[submodule "vim/pack/ttaylorr/start/vim-puppet"]
-	path = vim/pack/ttaylorr/start/vim-puppet
-	url = https://github.com/rodjek/vim-puppet
 [submodule "vim/pack/ttaylorr/start/tagbar"]
 	path = vim/pack/ttaylorr/start/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "vim/pack/ttaylorr/start/vim-better-sml"]
-	path = vim/pack/ttaylorr/start/vim-better-sml
-	url = https://github.com/jez/vim-better-sml.git
-[submodule "vim/pack/ttaylorr/start/vim-loves-dafny"]
-	path = vim/pack/ttaylorr/start/vim-loves-dafny
-	url = https://github.com/mlr-msft/vim-loves-dafny.git
 [submodule "vim/pack/ttaylorr/start/whitespaste.vim"]
 	path = vim/pack/ttaylorr/start/whitespaste.vim
 	url = https://github.com/AndrewRadev/whitespaste.vim.git
