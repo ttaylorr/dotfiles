@@ -32,6 +32,7 @@ brew 'tmux'
 brew 'tree'
 brew 'urlview'
 brew 'vim'
+brew 'w3m'
 brew 'watch'
 brew 'zsh'
 
