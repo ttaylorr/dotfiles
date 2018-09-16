@@ -16,6 +16,7 @@ set certificate_file = ~/.mutt/certificates
 set mailcap_path = ~/.mutt/mailcap
 set sig_dashes = no
 set signature = ~/.mutt/signature
+set mailcap_path  = ~/.mutt/mailcap
 
 set query_command = "mu cfind --format=mutt-ab '%s'"
 
