@@ -37,6 +37,7 @@ mutt:
 	ln -fs $(DOTFILES_ROOT)/mutt/.muttrc ${HOME}/.muttrc
 	[ ! -L ${HOME}/.mutt/account ] && ln -fs $(DOTFILES_ROOT)/mutt/account/ ${HOME}/.mutt/account || true
 	ln -fs $(DOTFILES_ROOT)/mutt/signature ${HOME}/.mutt/signature
+	ln -fs $(DOTFILES_ROOT)/mutt/mailcap ${HOME}/.mutt/mailcap
 
 defaults:
 	defaults write -g KeyRepeat -int 1
