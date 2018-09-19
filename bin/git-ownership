@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+#
+# OVERVIEW
+# ========
+#
+# 'git ownership' - see how many lines were last touched by unique authors
+#
+# OPTIONS
+# =======
+#
+# 'git ownership' takes the same arguments as 'git-ls-files(1)'.
+#
+# EXAMPLES
+# ========
+#
+#   $ git ownership
+#   # inspect all files in the repository
+#
+#   $ git ownership t
+#   # inspect the 't' directory (or file)
+
+set -e
+
+if ! git rev-parse --git-dir >/dev/null 2>&1; then
+  echo >&2 "fatal: must be inside a git repository"
+  exit 1
+fi
+
+git ls-files $@ \
+  | grep -v "^vendor\/" \
+  | while read file; do
+      git blame --line-porcelain "$file" \
+        | grep "^author " \
+        | sed -e 's/^author //g';
+    done \
+      | sort \
+      | uniq -c \
+      | sort -rn \
