@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+main() {
+  case "$1" in
+    --drop)
+      shift; git_reroll__drop $@; ;;
+    --make)
+      shift; git_reroll__make $@; ;;
+    --last|*)
+      shift; git_reroll__last $@; ;;
+  esac
+}
+
+next_reroll_count() {
+  if [ ! -z "$1" ]; then
+    echo "$1" | sed -e 's/^-v[[:space:]]*//g'
+  else
+    git_reroll__last \
+      | cut -d' ' -f1 \
+      | grep -o "[[:digit:]]*$" \
+      | awk '{ print $0 + 1 }'
+  fi
+}
+
+topic_name() {
+  git rev-parse --symbolic-full-name "${1:-HEAD}" \
+    | sed -e 's,^refs/heads/,,'
+
+}
+
+git_reroll__drop() {
+  git_reroll__last "$@" \
+    | sed -e 's,refs/tags/,,' \
+    | awk '{ print $1 }' \
+    | xargs git tag -d
+}
+
+git_reroll__make() {
+  topic="$(topic_name "$1")"
+  count="$(next_reroll_count "$1")"
+
+  git tag "${topic}.v${count}"
+}
+
+git_reroll__last() {
+  TIP="$(git for-each-ref --points-at="${1:-HEAD}" refs/heads \
+      | awk '{ print $3 }' \
+      | sed -e 's,^refs/heads/,,g'
+    )"
+  PREFIX="$(echo "$TIP" | grep -o '\(.*\)/')"
+
+  git for-each-ref "refs/tags/$PREFIX" \
+    | grep "refs/tags/$TIP\.v[[:digit:]]*" \
+    | awk '{ print $3 " " $1 }' \
+    | sort -r \
+    | head -n1
+}
+
+main "$@";
