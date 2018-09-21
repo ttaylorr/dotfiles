@@ -3,5 +3,21 @@
 set -e
 
 mbox=$(mktemp -t "git-mutt-$(git rev-parse --abbrev-ref HEAD | tr -s '/' '-')")
-git format-patch --thread --stdout $@ >"$mbox"
+
+previously="$(git reroll --last | cut -d' ' -f1)"
+if [ ! -z "$previously" ]; then
+  range_diff_args="--range-diff=$previously"
+  version_args="-v$(echo $previously \
+    | grep -o "[[:digit:]]*$" \
+    | awk '{ print $0 + 1 }')"
+
+fi
+
+git format-patch \
+  --thread \
+  --stdout \
+  --cover-letter \
+  "$range_diff_args" \
+  "$version_args" \
+  $@ >"$mbox"
 mutt -f "$mbox"
