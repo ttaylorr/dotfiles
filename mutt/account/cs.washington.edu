@@ -18,5 +18,4 @@ macro index gt "<change-folder>=cs.washington.edu/trash<enter>" "Go to trash"
 macro index,pager e "<save-message>=cs.washington.edu/archive<enter>" "Archive"
 macro index,pager d "<save-message>=cs.washington.edu/trash<enter>" "Trash"
 
-bind index O "<shell-escape>offlineimap -qa uw<enter>"
-
+macro index O "<shell-escape>offlineimap -qa uw<enter>"

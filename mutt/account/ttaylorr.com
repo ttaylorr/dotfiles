@@ -18,4 +18,4 @@ macro index gt "<change-folder>=ttaylorr.com/trash<enter>" "Go to trash"
 macro index,pager e "<save-message>=ttaylorr.com/archive<enter>" "Archive"
 macro index,pager d "<save-message>=ttaylorr.com/trash<enter>" "Trash"
 
-bind index O "<shell-escape>offlineimap -qa ttaylorr<enter>"
+macro index O "<shell-escape>offlineimap -qa ttaylorr<enter>"
