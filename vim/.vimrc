@@ -130,6 +130,18 @@ if strlen(system("which racer")) > 0
     let g:rustfmt_autosave = 1
   endif
 endif
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+function! UpdateImports()
+  :call javacomplete#imports#AddMissing()
+  :call javacomplete#imports#RemoveUnused()
+endfunction
+
+autocmd BufWritePre *.java :call UpdateImports()
+" nmap <leader>jI :call UpdateImports()
+" imap <C-j>I     :call UpdateImports()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 3) Key rebindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
