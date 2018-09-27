@@ -52,3 +52,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-gitgutter"]
 	path = vim/pack/ttaylorr/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/pack/ttaylorr/start/vim-javacomplete2"]
+	path = vim/pack/ttaylorr/start/vim-javacomplete2
+	url = git@github.com:artur-shaik/vim-javacomplete2.git
