@@ -62,6 +62,7 @@ bind index <space> collapse-thread
 bind index <tab> sync-mailbox
 
 bind index R group-reply
+bind index \CR recall-message
 
 set sidebar_visible = yes
 set sidebar_width   = 28
