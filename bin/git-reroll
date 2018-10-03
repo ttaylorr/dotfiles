@@ -6,6 +6,8 @@ main() {
       shift; git_reroll__drop $@; ;;
     --make)
       shift; git_reroll__make $@; ;;
+    --range-diff)
+      shift; git_reroll__range_diff $@; ;;
     --last|*)
       shift; git_reroll__last $@; ;;
   esac
@@ -54,6 +56,10 @@ git_reroll__last() {
     | awk '{ print $3 " " $1 }' \
     | sort -r \
     | head -n1
+}
+
+git_reroll__range_diff() {
+  git range-diff master $(git_reroll__last | cut -d' ' -f1) ${1:-HEAD}
 }
 
 main "$@";
