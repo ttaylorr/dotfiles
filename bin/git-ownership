@@ -29,10 +29,12 @@ fi
 git ls-files $@ \
   | grep -v "^vendor\/" \
   | while read file; do
+      printf >&2 "\r%s%s" "$(tput el)" "$file" &&
       git blame --line-porcelain "$file" \
         | grep "^author " \
         | sed -e 's/^author //g';
     done \
       | sort \
       | uniq -c \
-      | sort -rn \
+      | sort -rn | tr '\n' '\0' \
+      | xargs -0 printf "\n%s" && echo
