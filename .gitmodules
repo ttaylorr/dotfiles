@@ -55,3 +55,9 @@
 [submodule "vim/pack/ttaylorr/start/vim-javacomplete2"]
 	path = vim/pack/ttaylorr/start/vim-javacomplete2
 	url = git@github.com:artur-shaik/vim-javacomplete2.git
+[submodule "vim/pack/ttaylorr/start/coquille"]
+	path = vim/pack/ttaylorr/start/coquille
+	url = https://github.com/trefis/coquille.git
+[submodule "vim/pack/ttaylorr/start/vimbufsync"]
+	path = vim/pack/ttaylorr/start/vimbufsync
+	url = https://github.com/let-def/vimbufsync
