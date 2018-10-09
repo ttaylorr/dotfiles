@@ -135,7 +135,6 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 function! UpdateImports()
   :call javacomplete#imports#AddMissing()
-  :call javacomplete#imports#RemoveUnused()
 endfunction
 
 autocmd BufWritePre *.java :call UpdateImports()
