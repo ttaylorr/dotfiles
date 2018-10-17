@@ -75,6 +75,8 @@ node_modules/
 *.fls
 *.log
 *.toc
+*_region_.tex
+*.dvi
 
 /patch/
 /mbox
