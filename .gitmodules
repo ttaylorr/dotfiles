@@ -61,3 +61,6 @@
 [submodule "vim/pack/ttaylorr/start/vimbufsync"]
 	path = vim/pack/ttaylorr/start/vimbufsync
 	url = https://github.com/let-def/vimbufsync
+[submodule "vim/pack/ttaylorr/start/vim-latex-live-preview"]
+	path = vim/pack/ttaylorr/start/vim-latex-live-preview
+	url = git@github.com:xuhdev/vim-latex-live-preview.git

@@ -118,9 +118,7 @@ endfunction
 
 command! -nargs=* Git :call InlineCommand("git always <args>")
 
-let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#syntax#conceal#use = 0
-let g:vim_markdown_conceal = 0
+let g:livepreview_previewer = 'open -a Skim'
 
 if strlen(system("which racer")) > 0
   let g:racer_cmd = system("echo -n $HOME") . "/.cargo/bin/racer"
