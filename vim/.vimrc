@@ -129,6 +129,12 @@ if strlen(system("which racer")) > 0
   endif
 endif
 
+function! CoquilleInit()
+  :call coquille#FNMapping()
+  :call coquille#Launch()
+endfunction
+autocmd FileType coq :call CoquilleInit()
+
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 function! UpdateImports()
