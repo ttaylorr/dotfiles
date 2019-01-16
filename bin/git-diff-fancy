@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ ! -x "$(which diff-so-fancy)" ]; then
+  echo >&2 "fatal: unable to find an executable diff-so-fancy"
+  exit 1
+fi
+
+git diff $@ --color | diff-so-fancy |
+  if [ -t 1 ]; then
+    $(git config --default=less core.pager) -R
+  else
+    cat
+  fi
