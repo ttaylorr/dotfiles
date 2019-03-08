@@ -224,6 +224,9 @@ match ErrorMsg '\s\+$'
 set background=light
 colorscheme Atelier_ForestLight
 
+autocmd FileType tex hi clear texItalStyle
+autocmd FileType tex hi clear texBoldStyle
+
 set number
 
 "" 5.b) Tab deletion with ^w.
