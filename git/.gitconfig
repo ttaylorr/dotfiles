@@ -46,3 +46,6 @@
   smtpserveroption = "ttaylorr.com"
 [merge]
 	conflictstyle = diff3
+[rerere]
+  enabled = 1
+  autoupdate = 1
