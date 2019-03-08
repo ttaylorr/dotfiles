@@ -1,11 +1,11 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults rust
-.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults rust
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
-	brew bundle --global
+	# brew bundle --global
 
 bin:
 	[ ! -h ${HOME}/.bin ] && ln -fs $(DOTFILES_ROOT)/bin ${HOME}/.bin || true
@@ -43,14 +43,6 @@ defaults:
 	defaults write -g KeyRepeat -int 1
 	defaults write -g InitialKeyRepeat -int 10
 	defaults write -g ApplePressAndHoldEnabled -bool false
-
-rust:
-	[ ! -x "$(which rustup)" ] && curl https://sh.rustup.rs -sSf | sh
-	rustup self upgrade-data
-	rustup update stable
-	rustup component add rust-src
-	rustup default stable
-	which racer >/dev/null || cargo install racer
 
 tmux:
 	$(call install-if-missing, "tmux")
