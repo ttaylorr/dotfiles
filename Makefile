@@ -1,7 +1,7 @@
 DOTFILES_ROOT := $(shell pwd)
 
-all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults
-.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults
+all: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults chunkwm skhd
+.PHONY: bash zsh brew bin launchagents git vim tmux editorconfig offlineimap msmtp mutt urlview defaults chunkwm skhd
 
 brew:
 	ln -fs $(DOTFILES_ROOT)/brew/Brewfile ${HOME}/.Brewfile
@@ -60,6 +60,12 @@ zsh:
 
 bash:
 	ln -fs $(DOTFILES_ROOT)/bash/.bashrc ${HOME}/.bashrc
+
+chunkwm :
+	ln -fs $(DOTFILES_ROOT)/chunkm/.chunkwmrc ${HOME}/.chunkwmrc
+
+skhd :
+	ln -fs $(DOTFILES_ROOT)/skhd/.skhdrc ${HOME}/.skhdrc
 
 define install-if-missing
 	@brew list $1 > /dev/null 2>&1 || brew install $1
