@@ -18,6 +18,9 @@ set sig_dashes = no
 set signature = ~/.mutt/signature
 set mailcap_path  = ~/.mutt/mailcap
 
+set charset = utf-8
+set send_charset = utf-8
+
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
