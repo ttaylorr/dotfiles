@@ -106,7 +106,7 @@ set sendmail_wait = 0
 unset record
 
 set sort = threads
-set sort_aux = last-date-received
+set sort_aux = date
 set sort_re
 
 set realname = "Taylor Blau"
