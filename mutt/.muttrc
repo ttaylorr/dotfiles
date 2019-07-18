@@ -28,13 +28,12 @@ set certificate_file = ~/.mutt/certificates
 set mailcap_path = ~/.mutt/mailcap
 set sig_dashes = no
 set signature = ~/.mutt/signature
-set mailcap_path  = ~/.mutt/mailcap
 
 set charset = utf-8
 set send_charset = utf-8
 
+alternative_order text/html text/plain text/enriched
 auto_view text/html
-alternative_order text/plain text/enriched text/html
 
 set query_command = "mu cfind --format=mutt-ab '%s'"
 
