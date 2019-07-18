@@ -77,6 +77,7 @@ macro index,pager B ":set editor=true<enter><resend-message><send-message>:set e
 
 bind index <space> collapse-thread
 bind index <tab> sync-mailbox
+bind index <Esc>r read-subthread
 
 bind index R group-reply
 bind index \CR recall-message
