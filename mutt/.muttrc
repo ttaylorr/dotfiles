@@ -11,6 +11,8 @@ color body brightgreen      default ^(>\ ?){9}.*
 set pager_index_lines = 10
 bind pager k previous-line
 bind pager j next-line
+bind index,pager \Cy previous-line
+bind index,pager \Ce next-line
 bind pager R group-reply
 
 macro pager \Co "|urlview<enter>" "call urlview to open links"
