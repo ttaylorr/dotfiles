@@ -128,6 +128,12 @@ set sort_re
 
 set realname = "Taylor Blau"
 
+set wrap = 80
+set smart_wrap = yes
+set wrap_headers = 78
+
+unset markers
+
 ignore *
 unignore from: to: cc: date: subject:
 hdr_order from: to: cc: date: subject:
