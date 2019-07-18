@@ -54,6 +54,9 @@ macro index <f6> "<change-folder-readonly>~/.mail/search" \
 bind index gg first-entry
 bind index G last-entry
 
+bind pager gg top
+bind pager G bottom
+
 macro index x "<tag-entry><previous-entry>"
 
 bind index k previous-entry
