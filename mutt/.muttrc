@@ -1,3 +1,13 @@
+color body magenta          default ^(>\ ?){1}.*
+color body yellow           default ^(>\ ?){2}.*
+color body red              default ^(>\ ?){3}.*
+color body brightred        default ^(>\ ?){4}.*
+color body yellow           default ^(>\ ?){5}.*
+color body cyan             default ^(>\ ?){6}.*
+color body green            default ^(>\ ?){7}.*
+color body brightcyan       default ^(>\ ?){8}.*
+color body brightgreen      default ^(>\ ?){9}.*
+
 set pager_index_lines = 10
 bind pager k previous-line
 bind pager j next-line
