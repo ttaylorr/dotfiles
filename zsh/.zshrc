@@ -75,6 +75,16 @@ parse_git_branch() {
   echo " ($branch%{$reset_color%})"
 }
 
+ssh() {
+  if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+    tmux rename-window "$(echo $*)"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on" 1>/dev/null
+  else
+    command ssh "$@"
+  fi
+}
+
 function exec_after_prompt() {
   set -e
 
