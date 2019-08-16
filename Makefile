@@ -62,7 +62,7 @@ bash:
 	ln -fs $(DOTFILES_ROOT)/bash/.bashrc ${HOME}/.bashrc
 
 chunkwm :
-	ln -fs $(DOTFILES_ROOT)/chunkm/.chunkwmrc ${HOME}/.chunkwmrc
+	ln -fs $(DOTFILES_ROOT)/chunkwm/.chunkwmrc ${HOME}/.chunkwmrc
 
 skhd :
 	ln -fs $(DOTFILES_ROOT)/skhd/.skhdrc ${HOME}/.skhdrc
