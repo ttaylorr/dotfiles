@@ -8,5 +8,5 @@ if [ 1 -ne $# ]; then
 fi
 
 mbox=$(mktemp)
-curl "$(echo $1 | sed -e 's/\/T\/.*//')/t.mbox.gz" | gunzip >mbox
+curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >mbox
 mutt -f mbox
