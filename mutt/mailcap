@@ -1,1 +1,1 @@
-text/html; w3m -I %{charset} -T text/html; copiousoutput;
+text/html; w3m -o color=TRUE -I %{charset} -T text/html; copiousoutput
