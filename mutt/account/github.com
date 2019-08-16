@@ -27,8 +27,10 @@ macro index gd "<change-folder>=github.com/drafts<enter>" "Go to drafts"
 macro index gi "<change-folder>=github.com/INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=github.com/[Gmail].Starred<enter>" "Go to starred"
 macro index gt "<change-folder>=github.com/trash<enter>" "Go to trash"
-macro index,pager e "<save-message>=github.com/archive<enter>" "Archive"
-macro index,pager d "<save-message>=github.com/trash<enter>" "Trash"
+macro index e "<tag-prefix><save-message>=github.com/archive<enter>" "Archive"
+macro index d "<tag-prefix><save-message>=github.com/trash<enter>" "Trash"
+macro pager e "<save-message>=github.com/archive<enter>" "Archive"
+macro pager d "<save-message>=github.com/trash<enter>" "Trash"
 
 macro index O "<shell-escape>offlineimap -qa github<enter>"
 
