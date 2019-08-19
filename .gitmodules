@@ -40,3 +40,6 @@
 [submodule "vim/pack/ttaylorr/start/vimbufsync"]
 	path = vim/pack/ttaylorr/start/vimbufsync
 	url = https://github.com/let-def/vimbufsync
+[submodule "vim/pack/ttaylorr/start/LanguageClient-neovim"]
+	path = vim/pack/ttaylorr/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim

@@ -16,6 +16,13 @@ main() {
       git pull origin master
     popd >/dev/null" \
     ::: "$(list_submodules_in "vim/pack/$packname")"
+
+  if [ -d "vim/pack/$packname/LanguageClient-neovim" ]; then
+    (
+      cd "vim/pack/$packname/LanguageClient-neovim"
+      bash install.sh
+    )
+  fi
 }
 
 list_submodules_in() {
