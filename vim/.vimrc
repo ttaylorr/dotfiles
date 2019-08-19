@@ -52,9 +52,6 @@ endif
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
-"" 2.a.b) vim-go (use goimports)
-let g:go_fmt_command = "goimports"
-let g:go_template_autocreate = 0
 
 "" 2.a.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
@@ -118,32 +115,6 @@ endfunction
 
 command! -nargs=* Git :call InlineCommand("git always <args>")
 
-let g:livepreview_previewer = 'open -a Skim'
-
-if strlen(system("which racer")) > 0
-  let g:racer_cmd = system("echo -n $HOME") . "/.cargo/bin/racer"
-  let g:racer_experimental_completer = 1
-
-  if strlen(system("which rustfmt")) > 0
-    let g:rustfmt_autosave = 1
-  endif
-endif
-
-function! CoquilleInit()
-  :call coquille#FNMapping()
-  :call coquille#Launch()
-endfunction
-autocmd FileType coq :call CoquilleInit()
-
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-
-function! UpdateImports()
-  :call javacomplete#imports#AddMissing()
-endfunction
-
-autocmd BufWritePre *.java :call UpdateImports()
-" nmap <leader>jI :call UpdateImports()
-" imap <C-j>I     :call UpdateImports()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 3) Key rebindings
@@ -156,26 +127,10 @@ for prefix in ['i', 'n', 'v']
 endfor
 
 "" 3.b) Pane-switching
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-"" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-
-"" 3.c) Testing
-map <leader>tu :!./script/test<cr>
-map <leader>ti :!./script/integration<cr>
-map <leader>tci :!./script/cibuild<cr>
-
-"" 3.c.i) Testing (Golang)
-autocmd FileType go map <leader>t  :GoTestFunc<cr>
-autocmd FileType go map <leader>tt :GoTest<cr>
-autocmd FileType go map <leader>tc :GoCoverage<cr>
-autocmd FileType go map <leader>ta :Tagbar<cr>
-autocmd FileType go map <leader>ga :GoAlternate<cr>
-autocmd FileType go map <leader>gd :GoDoc<cr>
+nnoremap <silent> <c-h> <c-W><c-h>
+nnoremap <silent> <c-j> <c-W><c-j>
+nnoremap <silent> <c-k> <c-W><c-k>
+nnoremap <silent> <c-l> <c-W><c-l>
 
 "" 3.d) Spell-Checking
 map <leader>sc :setlocal spell! spelllang=en_us<cr>
@@ -192,9 +147,6 @@ nnoremap ; :
 
 "" 3.h) map `,r` to redraw! buffer
 map <leader>r :redraw!<cr>
-
-"" 3.i) map `,to` to open tag buffer
-map <leader>to :TagbarOpen<cr>
 
 "" 3.j) map `,m` to make
 map <leader>m :term ++close ++rows=5 make<cr>
@@ -216,7 +168,6 @@ autocmd BufWritePre    * :call TrimWhitespace()
 "" 4.c) Mark trailing whitespace as an error
 match ErrorMsg '\s\+$'
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" 5) Misc.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,12 +185,3 @@ noremap <C-w> :tabclose<CR>
 
 "" 5.c) Remove annoying escape delay
 set timeoutlen=1000 ttimeoutlen=0
-
-"" 5.d) Macvim
-autocmd! GUIEnter * set vb t_vb=
-autocmd! GUIEnter * set guifont=Fira\ Code\ Retina:h16
-autocmd VimResized * redraw!
-
-if system("echo $TERM_PROGRAM") == "iTerm.app"
-  set mouse=a
-endif
