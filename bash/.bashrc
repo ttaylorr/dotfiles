@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-export GOPATH="$HOME/go"
 export GPG_TTY="$(tty)"
 
 export EDITOR="$(which vim)"
@@ -10,7 +9,7 @@ function d() {
   e $@ .
 }
 
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/Library/TeX/texbin"
