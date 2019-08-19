@@ -7,15 +7,9 @@
 [submodule "vim/pack/ttaylorr/start/editorconfig-vim"]
 	path = vim/pack/ttaylorr/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/pack/ttaylorr/start/vim-go"]
-	path = vim/pack/ttaylorr/start/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule "vim/pack/ttaylorr/start/vim-signature"]
 	path = vim/pack/ttaylorr/start/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
-[submodule "vim/pack/ttaylorr/start/gocode"]
-	path = vim/pack/ttaylorr/start/gocode
-	url = https://github.com/nsf/gocode.git
 [submodule "vim/pack/ttaylorr/start/nerdtree"]
 	path = vim/pack/ttaylorr/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -25,24 +19,15 @@
 [submodule "vim/pack/ttaylorr/start/vim-endwise"]
 	path = vim/pack/ttaylorr/start/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "vim/pack/ttaylorr/start/vim-github"]
-	path = vim/pack/ttaylorr/start/vim-github
-	url = https://github.com/ttaylorr/vim-github.git
 [submodule "vim/pack/ttaylorr/start/vim-colors_atelier-schemes"]
 	path = vim/pack/ttaylorr/start/vim-colors_atelier-schemes
 	url = https://github.com/atelierbram/vim-colors_atelier-schemes
-[submodule "vim/pack/ttaylorr/start/vim-tmux-navigator"]
-	path = vim/pack/ttaylorr/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
 [submodule "vim/pack/ttaylorr/start/ack.vim"]
 	path = vim/pack/ttaylorr/start/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
 	path = vim/pack/ttaylorr/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
-[submodule "vim/pack/ttaylorr/start/gundo.vim"]
-	path = vim/pack/ttaylorr/start/gundo.vim
-	url = https://github.com/sjl/gundo.vim
 [submodule "vim/pack/ttaylorr/start/tagbar"]
 	path = vim/pack/ttaylorr/start/tagbar
 	url = https://github.com/majutsushi/tagbar
@@ -52,15 +37,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-gitgutter"]
 	path = vim/pack/ttaylorr/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim/pack/ttaylorr/start/vim-javacomplete2"]
-	path = vim/pack/ttaylorr/start/vim-javacomplete2
-	url = git@github.com:artur-shaik/vim-javacomplete2.git
-[submodule "vim/pack/ttaylorr/start/coquille"]
-	path = vim/pack/ttaylorr/start/coquille
-	url = https://github.com/trefis/coquille.git
 [submodule "vim/pack/ttaylorr/start/vimbufsync"]
 	path = vim/pack/ttaylorr/start/vimbufsync
 	url = https://github.com/let-def/vimbufsync
-[submodule "vim/pack/ttaylorr/start/vim-latex-live-preview"]
-	path = vim/pack/ttaylorr/start/vim-latex-live-preview
-	url = git@github.com:xuhdev/vim-latex-live-preview.git
