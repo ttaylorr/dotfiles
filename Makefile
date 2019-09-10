@@ -13,15 +13,17 @@ include bin/rules.mak
 include git/rules.mak
 include vim/rules.mak
 include editorconfig/rules.mak
+ifndef NO_MUTT
 include offlineimap/rules.mak
 include msmtp/rules.mak
 include mutt/rules.mak
+include urlview/rules.mak
+endif
 ifndef NO_MACOS
 include defaults/rules.mak
 include chunkwm/rules.mak
 include skhd/rules.mak
 endif
-include urlview/rules.mak
 
 .PHONY : all
 all : install $(POST_INSTALL)
