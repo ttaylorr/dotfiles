@@ -52,85 +52,9 @@ endif
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
-let g:LanguageClient_serverCommands = {
-  \   'go': ['gopls'],
-  \ }
-let g:LanguageClient_diagnosticsEnable = 0
-
-function! MyGoToDefinition(...) abort
-  " ref: https://github.com/davidhalter/jedi-vim/blob/master/pythonx/jedi_vim.py#L329-L345
-
-  " Get the current position
-  let l:fname = expand('%:p')
-  let l:line = line(".")
-  let l:col = col(".")
-  let l:word = expand("<cword>")
-
-  " Call the original function to jump to the definition
-  let l:result = LanguageClient_runSync(
-                  \ 'LanguageClient#textDocument_definition', {
-                  \ 'handle': v:true,
-                  \ })
-
-  " Get the position of definition
-  let l:jump_fname = expand('%:p')
-  let l:jump_line = line(".")
-  let l:jump_col = col(".")
-
-  " If the position is the same as previous, ignore the jump action
-  if l:fname == l:jump_fname && l:line == l:jump_line
-    return
-  endif
-
-  " Workaround: Jump to origial file. If the function is in rust, there is a
-  " way to ignore the behaviour
-  if &modified
-    exec 'hide edit'  l:fname
-  else
-    exec 'edit' l:fname
-  endif
-  call cursor(l:line, l:col)
-
-  " Store the original setting
-  let l:ori_wildignore = &wildignore
-  let l:ori_tags = &tags
-
-  " Write a temp tags file
-  let l:temp_tags_fname = tempname()
-  let l:temp_tags_content = printf("%s\t%s\t%s", l:word, l:jump_fname,
-      \ printf("call cursor(%d, %d)", l:jump_line, l:jump_col+1))
-  call writefile([l:temp_tags_content], l:temp_tags_fname)
-
-  " Set temporary new setting
-  set wildignore=
-  let &tags = l:temp_tags_fname
-
-  " Add to new stack
-  execute ":tjump " . l:word
-
-  " Restore original setting
-  let &tags = l:ori_tags
-  let &wildignore = l:ori_wildignore
-
-  " Remove temporary file
-  if filereadable(l:temp_tags_fname)
-    call delete(l:temp_tags_fname, "rf")
-  endif
-endfunction
-
-function LC_maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    set completefunc=LanguageClient#complete
-    set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-
-    nnoremap <buffer> <silent> <C-]> :call MyGoToDefinition()<cr>
-
-    autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-  endif
-
-endfunction
-
-autocmd FileType * call LC_maps()
+let g:go_jump_to_error = 0
+let g:go_fmt_command = "goimports"
+let g:go_template_autocreate = 0
 
 "" 2.a.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
