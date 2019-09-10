@@ -18,6 +18,7 @@ export PATH="$PATH:/usr/local/sbin"
 
 alias g=git
 alias ls="ls -G"
+alias grep="grep --color"
 alias vi=vim
 
 if [ -x "$(which ssh-add)" ]; then
