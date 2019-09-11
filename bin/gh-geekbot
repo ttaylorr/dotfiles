@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+
+blue="\e[1m\e[34m"
+reset="\e[0m"
+
+login="ttaylorr"
+if [ -n "$1" ]; then
+  login="$1"
+  shift
+fi
+
+cd "$(mktemp -d)"
+
+curl -sn "https://api.github.com/users/${login}/events" |
+jq "[.[] | select(.created_at | fromdateiso8601 > "$(date +%s)" - 86400)]" \
+  >events
+
+touch out
+
+for i in $(seq 0 "$(jq '. | length - 1' events)"); do
+  jq ".[$i]" events >event
+
+  type="$(jq -r '.type' event)"
+
+  case "$type" in
+    PullRequestReviewCommentEvent)
+      printf "commented on %s (%s)" \
+        "$(jq -r '.payload.pull_request.title' event)" \
+        "$(jq -r '.payload.comment.html_url' event)"
+      ;;
+    IssueCommentEvent)
+      printf "commented on %s (%s)" \
+        "$(jq -r '.payload.issue.title' event)" \
+        "$(jq -r '.payload.comment.html_url' event)"
+      ;;
+    PullRequestEvent)
+      action="$(jq -r '.payload.action' event)"
+      if [ "true" = "$(jq -r '.payload.pull_request.merged' event)" ]; then
+        action="merged"
+      fi
+
+      printf "%s pull request '%s' (%s)" \
+        "$action" \
+        "$(jq -r '.payload.pull_request.title' event)" \
+        "$(jq -r '.payload.pull_request.html_url' event)"
+      ;;
+    IssuesEvent)
+      printf "%s issue '%s' (%s)" \
+        "$(jq -r '.payload.action' event)" \
+        "$(jq -r '.payload.issue.title' event)" \
+        "$(jq -r '.payload.issue.html_url' event)"
+      ;;
+    DeleteEvent)
+      continue
+      ;;
+    CreateEvent)
+      continue
+      ;;
+    PushEvent)
+      continue
+      ;;
+    *)
+      echo >&2 "fatal: unknown type: '$type'"
+      exit 1
+      ;;
+  esac >summary
+
+  cat >&2 summary
+  echo >&2
+
+  while true; do
+    printf >&2 "${blue}Add this to summary? [y,n,e]? $reset"
+    read -n1
+    if [ -z "$REPLY" ]; then
+      REPLY="y"
+    else
+      echo >&2
+    fi
+
+    test -z "$REPLY" && REPLY="y"
+    case "$REPLY" in
+      [e])
+        "$EDITOR" summary >/dev/tty
+        ;&
+      [yY])
+        printf -- "- %s\n" "$(cat summary)" >>out
+        break
+        ;;
+      [nN])
+        break
+        ;;
+      $'\04')
+        exit 1
+        ;;
+      *)
+        ;;
+    esac
+  done
+done
+
+cat out
