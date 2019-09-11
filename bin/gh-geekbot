@@ -24,12 +24,12 @@ for i in $(seq 0 "$(jq '. | length - 1' events)"); do
 
   case "$type" in
     PullRequestReviewCommentEvent)
-      printf "commented on %s (%s)" \
+      printf "Commented on %s (%s)" \
         "$(jq -r '.payload.pull_request.title' event)" \
         "$(jq -r '.payload.comment.html_url' event)"
       ;;
     IssueCommentEvent)
-      printf "commented on %s (%s)" \
+      printf "Commented on %s (%s)" \
         "$(jq -r '.payload.issue.title' event)" \
         "$(jq -r '.payload.comment.html_url' event)"
       ;;
@@ -40,13 +40,14 @@ for i in $(seq 0 "$(jq '. | length - 1' events)"); do
       fi
 
       printf "%s pull request '%s' (%s)" \
-        "$action" \
+        "${action^}" \
         "$(jq -r '.payload.pull_request.title' event)" \
         "$(jq -r '.payload.pull_request.html_url' event)"
       ;;
     IssuesEvent)
+      action="$(jq -r '.payload.action' event)"
       printf "%s issue '%s' (%s)" \
-        "$(jq -r '.payload.action' event)" \
+        "${action^}" \
         "$(jq -r '.payload.issue.title' event)" \
         "$(jq -r '.payload.issue.html_url' event)"
       ;;
