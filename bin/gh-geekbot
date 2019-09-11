@@ -12,7 +12,7 @@ fi
 cd "$(mktemp -d)"
 
 curl -sn "https://api.github.com/users/${login}/events" |
-jq "[.[] | select(.created_at | fromdateiso8601 > "$(date +%s)" - 86400)]" \
+jq "[sort_by(.type) | .[] | select(.created_at | fromdateiso8601 > "$(date +%s)" - 86400)]" \
   >events
 
 touch out
