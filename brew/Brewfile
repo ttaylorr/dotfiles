@@ -22,7 +22,6 @@ brew 'go'
 brew 'gpg'
 brew 'graphviz'
 brew 'msmtp', args: ['with-macosx-keyring']
-brew 'mu'
 brew 'offlineimap'
 brew 'openssl'
 brew 'parallel'

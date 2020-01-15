@@ -7,7 +7,6 @@ fsync      = false
 [Account github]
 localrepository  = github-local
 remoterepository = github-remote
-postsynchook     = mu index -m ~/.mail/github.com
 
 [Repository github-local]
 type         = Maildir
@@ -26,7 +25,6 @@ nametrans      = reverse_nametrans
 [Account ttaylorr]
 localrepository  = ttaylorr-local
 remoterepository = ttaylorr-remote
-postsynchook     = mu index -m ~/.mail/ttaylorr.com
 
 [Repository ttaylorr-local]
 type         = Maildir
@@ -45,7 +43,6 @@ nametrans      = reverse_nametrans
 [Account uw]
 localrepository  = uw-local
 remoterepository = uw-remote
-postsynchook     = mu index -m ~/.mail/cs.washington.edu
 
 [Repository uw-local]
 type         = Maildir
