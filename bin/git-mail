@@ -21,4 +21,4 @@ git format-patch \
   $range_diff_args \
   $version_args \
   $@ >"$mbox"
-mutt -f "$mbox"
+mutt -F ~/.muttrc.git -f "$mbox"
