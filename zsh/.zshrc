@@ -23,6 +23,8 @@ fi
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+bindkey -v
+
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
