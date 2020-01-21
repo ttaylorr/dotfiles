@@ -32,9 +32,6 @@ set signature = ~/.mutt/signature
 set charset = utf-8
 set send_charset = utf-8
 
-alternative_order text/html text/plain text/enriched
-auto_view text/html
-
 folder-hook github.com/ source ~/.mutt/account/github.com
 folder-hook ttaylorr.com/ source ~/.mutt/account/ttaylorr.com
 
