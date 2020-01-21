@@ -99,6 +99,7 @@ chunkc core::load tiling.so
 
 chunkc tiling::rule --owner \"FaceTime\" --state float &
 chunkc tiling::rule --owner \"Things\" --state float &
+chunkc tiling::rule --owner \"Isabelle2019\" --state float &
 
 chunkc tiling::rule --owner \"Google Chrome\" --desktop 1
 chunkc tiling::rule --owner \"Messages\" --desktop 1
