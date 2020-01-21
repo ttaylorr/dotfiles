@@ -52,6 +52,14 @@ max_line_length = 80;
 indent_size = 2
 indent_style = space
 
+[*.thy]
+indent_size = 2
+indent_style = space
+
+[*.s]
+indent_size = 8
+indent_style = tab
+
 [COMMIT_EDITMSG]
 max_line_length = 0
 max_line_length = 72
