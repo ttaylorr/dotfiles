@@ -8,7 +8,7 @@ color body green            default ^(>\ ?){7}.*
 color body brightcyan       default ^(>\ ?){8}.*
 color body brightgreen      default ^(>\ ?){9}.*
 
-set pager_index_lines = 10
+set pager_index_lines = 16
 bind pager k previous-line
 bind pager j next-line
 bind index,pager \Cy previous-line
