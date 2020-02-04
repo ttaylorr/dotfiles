@@ -110,13 +110,32 @@ nnoremap <Leader>a :Ack!<Space>''<Left>
 set completeopt+=menuone
 set completeopt-=preview
 
-function InlineCommand(cmd)
-  let l:output = system(a:cmd)
-  let l:output = substitute(' '.l:output, '[\r\n]*$', '', '')
-  execute 'normal i' . l:output
+function MaybeInlineCommand(cmd)
+  let l:lines = split(system(a:cmd), '\n')
+  if len(l:lines) == 0
+    " nothing to do
+  elseif len(l:lines) == 1
+    " We have one line; let's append it at the cursor, but with a little
+    " magic for inserting into existing prose:
+    "  - if we're in the middle of a word, insert at the end of the word
+    "  - insert spaces to separate from existing content (unless we
+    "    already have them)
+    if col('.') > 1 && getline('.')[col('.')-1] != ' '
+      " Not just 'e', because that will go to the next word if we're on
+      " the last letter of the current one.
+      execute 'normal he'
+      let l:lines[0] = ' ' . l:lines[0]
+    endif
+    if col('.') != col('$')-1 && getline('.')[col('.')] != ' '
+      let l:lines[0] = l:lines[0] . ' '
+    endif
+    execute 'normal a' . l:lines[0]
+  else
+    call append(line('.'), l:lines)
+  endif
 endfunction
 
-command! -nargs=* Git :call InlineCommand("git always <args>")
+command! -nargs=* Git :call MaybeInlineCommand("git always <args>")
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
