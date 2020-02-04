@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+my $me = do {
+        local $_ = qx(git var GIT_AUTHOR_IDENT);
+        chomp;
+        s/>.*/>/;
+        $_
+};
+open(my $fh, '-|',
+     qw(git format-patch -s --stdout --no-walk --root),
+     @ARGV) or die "unable to run format-patch: $!\n";
+# Print header, picking out only interesting lines.
+while (<$fh>) {
+        if (/^From: (.*)/) {
+                print unless $1 eq $me;
+                $in_header = 1;
+        } elsif (/^Subject:/) {
+                print;
+                $in_header = 1;
+        } elsif (/^$/) {
+                print;
+                last;
+        } elsif ($in_header && /^\s+/) {
+                print;
+        } else {
+                $in_header = 0;
+        }
+}
+# Everything else is body; print it unconditionally.
+while (<$fh>) {
+        print;
+}
