@@ -12,6 +12,8 @@ if test -f "mbox"; then
   exit 1
 fi
 
+trap 'rm -f mbox' EXIT
+
 mbox=$(mktemp)
 curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >mbox
 mutt -f mbox
