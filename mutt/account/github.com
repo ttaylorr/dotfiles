@@ -10,7 +10,8 @@ set from = "ttaylorr@github.com"
 
 set sendmail="/usr/local/bin/msmtp -a github.com"
 
-set header_cache="~/.mail/cache/github.com/header"
+set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %?y?[%y]? %s"
+
 set message_cachedir="~/.mail/cache/github.com/message"
 
 send2-hook '~C git@vger.kernel.org' 'set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"'
