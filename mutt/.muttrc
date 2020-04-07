@@ -73,13 +73,6 @@ bind index \CR recall-message
 
 set pager_stop = yes
 
-set sidebar_visible = yes
-set sidebar_width   = 28
-
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
-
 color index brightblue brightwhite ~N
 color index brightwhite black ~D
 
@@ -126,3 +119,15 @@ unset markers
 ignore *
 unignore from: to: cc: date: subject:
 hdr_order from: to: cc: date: subject:
+
+bind editor <space> noop
+
+macro index ga "<change-folder>=[Gmail]/All Mail<enter><enter>" "Go to all mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
+macro index e "<tag-prefix><save-message>=[Gmail]/All Mail<enter>" "Archive"
+macro index d "<tag-prefix><save-message>=[Gmail]/Trash<enter>" "Trash"
+macro pager e "<save-message>=[Gmail]/All Mail<enter>" "Archive"
+macro pager d "<save-message>=[Gmail]/Trash<enter>" "Trash"

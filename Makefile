@@ -14,7 +14,6 @@ include git/rules.mak
 include vim/rules.mak
 include editorconfig/rules.mak
 ifndef NO_MUTT
-include offlineimap/rules.mak
 include msmtp/rules.mak
 include mutt/rules.mak
 include urlview/rules.mak

@@ -1,23 +1,14 @@
-mailboxes +ttaylorr.com/INBOX
+set imap_user = 'me@ttaylorr.com'
+set imap_pass = `security find-internet-password -g -a me@ttaylorr.com -s imap.gmail.com 2>&1 | perl -e 'if (<STDIN> =~ m/password: "(.*)"$/ ) { print $1; }'`
+
+set folder = imaps://imap.gmail.com/
+set spoolfile = +INBOX
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
 
 set from = "me@ttaylorr.com"
-set mbox = "+ttaylorr.com/archive"
-set postponed = "+ttaylorr.com/drafts"
-set spoolfile = "+ttaylorr.com/INBOX"
 
 set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"
 
 set header_cache="~/.mail/cache/ttaylorr.com/header"
 set message_cachedir="~/.mail/cache/ttaylorr.com/message"
-
-macro index ga "<change-folder>=ttaylorr.com/archive<enter>" "Go to all mail"
-macro index gd "<change-folder>=ttaylorr.com/drafts<enter>" "Go to drafts"
-macro index gi "<change-folder>=ttaylorr.com/INBOX<enter>" "Go to inbox"
-macro index gs "<change-folder>=ttaylorr.com/[Gmail].Starred<enter>" "Go to starred"
-macro index gt "<change-folder>=ttaylorr.com/trash<enter>" "Go to trash"
-macro index e "<tag-prefix><save-message>=ttaylorr.com/archive<enter>" "Archive"
-macro index d "<tag-prefix><save-message>=ttaylorr.com/trash<enter>" "Trash"
-macro pager e "<save-message>=ttaylorr.com/archive<enter>" "Archive"
-macro pager d "<save-message>=ttaylorr.com/trash<enter>" "Trash"
-
-macro index O "<shell-escape>offlineimap -qa ttaylorr<enter>"
