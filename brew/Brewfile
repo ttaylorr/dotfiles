@@ -28,7 +28,7 @@ brew 'shkd'
 brew 'smlnj'
 brew 'tmux'
 brew 'tree'
-brew 'ttaylorr/homebrew-mutt/mutt', args: ['with-retain-messageid']
+brew 'ttaylorr/homebrew-mutt/mutt'
 brew 'urlview'
 brew 'vim'
 brew 'w3m'
