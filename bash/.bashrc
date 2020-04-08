@@ -23,6 +23,4 @@ alias ls="ls -G"
 alias grep="grep --color"
 alias vi=vim
 
-if [ -x "$(which ssh-add)" ]; then
-  ssh-add &> /dev/null
-fi
+eval `ssh-agent -s` >/dev/null
