@@ -10,7 +10,7 @@ set from = "ttaylorr@github.com"
 
 set sendmail="/usr/local/bin/msmtp -a github.com"
 
-set index_format="%4C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %?y?[%y]? %s"
+set index_format="%4C %Z %{%b %d} %-15.15L %?y?[%y]? %s"
 
 set message_cachedir="~/.mail/cache/github.com/message"
 
