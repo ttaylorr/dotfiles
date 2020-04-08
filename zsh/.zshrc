@@ -45,6 +45,10 @@ abbrev_path() {
   sed "s:\([^/]\)[^/]*/:\1/:g" <<<$(sed s:$HOME:\~:g <<<$PWD)
 }
 
+on_host() {
+  echo " [%{$fg[yellow]%}$(hostname)%{$reset_color%}]"
+}
+
 parse_git_branch() {
   branch="$(git branch 2>/dev/null | grep "*")"
   detached="$(echo "$branch" | grep "detached at")"
@@ -115,4 +119,4 @@ function exec_after_prompt() {
   fi
 }
 
-export PS1='$(abbrev_path)$(parse_git_branch) $ $(exec_after_prompt)'
+export PS1='$(abbrev_path)$(on_host)$(parse_git_branch) $ $(exec_after_prompt)'
