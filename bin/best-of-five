@@ -1,0 +1,66 @@
+#!/bin/sh
+runs=5
+ignore_failure=
+input=/dev/null
+output=/dev/null
+reference=
+drop_caches=
+pre_cmd=
+while test $# -gt 0; do
+  case "$1" in
+    -c) shift; runs=$1 ;;
+    -f) ignore_failure=t ;;
+    -i) shift; input=$1 ;;
+    -o) shift; output=$1 ;;
+    -r) shift; reference=$1 ;;
+    -d) drop_caches=3 ;;
+   -d*) drop_caches=${1#-d} ;;
+    -p) shift; pre_cmd=$1 ;;
+     *) break ;;
+  esac
+  shift
+done
+
+attempt=
+say() {
+  test -z "$attempt" || prefix="Attempt $attempt: "
+  echo >&2 "$prefix$*"
+}
+
+die() {
+  say "$@"
+  exit 1
+}
+
+best=
+for attempt in `perl -le "print for (1..$runs)"`; do
+  if test -n "$drop_caches"; then
+    sudo sh -c "echo $drop_caches >/proc/sys/vm/drop_caches"
+  fi
+  if test -n "$pre_cmd"; then
+    eval "$pre_cmd" || die "pre-cmd '$pre_cmd' failed"
+  fi
+
+  bash -c 'time "$@" <'"$input"' >'"$output"' 2>&1' -- "$@" 2>time.out ||
+    test "$ignore_failure" = "t" ||
+    die "command reported failure on exit"
+  time=`perl -lne 'print 60*$1 + $2 if /real\s(\d+)m([0-9.]+)s/' time.out`
+
+  if test -n "$reference" && ! diff -u "$reference" "$output"; then
+    die "output differs from reference"
+  fi
+
+  say $time
+
+  if test -z "$best" ||
+     perl -e 'exit($ARGV[0] < $ARGV[1] ? 0 : 1)' $time $best
+  then
+    best=$time
+    cp time.out best.out
+  fi
+done
+
+cat best.out
+rm -f time.out best.out
+test "$output" != "/dev/null" && rm -f "$output"
+exit 0

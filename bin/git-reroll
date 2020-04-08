@@ -8,6 +8,8 @@ main() {
       shift; git_reroll__make $@; ;;
     --range-diff)
       shift; git_reroll__range_diff $@; ;;
+    --list)
+      shift; git_reroll__list $@; ;;
     --last|*)
       shift; git_reroll__last $@; ;;
   esac
@@ -44,7 +46,7 @@ git_reroll__make() {
   git tag "${topic}.v${count}"
 }
 
-git_reroll__last() {
+git_reroll__list() {
   TIP="$(git for-each-ref --points-at="${1:-HEAD}" refs/heads \
       | awk '{ print $3 }' \
       | sed -e 's,^refs/heads/,,g'
@@ -53,9 +55,11 @@ git_reroll__last() {
 
   git for-each-ref "refs/tags/$PREFIX" \
     | grep "refs/tags/$TIP\.v[[:digit:]]*" \
-    | awk '{ print $3 " " $1 }' \
-    | sort -r \
-    | head -n1
+    | awk '{ print $3 " " $1 }'
+}
+
+git_reroll__last() {
+  git_reroll__list | tail -1
 }
 
 git_reroll__range_diff() {

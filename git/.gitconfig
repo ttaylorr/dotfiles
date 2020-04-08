@@ -15,6 +15,7 @@
 	lb = checkout -
 	lg = log --oneline
 	ll = "!git always --no-pager log -1 --pretty='tformat:%h (%s, %ad)' --date=short"
+	pp = print-patch
 	st = status
 	up = pull --rebase --autostash
 [push]
@@ -49,3 +50,5 @@
 [rerere]
   enabled = 1
   autoupdate = 1
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

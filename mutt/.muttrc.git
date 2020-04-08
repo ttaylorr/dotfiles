@@ -1,0 +1,3 @@
+source ~/.muttrc
+
+macro index,pager B ":set editor=true<enter><resend-message><send-message>:set editor=$EDITOR<enter>"

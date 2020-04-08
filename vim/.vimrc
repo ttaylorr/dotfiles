@@ -52,85 +52,9 @@ endif
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen = 1
 
-let g:LanguageClient_serverCommands = {
-  \   'go': ['gopls'],
-  \ }
-let g:LanguageClient_diagnosticsEnable = 0
-
-function! MyGoToDefinition(...) abort
-  " ref: https://github.com/davidhalter/jedi-vim/blob/master/pythonx/jedi_vim.py#L329-L345
-
-  " Get the current position
-  let l:fname = expand('%:p')
-  let l:line = line(".")
-  let l:col = col(".")
-  let l:word = expand("<cword>")
-
-  " Call the original function to jump to the definition
-  let l:result = LanguageClient_runSync(
-                  \ 'LanguageClient#textDocument_definition', {
-                  \ 'handle': v:true,
-                  \ })
-
-  " Get the position of definition
-  let l:jump_fname = expand('%:p')
-  let l:jump_line = line(".")
-  let l:jump_col = col(".")
-
-  " If the position is the same as previous, ignore the jump action
-  if l:fname == l:jump_fname && l:line == l:jump_line
-    return
-  endif
-
-  " Workaround: Jump to origial file. If the function is in rust, there is a
-  " way to ignore the behaviour
-  if &modified
-    exec 'hide edit'  l:fname
-  else
-    exec 'edit' l:fname
-  endif
-  call cursor(l:line, l:col)
-
-  " Store the original setting
-  let l:ori_wildignore = &wildignore
-  let l:ori_tags = &tags
-
-  " Write a temp tags file
-  let l:temp_tags_fname = tempname()
-  let l:temp_tags_content = printf("%s\t%s\t%s", l:word, l:jump_fname,
-      \ printf("call cursor(%d, %d)", l:jump_line, l:jump_col+1))
-  call writefile([l:temp_tags_content], l:temp_tags_fname)
-
-  " Set temporary new setting
-  set wildignore=
-  let &tags = l:temp_tags_fname
-
-  " Add to new stack
-  execute ":tjump " . l:word
-
-  " Restore original setting
-  let &tags = l:ori_tags
-  let &wildignore = l:ori_wildignore
-
-  " Remove temporary file
-  if filereadable(l:temp_tags_fname)
-    call delete(l:temp_tags_fname, "rf")
-  endif
-endfunction
-
-function LC_maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    set completefunc=LanguageClient#complete
-    set formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-
-    nnoremap <buffer> <silent> <C-]> :call MyGoToDefinition()<cr>
-
-    autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-  endif
-
-endfunction
-
-autocmd FileType * call LC_maps()
+let g:go_jump_to_error = 0
+let g:go_fmt_command = "goimports"
+let g:go_template_autocreate = 0
 
 "" 2.a.c) ctrlp.vim
 set wildignore+=*/node_modules/*,*/bower_components/*
@@ -186,13 +110,32 @@ nnoremap <Leader>a :Ack!<Space>''<Left>
 set completeopt+=menuone
 set completeopt-=preview
 
-function InlineCommand(cmd)
-  let l:output = system(a:cmd)
-  let l:output = substitute(' '.l:output, '[\r\n]*$', '', '')
-  execute 'normal i' . l:output
+function MaybeInlineCommand(cmd)
+  let l:lines = split(system(a:cmd), '\n')
+  if len(l:lines) == 0
+    " nothing to do
+  elseif len(l:lines) == 1
+    " We have one line; let's append it at the cursor, but with a little
+    " magic for inserting into existing prose:
+    "  - if we're in the middle of a word, insert at the end of the word
+    "  - insert spaces to separate from existing content (unless we
+    "    already have them)
+    if col('.') > 1 && getline('.')[col('.')-1] != ' '
+      " Not just 'e', because that will go to the next word if we're on
+      " the last letter of the current one.
+      execute 'normal he'
+      let l:lines[0] = ' ' . l:lines[0]
+    endif
+    if col('.') != col('$')-1 && getline('.')[col('.')] != ' '
+      let l:lines[0] = l:lines[0] . ' '
+    endif
+    execute 'normal a' . l:lines[0]
+  else
+    call append(line('.'), l:lines)
+  endif
 endfunction
 
-command! -nargs=* Git :call InlineCommand("git always <args>")
+command! -nargs=* Git :call MaybeInlineCommand("git always <args>")
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

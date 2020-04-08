@@ -23,6 +23,8 @@ fi
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 
+bindkey -v
+
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
@@ -72,8 +74,10 @@ parse_git_branch() {
     branch="%{$fg[green]%}$branch"
   fi
 
-  if ! [[ -z "$(git status -s)" ]]; then
-    branch="$branch%{$fg[red]%}!"
+  if [ "$HOME/github/github" != "$(git rev-parse --show-toplevel)" ]; then
+    if ! [[ -z "$(git status -s)" ]]; then
+      branch="$branch%{$fg[red]%}!"
+    fi
   fi
 
   echo " ($branch%{$reset_color%})"
