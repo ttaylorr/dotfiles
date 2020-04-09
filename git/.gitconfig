@@ -22,6 +22,7 @@
 	default = current
 [pull]
 	default = current
+	rebase = true
 [branch]
 	autosetuprebase = always
 [core]
