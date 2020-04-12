@@ -1,5 +1,5 @@
 set imap_user = 'ttaylorr@github.com'
-set imap_pass = `security find-internet-password -g -a ttaylorr@github.com -s imap.gmail.com 2>&1 | perl -e 'if (<STDIN> =~ m/password: "(.*)"$/ ) { print $1; }'`
+set imap_pass = `security find-internet-password -w -a ttaylorr@github.com -s imap.gmail.com`
 
 set folder = imaps://imap.gmail.com/
 set spoolfile = +INBOX
