@@ -8,6 +8,8 @@ set postponed = "+[Gmail]/Drafts"
 
 set from = "ttaylorr@github.com"
 
+set header_cache="~/.mail/cache/github.com/header"
+
 set sendmail="/usr/local/bin/msmtp -a github.com"
 
 set index_format="%4C %Z %{%b %d} %-15.15L %?y?[%y]? %s"
