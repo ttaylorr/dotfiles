@@ -16,5 +16,15 @@ set index_format="%4C %Z %{%b %d} %-15.15L %?y?[%y]? %s"
 
 set message_cachedir="~/.mail/cache/github.com/message"
 
+macro index ga "<change-folder>=[Gmail]/All Mail<enter><enter>" "Go to all mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
+macro index e "<tag-prefix><save-message>=[Gmail]/All Mail<enter>" "Archive"
+macro index d "<tag-prefix><save-message>=[Gmail]/Trash<enter>" "Trash"
+macro pager e "<save-message>=[Gmail]/All Mail<enter>" "Archive"
+macro pager d "<save-message>=[Gmail]/Trash<enter>" "Trash"
+
 send2-hook '~C git@vger.kernel.org' 'set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"'
 send2-hook '~C git@vger.kernel.org' 'my_hdr From: Taylor Blau <me@ttaylorr.com>'
