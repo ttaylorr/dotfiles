@@ -140,3 +140,6 @@ shift + alt - f : chunkc tiling::window --toggle native-fullscreen
 # change layout of desktop
 ctrl + alt - a : chunkc tiling::desktop --layout bsp
 ctrl + alt - d : chunkc tiling::desktop --layout float
+
+# open a new terminal app
+shift + cmd - return : osascript -e "tell application \"iTerm2\"" -e "create window with default profile" -e "end tell"
