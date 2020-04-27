@@ -7,13 +7,8 @@ if [ 1 -ne $# ]; then
   exit 1
 fi
 
-if test -f "mbox"; then
-  echo >&2 "fatal: 'mbox' already exists, refusing to overwrite ..."
-  exit 1
-fi
+mbox="$(mktemp /tmp/git-lore.mbox.XXXXXX)"
+trap "rm -f $mbox" EXIT
 
-trap 'rm -f mbox' EXIT
-
-mbox=$(mktemp)
-curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >mbox
-mutt -f mbox
+curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >$mbox
+mutt -f $mbox
