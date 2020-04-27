@@ -18,6 +18,9 @@
 	pp = print-patch
 	st = status
 	up = pull --rebase --autostash
+	vgrep = jump grep
+	vdiff = jump diff
+	vmerge = jump merge
 [push]
 	default = current
 [pull]
