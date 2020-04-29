@@ -26,5 +26,7 @@ macro index d "<tag-prefix><save-message>=[Gmail]/Trash<enter>" "Trash"
 macro pager e "<save-message>=[Gmail]/All Mail<enter>" "Archive"
 macro pager d "<save-message>=[Gmail]/Trash<enter>" "Trash"
 
+macro index,pager < "<tag-prefix><copy-message>~/git-new.mbox<enter>" "mark new"
+
 send2-hook '~C git@vger.kernel.org' 'set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"'
 send2-hook '~C git@vger.kernel.org' 'my_hdr From: Taylor Blau <me@ttaylorr.com>'
