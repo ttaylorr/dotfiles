@@ -97,6 +97,7 @@ chunkc core::load tiling.so
 # NOTE: sample rules for the tiling plugin
 #
 
+chunkc tiling::rule --owner \"zoom.us\" --state float &
 chunkc tiling::rule --owner \"FaceTime\" --state float &
 chunkc tiling::rule --owner \"Things\" --state float &
 chunkc tiling::rule --owner \"Isabelle2019\" --state float &
