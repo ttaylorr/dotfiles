@@ -5,7 +5,20 @@ if test -z "$1"; then
   exit 1
 fi
 
+for upstream in origin/main origin/master origin/github ; do
+  if git rev-parse --verify -q $upstream >/dev/null
+  then
+    break
+  fi
+done
+
+if test -z $upstream
+then
+  echo >&2 "fatal: no upstream found"
+  exit 1
+fi
+
 for author in "$@"; do
-  git --no-pager -c mailmap.blob=origin/master:.mailmap log -1 \
-    --format="%an <%aE>" --author="$author" -i origin/master
+  git --no-pager -c mailmap.blob=$upstream:.mailmap log -1 \
+    --format="%an <%aE>" --author="$author" -i $upstream
 done | perl -pe 'chomp, s/$/, / unless eof'
