@@ -200,6 +200,8 @@ colorscheme Atelier_ForestLight
 autocmd FileType tex hi clear texItalStyle
 autocmd FileType tex hi clear texBoldStyle
 
+hi SpellBad ctermbg=224
+
 set number
 
 "" 5.b) Tab deletion with ^w.
