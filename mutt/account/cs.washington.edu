@@ -1,5 +1,6 @@
 set imap_user = 'ttaylorr@cs.washington.edu'
 set imap_pass = `security find-internet-password -w -a ttaylorr@cs.washington.edu -s imap.gmail.com`
+set imap_keepalive = 300
 
 set folder = imaps://imap.gmail.com/
 set spoolfile = +INBOX
