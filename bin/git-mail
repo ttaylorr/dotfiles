@@ -2,7 +2,8 @@
 
 set -e
 
-mbox=$(mktemp -t "git-mutt-$(git rev-parse --abbrev-ref HEAD | tr -s '/' '-')")
+topic="$(git rev-parse --abbrev-ref HEAD | tr -s '/' '-')"
+mbox=$(mktemp -t "git-mutt-${topic}-XXXXXX")
 
 previously="$(git reroll --last | cut -d' ' -f1)"
 if [ ! -z "$previously" ]; then
