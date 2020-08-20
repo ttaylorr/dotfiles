@@ -43,3 +43,12 @@
 [submodule "vim/pack/ttaylorr/start/vim-tmux-navigator"]
 	path = vim/pack/ttaylorr/start/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator
+[submodule "vim/pack/ttaylorr/start/ack.vim"]
+	path = vim/pack/ttaylorr/start/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
+	path = vim/pack/ttaylorr/start/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/pack/ttaylorr/start/whitespaste.vim"]
+	path = vim/pack/ttaylorr/start/whitespaste.vim
+	url = git@github.com:AndrewRadev/whitespaste.vim.git
