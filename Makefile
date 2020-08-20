@@ -20,8 +20,8 @@ include urlview/rules.mak
 endif
 ifndef NO_MACOS
 include defaults/rules.mak
-include chunkwm/rules.mak
 include skhd/rules.mak
+include yabai/rules.mak
 endif
 
 .PHONY : all
