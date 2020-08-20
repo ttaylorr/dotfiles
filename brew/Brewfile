@@ -33,6 +33,7 @@ brew 'yabai'
 brew 'zsh'
 
 cask '1password'
+cask 'ballast'
 cask 'docker'
 cask 'dropbox'
 cask 'fantastical'
