@@ -1,5 +1,6 @@
 yabai -m config layout bsp
 
+yabai -m config auto_balance on
 yabai -m config window_shadow float
 
 yabai -m rule --add app="zoom.us" manage=off
