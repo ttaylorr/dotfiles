@@ -3,7 +3,7 @@
 function manage_gpg_agent () {
   export GPG_TTY="$(tty)"
 
-  if test "$SSH_AUTH_SOCK" = "/tmp/*"; then
+  if echo "$SSH_AUTH_SOCK" | grep -q "^/tmp/"; then
     # Assume hosts with $SSH_AUTH_SOCK pointed at something in '/tmp'
     # know what they are doing, and don't manage their ssh-agent for
     # them.
