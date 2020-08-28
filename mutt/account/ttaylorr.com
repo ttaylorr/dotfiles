@@ -1,5 +1,5 @@
 set imap_user = 'me@ttaylorr.com'
-set imap_pass = `security find-internet-password -w -a me@ttaylorr.com -s imap.gmail.com`
+set imap_pass = `pass show imap.gmail.com/ttaylorr`
 set imap_keepalive = 300
 
 set folder = imaps://imap.gmail.com/
