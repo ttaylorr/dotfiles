@@ -124,3 +124,10 @@ function exec_after_prompt() {
 }
 
 export PS1='$(abbrev_path)$(on_host)$(parse_git_branch) $ $(exec_after_prompt)'
+
+BASE16_SHELL="$HOME/.base16-shell"
+if test -s "$BASE16_SHELL/profile_helper.sh"
+then
+  eval "$("$BASE16_SHELL/profile_helper.sh")"
+fi
+base16_atelier-forest-light
