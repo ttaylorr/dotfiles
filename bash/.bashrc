@@ -43,6 +43,11 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 alias g=git
-alias ls="ls -G"
+if test "Linux" = "$(uname -s)"
+then
+  alias ls="ls --color"
+else
+  alias ls="ls -G"
+fi
 alias grep="grep --color"
 alias vi=vim
