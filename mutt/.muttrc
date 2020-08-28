@@ -1,13 +1,3 @@
-color body magenta          default ^(>\ ?){1}.*
-color body yellow           default ^(>\ ?){2}.*
-color body red              default ^(>\ ?){3}.*
-color body brightred        default ^(>\ ?){4}.*
-color body yellow           default ^(>\ ?){5}.*
-color body cyan             default ^(>\ ?){6}.*
-color body green            default ^(>\ ?){7}.*
-color body brightcyan       default ^(>\ ?){8}.*
-color body brightgreen      default ^(>\ ?){9}.*
-
 set pager_index_lines = 16
 bind pager k previous-line
 bind pager j next-line
@@ -73,23 +63,6 @@ bind index \CR recall-message
 
 set pager_stop = yes
 
-color index brightblue brightwhite ~N
-color index brightwhite black ~D
-
-color normal default brightwhite
-color hdrdefault brightblue brightwhite
-color signature brightyellow brightwhite
-color tree brightblue brightwhite
-
-color body brightwhite default ^(diff).*
-color body white default ^---.*
-# color body white default ^\+\+\+.*
-color body green default ^(>\ ?)*[\+].*
-color body red default ^(>\ ?)*[\-].*
-color body cyan  default ^(@@).*
-color body brightwhite default ^(Signed-off-by).*
-color body brightwhite default ^(Cc)
-
 set wait_key = no
 set mbox_type = Maildir
 set timeout = 3
@@ -121,3 +94,46 @@ unignore from: to: cc: date: subject:
 hdr_order from: to: cc: date: subject:
 
 bind editor <space> noop
+
+color normal      color07  color00
+
+color tilde       color08  color00
+color attachment  color08  color00
+color tree        color01  color00
+color markers     color08  color00
+
+color bold        color21  color00
+color underline   color21  color00
+
+color index  color08  color00  "~R"
+color index  color21  color00  "(~U|~N|~O)"
+color index  color21  color00  "~v~(~U|~N|~O)"
+
+color body color08 default ^(diff\ ).*
+color body white default ^---.*
+color body green default ^(>\ ?)*[\+].*
+color body red default ^(>\ ?)*[\-].*
+color body default default ^(>\ ?)*[\-]-.*
+color body cyan  default ^(@@).*
+color body color08 default ^(.*-by):\ .*
+color body color08 default ^(Cc)
+
+color quoted   color06  color00
+color quoted1  color03  color00
+color quoted2  color04  color00
+color quoted3  color16  color00
+color quoted4  color01  color00
+color quoted5  color17  color00
+color quoted6  color05  color00
+color quoted7  color04  color00
+
+color error       color01  color00
+color message     color04  color00
+color search      color08  color03
+color status      color20  color19
+color indicator   color21  color19
+
+color hdrdefault  color07  color00
+color header      color07  color00  "^"
+color header      color21  color00  "^(From)"
+color header      color04  color00  "^(Subject)"
