@@ -6,7 +6,7 @@ DESTDIR ?= $(HOME)
 
 include bash/rules.mak
 include zsh/rules.mak
-ifeq ($(filter-out undefined,$(foreach v,NO_MACOS NO_HOMEBREW,$(origin $(v)))),)
+ifndef NO_MACOS
 include brew/rules.mak
 endif
 include bin/rules.mak
