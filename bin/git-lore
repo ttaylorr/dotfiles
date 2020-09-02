@@ -11,4 +11,9 @@ mbox="$(mktemp /tmp/git-lore.mbox.XXXXXX)"
 trap "rm -f $mbox" EXIT
 
 curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >$mbox
-mutt -f $mbox
+mutt -f $mbox -F <(cat <<-EOF
+  source ~/.muttrc
+
+  set postponed=$mbox
+EOF
+)
