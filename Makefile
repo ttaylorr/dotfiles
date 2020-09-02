@@ -6,7 +6,7 @@ DESTDIR ?= $(HOME)
 
 include bash/rules.mak
 include zsh/rules.mak
-ifndef NO_MACOS
+ifdef MACOS
 include brew/rules.mak
 endif
 include bin/rules.mak
@@ -18,7 +18,7 @@ include msmtp/rules.mak
 include mutt/rules.mak
 include urlview/rules.mak
 endif
-ifndef NO_MACOS
+ifdef MACOS
 include defaults/rules.mak
 include skhd/rules.mak
 include yabai/rules.mak

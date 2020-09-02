@@ -7,7 +7,7 @@ INSTALL_PAIRS += bin/git-print-patch .bin/git-print-patch
 INSTALL_PAIRS += bin/git-reroll .bin/git-reroll
 INSTALL_PAIRS += bin/git-who .bin/git-who
 
-ifndef NO_MACOS
+ifdef MACOS
 INSTALL_PAIRS += bin/edit-clipboard .bin/edit-clipboard
 INSTALL_PAIRS += bin/git-jump.macos .bin/git-jump
 else
