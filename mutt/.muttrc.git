@@ -1,3 +1,6 @@
-source ~/.muttrc
+source ~/.mutt/base
+
+set from = "me@ttaylorr.com"
+set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"
 
 macro index,pager B ":set editor=true<enter><resend-message><send-message>:set editor=$EDITOR<enter>"
