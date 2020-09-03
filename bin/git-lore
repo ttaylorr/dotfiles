@@ -14,6 +14,9 @@ curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >
 mutt -f $mbox -F <(cat <<-EOF
   source ~/.mutt/base
 
+  set from = "me@ttaylorr.com"
+  set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"
+
   set postponed=$mbox
 EOF
 )
