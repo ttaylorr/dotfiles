@@ -12,7 +12,7 @@ trap "rm -f $mbox" EXIT
 
 curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >$mbox
 mutt -f $mbox -F <(cat <<-EOF
-  source ~/.muttrc
+  source ~/.mutt/base
 
   set postponed=$mbox
 EOF

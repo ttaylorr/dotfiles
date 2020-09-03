@@ -1,0 +1,137 @@
+set pager_index_lines = 16
+bind pager k previous-line
+bind pager j next-line
+bind index,pager \Cy previous-line
+bind index,pager \Ce next-line
+bind pager R group-reply
+
+macro pager \Co "|urlview<enter>" "call urlview to open links"
+
+set folder = ~/.mail
+
+set editor = "$EDITOR -c 'set tw=72'"
+
+set alias_file = ~/.mutt/alias
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set sig_dashes = no
+set signature = ~/.mutt/signature
+
+set charset = utf-8
+set send_charset = utf-8
+
+folder-hook github.com/ source ~/.mutt/account/github.com
+folder-hook ttaylorr.com/ source ~/.mutt/account/ttaylorr.com
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account/github.com<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account/ttaylorr.com<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account/cs.washington.edu<enter><change-folder>!<enter>'
+
+bind index gg first-entry
+bind index G last-entry
+
+bind pager gg top
+bind pager G bottom
+
+macro index x "<tag-entry><previous-entry>"
+
+bind index k previous-entry
+bind index j next-entry
+bind generic,index,pager \Cd half-down
+bind generic,index,pager \Cu half-up
+
+macro index I "<tag-prefix><clear-flag>N"
+macro pager I "<clear-flag>N<exit>"
+macro index U "<tag-prefix><set-flag>N<previous-entry>"
+macro pager U "<set-flag>N<exit>"
+macro pager E ":set edit_headers=yes<enter><edit>:set edit_headers=no<enter><sync-mailbox>"
+
+macro pager,index D '<shell-escape>rm -rf $HOME/patch<enter>'
+macro pager,index A '<pipe-message>cat > ~/patch<enter>'
+macro index,pager b ":set edit_headers=yes<enter><resend-message>:set edit_headers=no<enter>"
+
+bind index <space> collapse-thread
+bind index <tab> sync-mailbox
+bind index <Esc>r read-subthread
+
+bind index R group-reply
+bind index \CR recall-message
+
+set pager_stop = yes
+
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+unset mark_old
+set beep_new
+
+set sendmail_wait = 0
+unset record
+
+set sort = threads
+set sort_aux = date
+set sort_re
+
+set realname = "Taylor Blau"
+
+set wrap = 80
+set smart_wrap = yes
+set wrap_headers = 78
+
+unset markers
+
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+bind editor <space> noop
+
+color normal      color07  color00
+
+color tilde       color08  color00
+color attachment  color08  color00
+color tree        color01  color00
+color markers     color08  color00
+
+color bold        color21  color00
+color underline   color21  color00
+
+color index  color08  color00  "~R"
+color index  color21  color00  "(~U|~N|~O)"
+color index  color21  color00  "~v~(~U|~N|~O)"
+
+color body color08 default ^(diff\ ).*
+color body white default ^---.*
+color body green default ^(>\ ?)*[\+].*
+color body red default ^(>\ ?)*[\-].*
+color body default default ^(>\ ?)*[\-]-.*
+color body cyan  default ^(@@).*
+color body color08 default ^(.*-by):\ .*
+color body color08 default ^(Cc)
+
+color quoted   color06  color00
+color quoted1  color03  color00
+color quoted2  color04  color00
+color quoted3  color16  color00
+color quoted4  color01  color00
+color quoted5  color17  color00
+color quoted6  color05  color00
+color quoted7  color04  color00
+
+color error       color01  color00
+color message     color04  color00
+color search      color08  color03
+color status      color20  color19
+color indicator   color21  color19
+
+color hdrdefault  color07  color00
+color header      color07  color00  "^"
+color header      color21  color00  "^(From)"
+color header      color04  color00  "^(Subject)"
