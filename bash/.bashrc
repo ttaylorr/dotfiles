@@ -20,12 +20,12 @@ manage_gpg_agent
 
 export EDITOR="$(which vim)"
 
-export PATH="/usr/local/bin:$PATH"
-export PATH="$PATH:$HOME/go/bin"
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:/Library/TeX/texbin"
+export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/go/bin"
+if test -d "/Library/TeX"; then
+  export PATH="$PATH:/Library/TeX/texbin"
+fi
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
