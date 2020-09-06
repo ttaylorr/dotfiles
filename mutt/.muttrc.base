@@ -5,8 +5,6 @@ bind index,pager \Cy previous-line
 bind index,pager \Ce next-line
 bind pager R group-reply
 
-macro pager \Co "|urlview<enter>" "call urlview to open links"
-
 set folder = ~/.mail
 
 set editor = "$EDITOR -c 'set tw=72'"

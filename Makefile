@@ -16,7 +16,6 @@ include editorconfig/rules.mak
 ifndef NO_MUTT
 include msmtp/rules.mak
 include mutt/rules.mak
-include urlview/rules.mak
 endif
 ifdef MACOS
 include defaults/rules.mak
