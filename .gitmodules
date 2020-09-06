@@ -7,12 +7,6 @@
 [submodule "vim/pack/ttaylorr/start/editorconfig-vim"]
 	path = vim/pack/ttaylorr/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "vim/pack/ttaylorr/start/vim-signature"]
-	path = vim/pack/ttaylorr/start/vim-signature
-	url = https://github.com/kshenoy/vim-signature.git
-[submodule "vim/pack/ttaylorr/start/nerdtree"]
-	path = vim/pack/ttaylorr/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/pack/ttaylorr/start/vim-multiple-cursors"]
 	path = vim/pack/ttaylorr/start/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
@@ -22,24 +16,15 @@
 [submodule "vim/pack/ttaylorr/start/vim-colors_atelier-schemes"]
 	path = vim/pack/ttaylorr/start/vim-colors_atelier-schemes
 	url = https://github.com/atelierbram/vim-colors_atelier-schemes
-[submodule "vim/pack/ttaylorr/start/ack.vim"]
-	path = vim/pack/ttaylorr/start/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
 	path = vim/pack/ttaylorr/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
-[submodule "vim/pack/ttaylorr/start/tagbar"]
-	path = vim/pack/ttaylorr/start/tagbar
-	url = https://github.com/majutsushi/tagbar
 [submodule "vim/pack/ttaylorr/start/whitespaste.vim"]
 	path = vim/pack/ttaylorr/start/whitespaste.vim
 	url = https://github.com/AndrewRadev/whitespaste.vim.git
 [submodule "vim/pack/ttaylorr/start/vim-gitgutter"]
 	path = vim/pack/ttaylorr/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim/pack/ttaylorr/start/vimbufsync"]
-	path = vim/pack/ttaylorr/start/vimbufsync
-	url = https://github.com/let-def/vimbufsync
 [submodule "vim/pack/ttaylorr/start/vim-go"]
 	path = vim/pack/ttaylorr/start/vim-go
 	url = https://github.com/fatih/vim-go.git
