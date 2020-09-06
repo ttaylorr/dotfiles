@@ -8,11 +8,13 @@ setopt SHARE_HISTORY
 SAVEHIST=1000000
 HISTSIZE=1000000
 
-if [[ -z "$HISTFILE" ]]; then
+if test -z "$HISTFILE"
+then
   HISTFILE="$HOME/.zsh_history"
 fi
 
-if [[ ! -f "$HISTFILE" ]]; then
+if ! test -f "$HISTFILE"
+then
   echo >&2 "NOTE: \$HISTFILE does not exist, creating it ..."
 
   mkdir -p "$(dirname "$HISTFILE")"
