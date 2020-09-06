@@ -18,14 +18,6 @@ function manage_gpg_agent () {
 }
 manage_gpg_agent
 
-function reset_gpg_tty () {
-  if ! test -x "$(which gpg-connect-agent)"; then
-    echo >&2 "error: gpg-connect-agent is not executable!"
-    return
-  fi
-  echo "UPDATESTARTUPTTY" | gpg-connect-agent
-}
-
 export EDITOR="$(which vim)"
 alias e="$EDITOR"
 
