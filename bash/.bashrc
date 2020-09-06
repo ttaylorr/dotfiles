@@ -21,10 +21,6 @@ manage_gpg_agent
 export EDITOR="$(which vim)"
 alias e="$EDITOR"
 
-function d() {
-  e $@ .
-}
-
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
