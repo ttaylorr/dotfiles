@@ -19,7 +19,6 @@ function manage_gpg_agent () {
 manage_gpg_agent
 
 export EDITOR="$(which vim)"
-alias e="$EDITOR"
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
