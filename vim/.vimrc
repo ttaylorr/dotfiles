@@ -13,6 +13,7 @@ set cinoptions+=(0
 
 set autoindent
 set backspace=indent,eol,start
+set cursorline
 set hlsearch
 set incsearch
 set lazyredraw
