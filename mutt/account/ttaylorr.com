@@ -5,6 +5,7 @@ set imap_keepalive = 300
 set folder = imaps://imap.gmail.com/
 set spoolfile = +INBOX
 set record = "+[Gmail]/Sent Mail"
+set copy = no
 set postponed = "+[Gmail]/Drafts"
 
 set from = "me@ttaylorr.com"
