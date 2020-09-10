@@ -41,7 +41,7 @@ let g:go_jump_to_error = 0
 let g:go_fmt_command = "goimports"
 let g:go_template_autocreate = 0
 
-set wildignore+=*/node_modules/*,*/bower_components/*
+set wildignore+=*.a,*.o,*.so
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()
