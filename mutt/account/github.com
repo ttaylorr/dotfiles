@@ -23,7 +23,7 @@ macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index e "<tag-prefix><delete-message><Tab>" "Archive"
-macro pager e "<delete-message><Tab>" "Archive"
+macro pager e "<delete-message>" "Archive"
 
 macro index,pager < "<tag-prefix><copy-message>~/git-new.mbox<enter>" "mark new"
 
