@@ -8,6 +8,7 @@ include bash/rules.mak
 include zsh/rules.mak
 ifdef MACOS
 include brew/rules.mak
+include alacritty/rules.mak
 endif
 include bin/rules.mak
 include git/rules.mak
