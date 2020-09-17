@@ -15,6 +15,7 @@ yabai -m rule --add app="Google Chrome" space=1
 yabai -m rule --add app="Messages" space=1
 yabai -m rule --add app="Slack" space=1
 yabai -m rule --add app="Terminal" space=2
+yabai -m rule --add app="Alacritty" space=2
 yabai -m rule --add app="iTerm" space=2
 yabai -m rule --add app="Fantastical" space=3
 yabai -m rule --add app="Spotify" space=3
