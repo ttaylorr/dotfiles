@@ -38,3 +38,8 @@ else
 fi
 alias grep="grep --color"
 alias vi=vim
+
+if test -x "$(which mutt)"
+then
+  alias mutt="TERM=screen-256color $(which mutt)"
+fi
