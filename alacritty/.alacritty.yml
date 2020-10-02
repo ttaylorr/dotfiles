@@ -24,4 +24,4 @@ cursor:
 mouse:
   url:
     launcher:
-      program: None
+      program: open
