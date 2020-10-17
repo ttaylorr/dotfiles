@@ -43,3 +43,5 @@ if test -x "$(which mutt)"
 then
   alias mutt="TERM=screen-256color $(which mutt)"
 fi
+
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
