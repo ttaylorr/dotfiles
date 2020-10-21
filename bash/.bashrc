@@ -26,7 +26,8 @@ export PATH="$PATH:$HOME/go/bin"
 if test -d "/Library/TeX"; then
   export PATH="$PATH:/Library/TeX/texbin"
 fi
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/local/git/current/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 alias g=git
