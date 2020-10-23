@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sed "s/^Message-[Ii][Dd]: <\(.*\)>/\1/;t;d"

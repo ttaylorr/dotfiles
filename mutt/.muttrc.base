@@ -52,6 +52,8 @@ macro pager,index D '<shell-escape>rm -rf $HOME/patch<enter>'
 macro pager,index A '<copy-message>~/patch<enter><enter>'
 macro index,pager b ":set edit_headers=yes<enter><resend-message>:set edit_headers=no<enter>"
 
+macro index,pager L "<pipe-message>$HOME/.bin/extract-message-id >/tmp/message-id<enter><shell-escape>git lore https://lore.kernel.org/git/$(cat /tmp/message-id)<enter>"
+
 bind index <space> collapse-thread
 bind index <tab> sync-mailbox
 bind index <Esc>r read-subthread
