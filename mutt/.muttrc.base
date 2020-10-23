@@ -37,6 +37,8 @@ macro index x "<tag-entry><previous-entry>"
 
 bind index k previous-entry
 bind index j next-entry
+bind index N next-thread
+bind index P previous-thread
 bind generic,index,pager \Cd half-down
 bind generic,index,pager \Cu half-up
 
