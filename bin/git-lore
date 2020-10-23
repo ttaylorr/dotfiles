@@ -10,7 +10,7 @@ fi
 mbox="$(mktemp /tmp/git-lore.mbox.XXXXXX)"
 trap "rm -f $mbox" EXIT
 
-curl "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >$mbox
+curl -Ss "$(echo $1 | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')/t.mbox.gz" | gunzip >$mbox
 TERM=screen-256color mutt -f $mbox -F <(cat <<-EOF
   source ~/.mutt/base
 
