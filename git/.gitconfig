@@ -14,6 +14,7 @@
 	ll = "!git always --no-pager log -1 --pretty='tformat:%h (%s, %ad)' --date=short"
 	pp = print-patch
 	st = status
+	w = "!tig"
 	vgrep = jump grep
 	vdiff = jump diff
 	vmerge = jump merge
