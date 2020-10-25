@@ -34,5 +34,7 @@
 [rerere]
   enabled = 1
   autoupdate = 1
+[tig]
+	line-graphics = utf-8
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
