@@ -86,9 +86,7 @@ set sort_re
 
 set realname = "Taylor Blau"
 
-set wrap = 80
 set smart_wrap = yes
-set wrap_headers = 78
 
 unset markers
 
