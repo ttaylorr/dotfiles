@@ -22,4 +22,5 @@ git format-patch \
   $range_diff_args \
   $version_args \
   $@ >"$mbox"
-mutt -F ~/.mutt/git -f "$mbox"
+
+TERM=screen-256color mutt -F ~/.mutt/git -f "$mbox"
