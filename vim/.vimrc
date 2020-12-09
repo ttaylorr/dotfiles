@@ -127,6 +127,8 @@ nnoremap <space> :nohl<cr>
 
 nnoremap ; :
 
+nnoremap <c-o> :CtrlPTag<cr>
+
 map <leader>m :term ++close ++rows=5 make<cr>
 
 function! TrimWhitespace()
