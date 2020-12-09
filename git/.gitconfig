@@ -27,6 +27,7 @@
 	autosetuprebase = always
 [core]
 	excludesfile = ~/.gitignore
+	pager = less -+F
 [diff]
 	compactionHeuristic = true
 	algorithm = patience
