@@ -40,7 +40,7 @@ fi
 alias grep="grep --color"
 alias vi=vim
 
-for exe in mutt newsboat
+for exe in mutt newsboat weechat
 do
   if test -x "$(which $exe)"
   then
