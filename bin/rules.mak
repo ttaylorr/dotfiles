@@ -6,6 +6,7 @@ INSTALL_PAIRS += bin/git-ownership .bin/git-ownership
 INSTALL_PAIRS += bin/git-print-patch .bin/git-print-patch
 INSTALL_PAIRS += bin/git-reroll .bin/git-reroll
 INSTALL_PAIRS += bin/git-who .bin/git-who
+INSTALL_PAIRS += bin/iplog .bin/iplog
 
 ifdef MACOS
 INSTALL_PAIRS += bin/edit-clipboard .bin/edit-clipboard

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+auth_logs () {
+  for log in $(sudo ls /var/log/auth.log*)
+  do
+    if echo $log | grep -q ".gz$"
+    then
+      sudo gzip -cd $log
+    else
+      sudo cat $log
+    fi
+  done
+}
+
+auth_logs |
+grep "Accepted publickey" |
+grep -Eo '[0-9]{3}\.([0-9]{1,3}\.?){3}'
