@@ -1,6 +1,8 @@
 [user]
 	name = Taylor Blau
 	email = me@ttaylorr.com
+[advice]
+	addIgnoredFile = false
 [alias]
 	a = add
 	aa = add --all
