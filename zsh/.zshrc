@@ -73,10 +73,10 @@ parse_git_branch() {
     branch="%{$fg[green]%}$branch"
   fi
 
-  if [ "$HOME/github/github" != "$(git rev-parse --show-toplevel)" ]; then
-    if ! [[ -z "$(git status -s)" ]]; then
+  if test "false" = "$(git rev-parse --is-bare-repository)" &&
+    test "$HOME/github/github" != "$(git rev-parse --show-toplevel)" &&
+    test -n "$(git status -s)"; then
       branch="$branch%{$fg[red]%}!"
-    fi
   fi
 
   echo " ($branch%{$reset_color%})"
