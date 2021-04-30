@@ -22,7 +22,7 @@
 	vmerge = jump merge
 [push]
 	default = current
-	pushOption = ready
+	pushOption = pull.ready
 [pull]
 	default = current
 	rebase = true
