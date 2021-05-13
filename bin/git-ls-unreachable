@@ -1,0 +1,5 @@
+#!/bin/bash
+
+comm -13 \
+  <(git rev-list --all --objects --use-bitmap-index --no-object-names | sort) \
+  <(git cat-file --batch-all-objects --batch-check='%(objectname)')
