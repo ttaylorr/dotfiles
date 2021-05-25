@@ -40,6 +40,7 @@ endif
 let g:go_jump_to_error = 0
 let g:go_fmt_command = "goimports"
 let g:go_template_autocreate = 0
+let g:vim_markdown_folding_disabled = 1
 
 set wildignore+=*.a,*.o,*.so
 
