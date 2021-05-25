@@ -1,0 +1,22 @@
+#!/usr/bin/env perl
+
+my $verbatim;
+my $dangling;
+
+sub flush {
+    print "\n" if $dangling;
+    $dangling = 0;
+}
+
+while(<>) {
+    if ($verbatim) { print; $verbatim = !/^[> ]*```/ }
+    elsif (/^[> ]*```/) { flush; print; $verbatim = 1 }
+    elsif (/^[> ]*$/) { flush; print; }
+    else {
+        chomp;
+        s/^[>\s]*/ / if $dangling;
+        print;
+        $dangling = 1;
+    }
+}
+flush;
