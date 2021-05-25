@@ -1,4 +1,4 @@
-set pager_index_lines = 16
+set pager_index_lines = 4
 bind pager k previous-line
 bind pager j next-line
 bind index,pager \Cy previous-line
