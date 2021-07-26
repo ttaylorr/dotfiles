@@ -63,7 +63,21 @@ git_reroll__last() {
 }
 
 git_reroll__range_diff() {
-  git range-diff master $(git_reroll__last | cut -d' ' -f1) ${1:-HEAD}
+  upstream=HEAD
+  case "$1" in
+    -*)
+      # options are passed directly to `git range-diff`
+      ;;
+    *)
+      if test -n "$1"
+      then
+        upstream="$1"
+      fi
+      shift
+      ;;
+  esac
+
+  git range-diff @{u} $(git_reroll__last | cut -d' ' -f1) "$upstream" "$@"
 }
 
 main "$@";
