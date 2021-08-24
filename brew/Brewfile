@@ -42,6 +42,6 @@ cask 'slack'
 cask 'spotify'
 cask 'vmware-fusion'
 cask 'wireshark'
-cask 'zoomus'
+cask 'zoom'
 
 cask 'font-fira-code'
