@@ -90,3 +90,5 @@ then
   eval "$("$BASE16_SHELL/profile_helper.sh")"
 fi
 base16_atelier-forest-light
+
+test -n "$ALACRITTY_LOG" && printf "\e[?1042l"
