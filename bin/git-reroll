@@ -52,11 +52,8 @@ git_reroll__list() {
       | awk '{ print $3 }' \
       | sed -e 's,^refs/heads/,,g'
     )"
-  PREFIX="$(echo "$TIP" | grep -o '\(.*\)/')"
 
-  git for-each-ref "refs/tags/$PREFIX" \
-    | grep "refs/tags/$TIP\.v[[:digit:]]*" \
-    | awk '{ print $3 " " $1 }'
+  git for-each-ref --format='%(refname:short) %(objectname)' "refs/tags/$TIP.v*"
 }
 
 git_reroll__last() {
