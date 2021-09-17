@@ -10,6 +10,8 @@ main() {
       shift; git_reroll__range_diff $@; ;;
     --list)
       shift; git_reroll__list $@; ;;
+    --update|--push)
+      shift; git_reroll__update "$@" ;;
     --last|*)
       shift; git_reroll__last $@; ;;
   esac
@@ -76,6 +78,11 @@ git_reroll__range_diff() {
   esac
 
   git range-diff @{u} $(git_reroll__last | cut -d' ' -f1) "$upstream" "$@"
+}
+
+git_reroll__update() {
+  git push -f "${1:-ttaylorr}" "$(git symbolic-ref --short HEAD)" \
+    $(git_reroll__list | cut -d' ' -f1)
 }
 
 main "$@";
