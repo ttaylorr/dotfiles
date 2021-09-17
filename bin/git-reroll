@@ -44,6 +44,7 @@ git_reroll__make() {
   count="$(next_reroll_count "$1")"
 
   git tag "${topic}.v${count:-1}"
+  git_reroll__last
 }
 
 git_reroll__list() {
