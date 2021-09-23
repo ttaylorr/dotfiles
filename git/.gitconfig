@@ -10,6 +10,7 @@
 	br = branch
 	ci = commit
 	co = checkout
+	cp = cherry-pick
 	di = diff
 	lb = checkout -
 	lg = log --oneline
