@@ -81,6 +81,9 @@ set beep_new
 set sendmail_wait = 0
 unset record
 
+set autoedit
+set edit_headers
+
 set sort = threads
 set sort_aux = date-sent
 set sort_re
