@@ -12,8 +12,8 @@ function manage_gpg_agent () {
 
   if test -x "$(which gpg-agent)"; then
     eval $(gpg-agent --daemon -q 2>/dev/null)
-    export GPG_AGENT_INFO="$(gpgconf --list-dirs agent-socket):0:1"
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export GPG_AGENT_INFO="$(gpgconf --list-dirs agent-socket 2>/dev/null):0:1"
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket 2>/dev/null)"
   fi
 }
 manage_gpg_agent
