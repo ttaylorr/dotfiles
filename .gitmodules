@@ -28,3 +28,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-markdown"]
 	path = vim/pack/ttaylorr/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "vim/pack/ttaylorr/start/vim-beancount"]
+	path = vim/pack/ttaylorr/start/vim-beancount
+	url = https://github.com/nathangrigg/vim-beancount
