@@ -21,7 +21,3 @@ cursor:
     program: /usr/local/bin/zsh
     args:
       - --login
-mouse:
-  url:
-    launcher:
-      program: open
