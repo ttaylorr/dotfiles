@@ -1,3 +1,8 @@
 #!/bin/sh
 
-exec sed "s/^Message-[Ii][Dd]: <\(.*\)>/\1/;t;d"
+if command -v formail >/dev/null
+then
+  formail -c -x Message-ID | sed "s/\s*<\(.*\)>$/\1/;t;d"
+else
+  sed "s/^Message-[Ii][Dd]: <\(.*\)>/\1/;t;d" | head -n 1
+fi
