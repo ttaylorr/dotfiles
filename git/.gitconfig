@@ -1,6 +1,7 @@
 [user]
 	name = Taylor Blau
 	email = me@ttaylorr.com
+	signingKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBGMMFNgtIWTlpBDtv5S49wOqza+OvmfWwjx2dYALZTWRLJPpcp5fUEe/mgFFhiV9NpLnAQ87b+N352Kfm3TdI89scZVuBMyAyW8D8UIUUQkmNTEnDeMEaPTU0QKZzOPFYLq33wxQwl151ywhrm/DN210D1lkHKfSnd1Hj3DvMrPPIh5/Im4csrfA17Jb49vEzVcb96qDGVr85W2T9ttoeUL8wvW+pO/5A4cwWi/B/jMdEpmqS8/IYstlcKF/QbVY09Od0rsnPtmpkE8LJmueaiyopyzw9eYUW/ppfKe7TjqN5PE37PVW9z9ax8KGQCHLPAt6DTKWwCaoNhR9ICUh3"
 [advice]
 	addIgnoredFile = false
 [alias]
@@ -44,5 +45,9 @@
 	line-graphics = utf-8
 	main-view-id = yes
 	main-view-id-width = 10
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = "~/.ssh/allowed_signers"
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
