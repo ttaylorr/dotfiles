@@ -92,6 +92,8 @@ set realname = "Taylor Blau"
 
 set smart_wrap = yes
 
+set include = yes
+
 unset markers
 
 ignore *
