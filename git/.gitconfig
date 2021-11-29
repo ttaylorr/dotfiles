@@ -23,6 +23,8 @@
 	vgrep = jump grep
 	vdiff = jump diff
 	vmerge = jump merge
+[commit]
+	verbose = true
 [push]
 	default = current
 [pull]
