@@ -21,3 +21,13 @@ cursor:
     program: /usr/local/bin/zsh
     args:
       - --login
+
+hints:
+  enabled:
+    - regex: "[0-9a-f]{40}([0-9a-f]{24})?"
+      action: copy
+      mouse:
+        enabled: true
+      binding:
+        key: S
+        mods: control
