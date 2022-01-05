@@ -24,7 +24,7 @@ cursor:
 
 hints:
   enabled:
-    - regex: "[0-9a-f]{40}([0-9a-f]{24})?"
+    - regex: "([0-9a-f]{40}([0-9a-f]{24})?)|([0-9a-f]{7,10})"
       action: copy
       mouse:
         enabled: true
