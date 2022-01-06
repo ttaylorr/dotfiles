@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+test -z "$1" && { echo >&2 "usage: $0 <topic> [upstream]"; exit 1; }
+
+git checkout -b "$1" "${2:-origin/master}"
+git am -3 ~/patch

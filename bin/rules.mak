@@ -1,4 +1,5 @@
 INSTALL_PAIRS += bin/best-of-five .bin/best-of-five
+INSTALL_PAIRS += bin/git-apply-to .bin/git-apply-to
 INSTALL_PAIRS += bin/git-diff-fancy .bin/git-diff-fancy
 INSTALL_PAIRS += bin/git-lore .bin/git-lore
 INSTALL_PAIRS += bin/git-ls-unreachable .bin/git-ls-unreachable
