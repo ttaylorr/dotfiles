@@ -16,7 +16,7 @@
 	di = diff
 	lb = checkout -
 	lg = log --oneline
-	ll = "!git always --no-pager log -1 --pretty='tformat:%h (%s, %ad)' --date=short"
+	ll = "!git always --no-pager log -1 --pretty=reference"
 	midx = multi-pack-index
 	pp = print-patch
 	st = status
