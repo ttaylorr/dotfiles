@@ -19,6 +19,7 @@
 	ll = "!git always --no-pager log -1 --pretty=reference"
 	midx = multi-pack-index
 	pp = print-patch
+	seq = sequence
 	st = status
 	w = "!tig"
 	vgrep = jump grep

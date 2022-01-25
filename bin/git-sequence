@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+git rev-parse --git-dir >/dev/null
+
+if test 0 -eq "$#"
+then
+  echo >&2 "fatal: usage git sequence <args...>"
+  exit 1
+fi
+
+if test -f "$(git rev-parse --git-path MERGE_HEAD)"
+then
+  cmd=merge
+elif test -f "$(git rev-parse --git-path BISECT_LOG)"
+then
+  cmd=bisect
+elif test -d "$(git rev-parse --git-path rebase-apply)"
+then
+  if test -f "$(git rev-parse --git-path rebase-apply/applying)"
+  then
+    cmd=am
+  else
+    cmd=rebase
+  fi
+elif test -d "$(git rev-parse --git-path rebase-merge)"
+then
+  cmd=rebase
+elif test -f "$(git rev-parse --git-path CHERRY_PICK_HEAD)"
+then
+  cmd=cherry-pick
+elif test -f "$(git rev-parse --git-path REVERT_HEAD)"
+then
+  cmd=revert
+fi
+
+if test "x$1" = "x--debug"
+then
+  echo "${cmd:-(none)}"
+else
+  if test -z "$cmd"
+  then
+    echo >&2 "fatal: the sequencer is inactive"
+    exit 1
+  fi
+
+  exec git "$cmd" "$@"
+fi
