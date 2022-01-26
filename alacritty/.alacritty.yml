@@ -46,3 +46,6 @@ hints:
       binding:
         key: S
         mods: control
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
