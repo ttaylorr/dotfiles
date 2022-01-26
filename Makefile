@@ -7,7 +7,9 @@ DESTDIR ?= $(HOME)
 include bash/rules.mak
 include zsh/rules.mak
 ifdef MACOS
+ifdef BREW
 include brew/rules.mak
+endif # BREW
 include alacritty/rules.mak
 endif # MACOS
 include bin/rules.mak
