@@ -9,7 +9,7 @@ include zsh/rules.mak
 ifdef MACOS
 include brew/rules.mak
 include alacritty/rules.mak
-endif
+endif # MACOS
 include bin/rules.mak
 include git/rules.mak
 include vim/rules.mak
@@ -17,12 +17,12 @@ include editorconfig/rules.mak
 ifndef NO_MUTT
 include msmtp/rules.mak
 include mutt/rules.mak
-endif
+endif # NO_MUTT
 ifdef MACOS
 include defaults/rules.mak
 include skhd/rules.mak
 include yabai/rules.mak
-endif
+endif # MACOS
 
 .PHONY : all
 all : install $(POST_INSTALL)
