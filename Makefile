@@ -4,6 +4,12 @@
 
 DESTDIR ?= $(HOME)
 
+ifndef MACOS
+ifeq ($(shell uname -s), Darwin)
+	MACOS=YesPlease
+endif
+endif
+
 include bash/rules.mak
 include zsh/rules.mak
 ifdef MACOS
