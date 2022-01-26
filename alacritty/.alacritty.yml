@@ -3,12 +3,12 @@ env:
 
 font:
   normal:
-    family: Menlo
+    family: Inconsolata
     style: Regular
   bold:
-    family: Menlo
+    family: Inconsolata
     style: Bold
-  size: 15.0
+  size: 17.0
   use_thin_strokes: true
 
 bell:
