@@ -23,6 +23,8 @@ shell:
   args:
     - --login
 
+working_directory: /Users/ttaylorr
+
 hints:
   enabled:
     - regex: "([0-9a-f]{40}([0-9a-f]{24})?)|([0-9a-f]{7,10})"
