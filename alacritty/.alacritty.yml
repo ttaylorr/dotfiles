@@ -17,10 +17,11 @@ bell:
 cursor:
   style: Beam
   unfocused_hollow: true
-  shell:
-    program: /usr/local/bin/zsh
-    args:
-      - --login
+
+shell:
+  program: /usr/local/bin/zsh
+  args:
+    - --login
 
 hints:
   enabled:
