@@ -153,3 +153,6 @@ autocmd FileType tex hi clear texBoldStyle
 hi SpellBad ctermbg=224
 
 set timeoutlen=1000 ttimeoutlen=0
+
+set mouse=a
+set nowrap
