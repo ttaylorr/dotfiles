@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec ruby -run -e httpd -- --bind-address=$(tailscale ip -4) --port=8080 "$@"
