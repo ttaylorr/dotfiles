@@ -144,14 +144,30 @@ autocmd BufWritePre    * :call TrimWhitespace()
 
 match ErrorMsg '\s\+$'
 
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
+
+function! s:base16_customize() abort
+  hi clear SpellBad
+  hi clear SpellLocal
+  hi clear SpellCap
+  hi clear SpellRare
+
+  call Base16hi("SpellBad", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
+  call Base16hi("SpellLocal", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
+  call Base16hi("SpellCap", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
+  call Base16hi("SpellRare", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
+endfunction
+
 set background=light
 set termguicolors
+
+autocmd ColorScheme * call s:base16_customize()
+
 colorscheme base16-atelier-forest-light
 
 autocmd FileType tex hi clear texItalStyle
 autocmd FileType tex hi clear texBoldStyle
-
-hi SpellBad ctermbg=224
 
 set timeoutlen=1000 ttimeoutlen=0
 
