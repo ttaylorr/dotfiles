@@ -58,9 +58,6 @@ shell:
 
 working_directory: /Users/ttaylorr
 
-window:
-  decorations: none
-
 hints:
   enabled:
     - regex: "([0-9a-f]{40}([0-9a-f]{24})?)|([0-9a-f]{7,10})"
