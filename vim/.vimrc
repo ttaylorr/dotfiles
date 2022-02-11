@@ -145,7 +145,8 @@ autocmd BufWritePre    * :call TrimWhitespace()
 match ErrorMsg '\s\+$'
 
 set background=light
-colorscheme Atelier_ForestLight
+set termguicolors
+colorscheme base16-atelier-forest-light
 
 autocmd FileType tex hi clear texItalStyle
 autocmd FileType tex hi clear texBoldStyle

@@ -10,9 +10,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-endwise"]
 	path = vim/pack/ttaylorr/start/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "vim/pack/ttaylorr/start/vim-colors_atelier-schemes"]
-	path = vim/pack/ttaylorr/start/vim-colors_atelier-schemes
-	url = https://github.com/atelierbram/vim-colors_atelier-schemes
 [submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
 	path = vim/pack/ttaylorr/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
@@ -31,3 +28,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-beancount"]
 	path = vim/pack/ttaylorr/start/vim-beancount
 	url = https://github.com/nathangrigg/vim-beancount
+[submodule "vim/pack/ttaylorr/start/base16-vim"]
+	path = vim/pack/ttaylorr/start/base16-vim
+	url = git@github.com:fnune/base16-vim.git
