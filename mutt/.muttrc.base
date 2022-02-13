@@ -85,7 +85,8 @@ set autoedit
 set edit_headers
 
 set sort = threads
-set sort_aux = date-sent
+set sort_aux = date
+set sort_thread_groups = reverse-last-date
 set sort_re
 
 set realname = "Taylor Blau"
