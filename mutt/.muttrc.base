@@ -7,7 +7,7 @@ bind pager R group-reply
 
 set folder = ~/.mail
 
-set editor = "$EDITOR -c 'set tw=72'"
+set editor = "TERM=xterm-256color $EDITOR -c 'set tw=72'"
 
 set alias_file = ~/.mutt/alias
 set header_cache = ~/.mutt/cache/headers
