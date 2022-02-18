@@ -25,23 +25,27 @@
 	vgrep = jump grep
 	vdiff = jump diff
 	vmerge = jump merge
-[commit]
-	verbose = true
-[push]
-	default = current
-[pull]
-	default = current
-	rebase = true
 [branch]
 	autosetuprebase = always
+[commit]
+	verbose = true
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -+F
 [diff]
 	compactionHeuristic = true
 	algorithm = patience
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = "~/.ssh/allowed_signers"
 [merge]
 	conflictstyle = diff3
+[pull]
+	default = current
+	rebase = true
+[push]
+	default = current
 [rerere]
   enabled = 1
   autoupdate = 1
@@ -49,9 +53,5 @@
 	line-graphics = utf-8
 	main-view-id = yes
 	main-view-id-width = 10
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	allowedSignersFile = "~/.ssh/allowed_signers"
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
