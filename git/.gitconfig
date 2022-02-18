@@ -39,6 +39,8 @@
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = "~/.ssh/allowed_signers"
+[init]
+	defaultBranch = main
 [merge]
 	conflictstyle = diff3
 [pull]
