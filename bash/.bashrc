@@ -49,6 +49,9 @@ do
 done
 alias news=newsboat
 
+alias mgit="mutt -e 'push \"<limit>~y git.git<enter>\"'"
+alias mgh="mutt -e 'push \"<limit>!~y git.git<enter>\"'"
+
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 if test "Linux" = "$(uname -s)"
