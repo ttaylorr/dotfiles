@@ -19,6 +19,7 @@ git format-patch \
   --thread \
   --stdout \
   --cover-letter \
+  --cover-from-description=auto \
   $range_diff_args \
   $version_args \
   $@ >"$mbox"
