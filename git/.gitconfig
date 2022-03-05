@@ -52,6 +52,9 @@
   enabled = 1
   autoupdate = 1
 [tig]
+	blame-view-author-display = email-user
+	blame-view-date-display = relative
+	blame-view-file-name-display = no
 	line-graphics = utf-8
 	main-view-id = yes
 	main-view-id-width = 10
