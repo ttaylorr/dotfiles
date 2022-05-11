@@ -1,0 +1,4 @@
+#!/bin/sh
+
+git show -s --format='%P' "$@" \
+  | awk '{ print "https://github.com/git/git/compare/" $1 "..." $2 }'
