@@ -57,7 +57,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 if test "Linux" = "$(uname -s)"
 then
-  alias make="make -j$(lscpu | grep '^CPU(s):' | awk '{print $2}')"
+  alias make="make -j$(nproc)"
 else
   alias make="make -j$(sysctl -n hw.ncpu)"
 fi
