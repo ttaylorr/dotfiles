@@ -13,5 +13,5 @@ auth_logs () {
 }
 
 auth_logs |
-grep "Accepted publickey" |
+grep -a "Accepted publickey" |
 grep -Eo '[0-9]{3}\.([0-9]{1,3}\.?){3}'
