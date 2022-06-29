@@ -15,7 +15,7 @@
 	cp = cherry-pick
 	di = diff
 	lb = checkout -
-	lg = log --oneline
+	lg = log --oneline --no-decorate
 	ll = "!git always --no-pager log -1 --pretty=reference"
 	midx = multi-pack-index
 	pp = print-patch
