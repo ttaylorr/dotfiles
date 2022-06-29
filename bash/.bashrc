@@ -61,3 +61,8 @@ then
 else
   alias make="make -j$(sysctl -n hw.ncpu)"
 fi
+
+if test -d /opt/homebrew/bin/brew
+then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
