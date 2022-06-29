@@ -52,7 +52,7 @@ cursor:
   unfocused_hollow: true
 
 shell:
-  program: /usr/local/bin/zsh
+  program: zsh
   args:
     - --login
 
