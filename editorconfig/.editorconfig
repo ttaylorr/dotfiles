@@ -63,3 +63,7 @@ indent_style = tab
 [COMMIT_EDITMSG]
 max_line_length = 0
 max_line_length = 72
+
+[EDIT_DESCRIPTION]
+max_line_length = 0
+max_line_length = 72
