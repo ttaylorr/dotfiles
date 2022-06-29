@@ -58,5 +58,3 @@
 	line-graphics = utf-8
 	main-view-id = yes
 	main-view-id-width = 10
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
