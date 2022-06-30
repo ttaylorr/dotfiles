@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if test -d /opt/homebrew/bin
+then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
 function manage_gpg_agent () {
   export GPG_TTY="$(tty)"
 
@@ -60,9 +65,4 @@ then
   alias make="make -j$(nproc)"
 else
   alias make="make -j$(sysctl -n hw.ncpu)"
-fi
-
-if test -d /opt/homebrew/bin/brew
-then
-  eval $(/opt/homebrew/bin/brew shellenv)
 fi
