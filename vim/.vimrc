@@ -35,6 +35,8 @@ set winheight=999
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   au BufReadPost COMMIT_EDITMSG exe "normal! gg"
+
+  au BufRead,BufNewFile */git/t/t[0-9][0-9][0-9][0-9]-*.sh set syntax=sharness
 endif
 
 let g:go_jump_to_error = 0
