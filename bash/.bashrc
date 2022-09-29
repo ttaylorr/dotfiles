@@ -59,7 +59,7 @@ alias news=newsboat
 alias mgit="mutt -e 'push \"<limit>~y git.git<enter>\"'"
 alias mgh="mutt -e 'push \"<limit>!~y git.git<enter>\"'"
 alias mtt="mutt -e 'source $HOME/.mutt/account/ttaylorr.com'"
-alias mtoday="mutt -e 'push \"<limit>~d \<1d<enter>\"'"
+alias mtoday="mutt -e 'push \"<limit>~d \<24H<enter>\"'"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
