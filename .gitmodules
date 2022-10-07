@@ -7,9 +7,6 @@
 [submodule "vim/pack/ttaylorr/start/vim-multiple-cursors"]
 	path = vim/pack/ttaylorr/start/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "vim/pack/ttaylorr/start/vim-endwise"]
-	path = vim/pack/ttaylorr/start/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
 [submodule "vim/pack/ttaylorr/start/ctrlp.vim"]
 	path = vim/pack/ttaylorr/start/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
