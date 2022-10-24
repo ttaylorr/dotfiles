@@ -22,6 +22,7 @@
 	seq = sequence
 	st = status
 	w = "!tig"
+	wip = "!git commit -m 'WIP'"
 	vgrep = jump grep
 	vdiff = jump diff
 	vmerge = jump merge
