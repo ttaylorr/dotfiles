@@ -1,3 +1,0 @@
-#!/bin/sh
-
-git who "$@" | sed -e 's/, /\n/g' | sed -e 's/\(.*\)/--cc="\1" \\/g'
