@@ -10,6 +10,7 @@
 	aa = add --all
 	always = "!git rev-parse 2>/dev/null || cd ~/github/git; git"
 	br = branch
+	cc = "!git format-config cc"
 	ci = commit
 	co = checkout
 	cp = cherry-pick
@@ -21,6 +22,7 @@
 	pp = print-patch
 	seq = sequence
 	st = status
+	to = "!git format-config to"
 	w = "!tig"
 	wip = "!git commit -m 'WIP'"
 	vgrep = jump grep

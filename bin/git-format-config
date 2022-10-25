@@ -1,0 +1,60 @@
+#!/bin/sh
+
+branch="$(git symbolic-ref -q HEAD)"
+branch="${branch#refs/heads/}"
+
+if test $? -eq 1
+then
+    echo >&2 "fatal: must be on a branch"
+    exit 1
+fi
+
+GIT_DIR="$(git rev-parse --git-dir)"
+
+atexit () {
+    rm -f "$GIT_DIR/have" "$GIT_DIR/want"
+}
+trap atexit EXIT
+
+noop=false
+key=
+
+while test $# -gt 0
+do
+    case "$1" in
+    to|cc)
+        key="$1"
+        shift
+        ;;
+    -n)
+        noop=true
+        shift
+        ;;
+    *)
+        break
+        ;;
+    esac
+done
+
+want="$GIT_DIR/want"
+have="$GIT_DIR/have"
+
+git who "$@" 2>/dev/null | sed -e 's/, /\n/g' | sort >$want
+git config --get-all "format.$branch.$key" | sort >$have
+
+comm -23 $want $have |
+while read ident
+do
+    if $noop
+    then
+        printf "%s -> %s\n" "format.$branch.$key" "$ident"
+    else
+        git config --add "format.$branch.$key" "$ident"
+    fi
+done
+
+if ! $noop
+then
+    echo "==> format.$branch.$key"
+    git -P config --get-all "format.$branch.$key" | sed -e 's/^/  /g'
+fi
