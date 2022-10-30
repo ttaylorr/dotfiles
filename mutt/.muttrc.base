@@ -74,7 +74,7 @@ set mail_check = 0
 unset move
 set delete
 unset confirmappend
-set quit
+set quit = ask-yes
 unset mark_old
 set beep_new
 
