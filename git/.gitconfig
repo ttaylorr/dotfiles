@@ -8,6 +8,7 @@
 [alias]
 	a = add
 	aa = add --all
+	at = apply-to
 	always = "!git rev-parse 2>/dev/null || cd ~/github/git; git"
 	br = branch
 	cc = "!git format-config cc"
