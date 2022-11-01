@@ -56,7 +56,7 @@ parse_git_branch() {
   rebasing="$(echo "$branch" | grep "no branch, rebasing")"
 
   if [[ ! -z "$detached" ]] || [[ ! -z "$rebasing" ]]; then
-    branch="$(echo "$branch" | tr -d '()' | awk '{ print $5 }')"
+    branch="$(git rev-parse --short HEAD)"
   else
     branch="$(echo "$branch" | awk '{ print $2 }')"
   fi
