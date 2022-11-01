@@ -68,7 +68,7 @@ parse_git_branch() {
   if [[ ! -z "$detached" ]]; then
     branch="%{$fg[red]%}$branch"
   elif [[ ! -z "$rebasing" ]]; then
-    branch="%{$fg[red]%}~$branch"
+    branch="%{$fg[red]%}$branch!"
   else
     branch="%{$fg[green]%}$branch"
   fi
