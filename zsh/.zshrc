@@ -52,7 +52,7 @@ on_host() {
 
 parse_git_branch() {
   branch="$(git branch 2>/dev/null | grep "*")"
-  detached="$(echo "$branch" | grep "detached at")"
+  detached="$(echo "$branch" | grep "detached")"
   rebasing="$(echo "$branch" | grep "no branch, rebasing")"
 
   if [[ ! -z "$detached" ]] || [[ ! -z "$rebasing" ]]; then
