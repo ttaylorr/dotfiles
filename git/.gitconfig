@@ -21,6 +21,7 @@
 	ll = "!git always --no-pager log -1 --pretty=reference"
 	midx = multi-pack-index
 	pp = print-patch
+	rd = range-diff
 	seq = sequence
 	st = status
 	to = "!git format-config to"
