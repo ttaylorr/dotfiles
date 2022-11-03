@@ -24,7 +24,7 @@ set spell
 set ttyfast
 set wildmenu
 
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 set winwidth=87
