@@ -32,6 +32,8 @@
 	vmerge = jump merge
 [commit]
 	verbose = true
+[clean]
+	requireForce = false
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -+F
