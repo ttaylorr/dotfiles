@@ -48,6 +48,7 @@
 	defaultBranch = main
 [merge]
 	conflictstyle = diff3
+	log = true
 [pull]
 	default = current
 [push]
