@@ -16,6 +16,7 @@
 	co = checkout
 	cp = cherry-pick
 	di = diff
+	ft = find-topic
 	lb = checkout -
 	lg = log --oneline --no-decorate
 	ll = "!git always --no-pager log -1 --pretty=reference"

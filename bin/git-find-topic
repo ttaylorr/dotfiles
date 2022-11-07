@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+who="${1:-..}"
+shift
+
+search_one () {
+  local branch="$1"
+  shift
+
+  log="$(git log --oneline --no-decorate --grep="$@" --color master..$branch)"
+  if test -n "$log"
+  then
+    printf "==> %s\n%s\n" "$branch" "$log"
+  fi
+}
+
+git branch | grep "$who/" |
+  while read branch
+  do
+    search_one "$branch" "$@"
+  done
