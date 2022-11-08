@@ -19,7 +19,7 @@ search_one () {
   fi
 }
 
-git branch | grep "$who/" |
+git branch | tr -d '*' | grep "$who/" |
   while read branch
   do
     search_one "$branch" "$@"
