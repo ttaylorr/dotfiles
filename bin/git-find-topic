@@ -10,7 +10,12 @@ search_one () {
   log="$(git log --oneline --no-decorate --grep="$@" --color master..$branch)"
   if test -n "$log"
   then
-    printf "==> %s\n%s\n" "$branch" "$log"
+    if test "$#" -gt 0
+    then
+      printf "==> %s\n%s\n" "$branch" "$(echo "$log" | grep --color=always "$@")"
+    else
+      printf "==> %s\n%s\n" "$branch" "$log"
+    fi
   fi
 }
 
