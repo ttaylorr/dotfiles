@@ -3,24 +3,19 @@
 who="${1:-..}"
 shift
 
-search_one () {
-  local branch="$1"
-  shift
+git branch | tr -d '*' | grep "$who/" |
+  while read branch
+  do
+    log="$(git log --oneline --no-decorate --grep="$@" --color master..$branch)"
+    if test -z "$log"
+    then
+      continue
+    fi
 
-  log="$(git log --oneline --no-decorate --grep="$@" --color master..$branch)"
-  if test -n "$log"
-  then
     if test "$#" -gt 0
     then
       printf "==> %s\n%s\n" "$branch" "$(echo "$log" | grep --color=always "$@")"
     else
       printf "==> %s\n%s\n" "$branch" "$log"
     fi
-  fi
-}
-
-git branch | tr -d '*' | grep "$who/" |
-  while read branch
-  do
-    search_one "$branch" "$@"
   done
