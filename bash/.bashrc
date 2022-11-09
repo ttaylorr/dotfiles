@@ -61,7 +61,8 @@ alias mgh="mutt -e 'push \"<limit>!~y git.git<enter>\"'"
 alias mtt="mutt -e 'source $HOME/.mutt/account/ttaylorr.com'"
 alias mtoday="mutt -e 'push \"<limit>~d \<24H<enter>\"'"
 
-alias maintlog="vi ~/notes/maintlog"
+alias maintlog='vi $(find ~/notes/maintlog -type f | sort -rn | head -1)'
+alias ml='maintlog'
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
