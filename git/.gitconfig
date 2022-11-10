@@ -9,7 +9,7 @@
 	a = add
 	aa = add --all
 	at = apply-to
-	always = "!git rev-parse 2>/dev/null || cd ~/github/git; git"
+	always = "!git rev-parse 2>/dev/null || cd ~/src/git; git"
 	br = branch
 	cc = "!git format-config cc"
 	ci = commit
