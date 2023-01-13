@@ -2,6 +2,11 @@
 
 if test -n "$CODESPACES"
 then
+  # ttaylorr/dotfiles is cloned without recursing through submodules, so
+  # make sure that we initialize all of the submodules in
+  # vim/pack/ttaylorr/start before installing them into place.
+  git submodule update --init
+
   exec make NO_MUTT=YesPlease -C "$(dirname "$0")/.."
 else
   exec make -C "$(dirname "$0")/.."
