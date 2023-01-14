@@ -7,6 +7,9 @@ then
   # vim/pack/ttaylorr/start before installing them into place.
   git submodule update --init
 
+  # Make sure that we set zsh as the login shell.
+  sudo chsh -s "$(which zsh)" $(whoami)
+
   exec make NO_MUTT=YesPlease -C "$(dirname "$0")/.."
 else
   exec make -C "$(dirname "$0")/.."
