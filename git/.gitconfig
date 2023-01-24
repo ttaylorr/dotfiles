@@ -56,8 +56,8 @@
 [push]
 	default = current
 [rerere]
-  enabled = 1
-  autoupdate = 1
+	enabled = 1
+	autoupdate = 1
 [tig]
 	blame-view-author-display = email-user
 	blame-view-date-display = relative
