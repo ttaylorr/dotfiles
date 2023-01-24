@@ -1,0 +1,12 @@
+source ~/.mutt/base
+
+set from = "me@ttaylorr.com"
+set sendmail="/usr/local/bin/msmtp -a ttaylorr.com"
+
+set header_cache="~/.mail/cache/git/header"
+set message_cachedir="~/.mail/cache/git/message"
+
+macro index e "<tag-prefix><clear-flag>U<Tab>" "Mark read"
+macro pager e "<clear-flag>U" "Mark read"
+
+macro index,pager L "<mark-message>a<Enter><untag-pattern>~T<Enter><tag-thread><limit>~T<Enter><untag-pattern>~T<Enter>'a" "Limit to current thread"

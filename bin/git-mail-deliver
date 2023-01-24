@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# INITIAL SETUP
+# =============
+#
+# First, obtain a clone of the Git mailing list archives from
+# public-inbox.org, if you don't have one already:
+#
+#   $ git clone --bare https://public-inbox.org/git ~/Mail/git.git
+#
+# Then create an initial index:
+#
+#   $ cd ~/Mail/git.git && time public-inbox-index -v "$PWD"
+#
+# Then add the archive as an external:
+#
+#   $ lei add-external ~/Mail/git.git
+#
+# Do the initial import:
+#
+#   $ time lei q --limit=-1 -v -o ~/Mail/lei-q-git l:git.vger.kernel.org
+#
+# ...and the initial indexing:
+#
+#   $ lei up ~/Mail/lei-q-git
+
+set -xe
+
+repo=~/Mail/git.git
+export GIT_DIR="$repo"
+
+force=
+once=
+
+while test "$#" -gt 0
+do
+    case "$1" in
+    --force|-f)
+        force=y
+        shift
+        ;;
+    --once|-1)
+        once=y
+        force=y
+        shift
+        ;;
+    esac
+done
+
+while true
+do
+    wait=1
+
+    git fetch
+
+    ours=$(git rev-parse HEAD)
+    theirs=$(git rev-parse FETCH_HEAD)
+
+    if test -z "$force" && test "$ours" = "$theirs"
+    then
+        echo >&2 "nothing to update..."
+        wait=60
+    else
+        git update-ref HEAD "$theirs"
+
+        ( cd $repo && public-inbox-index -v "$PWD" )
+
+        lei up ~/Mail/lei-q-git/
+    fi
+
+    if test -n "$once"
+    then
+        break
+    fi
+
+    sleep $wait
+done

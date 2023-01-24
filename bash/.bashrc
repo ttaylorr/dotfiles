@@ -56,7 +56,7 @@ do
 done
 alias news=newsboat
 
-alias mgit="mutt -e 'push \"<limit>~y git.git<enter>\"'"
+alias mgit="mutt -F ~/.mutt/gitml -f ~/Mail/lei-q-git/ -e 'push \"<limit>~U<enter>\"'"
 alias mgh="mutt -e 'push \"<limit>!~y git.git<enter>\"'"
 alias mtt="mutt -e 'source $HOME/.mutt/account/ttaylorr.com'"
 alias mtoday="mutt -e 'push \"<limit>~d \<24H<enter>\"'"

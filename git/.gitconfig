@@ -20,6 +20,7 @@
 	lb = checkout -
 	lg = log --oneline --no-decorate
 	ll = "!git always --no-pager log -1 --pretty=reference"
+	md = mail-deliver
 	midx = multi-pack-index
 	pp = print-patch
 	rd = range-diff

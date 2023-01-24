@@ -6,6 +6,7 @@ INSTALL_PAIRS += bin/git-format-config .bin/git-format-config
 INSTALL_PAIRS += bin/git-lore .bin/git-lore
 INSTALL_PAIRS += bin/git-ls-unreachable .bin/git-ls-unreachable
 INSTALL_PAIRS += bin/git-mail .bin/git-mail
+INSTALL_PAIRS += bin/git-mail-deliver .bin/git-mail-deliver
 INSTALL_PAIRS += bin/git-ownership .bin/git-ownership
 INSTALL_PAIRS += bin/git-print-patch .bin/git-print-patch
 INSTALL_PAIRS += bin/git-reroll .bin/git-reroll
