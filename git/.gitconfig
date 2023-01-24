@@ -55,6 +55,7 @@
 	default = current
 [push]
 	default = current
+	followTags = true
 [rerere]
 	enabled = 1
 	autoupdate = 1
