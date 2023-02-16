@@ -85,3 +85,5 @@ parse_git_branch() {
 export PS1='$(abbrev_path)$(on_host)$(parse_git_branch) $ '
 
 test -n "$ALACRITTY_LOG" && printf "\e[?1042l"
+
+export SHELL="$(which zsh)"
