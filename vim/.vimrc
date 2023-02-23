@@ -12,6 +12,7 @@ set tabstop=2
 set cinoptions+=(0
 
 set autoindent
+set autoread
 set backspace=indent,eol,start
 set cursorline
 set hlsearch
