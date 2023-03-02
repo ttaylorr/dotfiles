@@ -56,10 +56,20 @@ do
 done
 alias news=newsboat
 
-alias mgit="mutt -F ~/.mutt/gitml -f ~/Mail/lei-q-git/ -e 'push \"<limit>~U<enter>\"'"
+function mgit () {
+  local limit="~U"
+
+  if test "$1" = "--today"
+  then
+    limit="~U ~d <1d"
+  fi
+
+  exec mutt -F ~/.mutt/gitml -f ~/Mail/lei-q-git/ -e "push '<limit>$limit<enter>'"
+}
+
 alias mgh="mutt -e 'push \"<limit>!~y git.git<enter>\"'"
 alias mtt="mutt -e 'source $HOME/.mutt/account/ttaylorr.com'"
-alias mtoday="mutt -e 'push \"<limit>~d \<24H<enter>\"'"
+alias mtoday="mgit --today"
 
 alias maintlog='vi $(find ~/notes/maintlog -type f | sort -rn | head -1)'
 alias ml='maintlog'
