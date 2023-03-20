@@ -2,6 +2,14 @@
 
 set -e
 
+if test -n "$GIT_EXEC_PATH"
+then
+  # If we are invoked as a child-process of 'git', then re-use the same
+  # version of Git that invoked us instead of the first one available on
+  # the system's `$PATH`.
+  export PATH="$GIT_EXEC_PATH:$PATH"
+fi
+
 topic="$(git rev-parse --abbrev-ref HEAD | tr -s '/' '-')"
 mbox=$(mktemp -t "git-mutt-${topic}-XXXXXX")
 
