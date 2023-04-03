@@ -112,12 +112,6 @@ endfunction
 
 command! -nargs=* Git :call MaybeInlineCommand("git always <args>")
 
-for prefix in ['i', 'n', 'v']
-  for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-    exe prefix . "noremap " . key . " <Nop>"
-  endfor
-endfor
-
 nnoremap <silent> <c-h> <c-W><c-h>
 nnoremap <silent> <c-j> <c-W><c-j>
 nnoremap <silent> <c-k> <c-W><c-k>
