@@ -30,9 +30,7 @@ export LANG=en_US.UTF-8
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
 test -d "/usr/local/go/bin" && export PATH="$PATH:/usr/local/go/bin"
-if test -d "/Library/TeX"; then
-  export PATH="$PATH:/Library/TeX/texbin"
-fi
+test -d "/Library/TeX/texbin" && export PATH="$PATH:/Library/TeX/texbin"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/local/git/current/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
