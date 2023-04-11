@@ -29,7 +29,7 @@ export LANG=en_US.UTF-8
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/go/bin"
+test -d "/usr/local/go/bin" && export PATH="$PATH:/usr/local/go/bin"
 if test -d "/Library/TeX"; then
   export PATH="$PATH:/Library/TeX/texbin"
 fi
