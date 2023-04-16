@@ -9,7 +9,6 @@ font:
     family: Inconsolata
     style: Bold
   size: 17.0
-  use_thin_strokes: true
 
 colors:
   primary:
