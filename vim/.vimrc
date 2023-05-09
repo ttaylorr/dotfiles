@@ -1,6 +1,5 @@
 let mapleader = ","
 
-set number
 set ruler
 set textwidth=80
 
