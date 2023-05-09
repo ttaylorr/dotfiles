@@ -9,7 +9,6 @@ font:
     family: Inconsolata
     style: Bold
   size: 17.0
-  use_thin_strokes: true
 
 colors:
   primary:
@@ -73,6 +72,3 @@ hints:
       post_processing: true
       mouse:
         enabled: true
-
-key_bindings:
-  - { key: N, mods: Command, action: CreateNewWindow }
