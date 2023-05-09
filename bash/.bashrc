@@ -57,10 +57,15 @@ alias news=newsboat
 function mgit () {
   local limit="~U"
 
-  if test "$1" = "--today"
-  then
-    limit="~U ~d <1d"
-  fi
+  while test "$#" -gt 0
+  do
+    case "$1" in
+      --today|-1)
+        limit="$limit ~d <1d"
+        shift
+        ;;
+    esac
+  done
 
   exec mutt -F ~/.mutt/gitml -f ~/Mail/lei-q-git/ -e "push '<limit>$limit<enter>'"
 }
