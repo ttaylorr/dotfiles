@@ -85,3 +85,4 @@ then
 else
   alias make="make -j$(sysctl -n hw.ncpu)"
 fi
+alias mkae="make"
