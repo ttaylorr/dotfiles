@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sed -i -e 's/^pick [0-9a-f]\+ WIP\( # empty\)\?$/\0\nexec git commit --amend --allow-empty -s/g' "$@"

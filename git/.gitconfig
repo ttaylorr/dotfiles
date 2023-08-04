@@ -27,6 +27,7 @@
 	seq = sequence
 	st = status
 	to = "!git format-config to"
+	unwip = -c sequence.editor=git-unwip--editor rebase -i
 	w = "!tig"
 	wip = "!git commit -m 'WIP'"
 	vgrep = jump grep
