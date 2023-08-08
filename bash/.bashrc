@@ -30,7 +30,10 @@ export LANG=en_US.UTF-8
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
 test -d "/usr/local/go/bin" && export PATH="$PATH:/usr/local/go/bin"
-test -d "/Library/TeX/texbin" && export PATH="$PATH:/Library/TeX/texbin"
+if test -d "/usr/local/texlive/2023basic/bin/universal-darwin"
+then
+  export PATH="$PATH:/usr/local/texlive/2023basic/bin/universal-darwin"
+fi
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/local/git/current/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
