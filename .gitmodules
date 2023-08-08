@@ -25,3 +25,6 @@
 [submodule "vim/pack/ttaylorr/start/base16-vim"]
 	path = vim/pack/ttaylorr/start/base16-vim
 	url = https://github.com/fnune/base16-vim
+[submodule "vim/pack/ttaylorr/start/asyncrun.vim"]
+	path = vim/pack/ttaylorr/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git

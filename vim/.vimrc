@@ -127,7 +127,7 @@ nnoremap ; :
 
 nnoremap <c-o> :CtrlPTag<cr>
 
-map <leader>m :term ++close ++rows=5 make<cr>
+map <leader>m :copen<cr>:AsyncRun -focus=0 make -j40<cr>
 
 function! TrimWhitespace()
   %s/\s\+$//e
