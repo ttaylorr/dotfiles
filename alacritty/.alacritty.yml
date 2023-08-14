@@ -47,7 +47,10 @@ bell:
   duration: 0
 
 cursor:
-  style: Beam
+  style:
+    shape: Beam
+    blinking: On
+  blink_interval: 500
   unfocused_hollow: true
 
 shell:
