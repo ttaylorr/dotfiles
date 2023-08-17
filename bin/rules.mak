@@ -22,10 +22,9 @@ endif
 
 ifdef MACOS
 INSTALL_PAIRS += bin/edit-clipboard .bin/edit-clipboard
-INSTALL_PAIRS += bin/git-jump.macos .bin/git-jump
-else
-INSTALL_PAIRS += bin/git-jump.linux .bin/git-jump
 endif
+
+INSTALL_PAIRS += $(HOME)/src/git/contrib/git-jump/git-jump .bin/git-jump
 
 bin/diff-highlight :
 	make -C $(HOME)/src/git/contrib/diff-highlight
