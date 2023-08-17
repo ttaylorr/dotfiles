@@ -33,7 +33,7 @@ include yabai/rules.mak
 endif # MACOS
 
 .PHONY : all
-all : install $(POST_INSTALL)
+all : $(PRE_INSTALL) install $(POST_INSTALL)
 
 # from brian m. carlson.
 .PHONY : install
