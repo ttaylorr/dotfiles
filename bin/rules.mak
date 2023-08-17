@@ -26,3 +26,10 @@ INSTALL_PAIRS += bin/git-jump.macos .bin/git-jump
 else
 INSTALL_PAIRS += bin/git-jump.linux .bin/git-jump
 endif
+
+bin/diff-highlight :
+	make -C $(HOME)/src/git/contrib/diff-highlight
+	ln -s $(HOME)/src/git/contrib/diff-highlight/diff-highlight $@
+PRE_INSTALL += bin/diff-highlight
+
+INSTALL_PAIRS += bin/diff-highlight .bin/diff-highlight

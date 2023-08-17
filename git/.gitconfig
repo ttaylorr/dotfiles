@@ -40,6 +40,10 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -+F
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
 [diff]
 	compactionHeuristic = true
 	algorithm = patience
