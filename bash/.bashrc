@@ -70,7 +70,7 @@ function mgit () {
     esac
   done
 
-  exec mutt -F ~/.mutt/gitml -f ~/Mail/lei-q-git/ -e "push '<limit>$limit<enter>'"
+  mutt -F ~/.mutt/gitml -f ~/Mail/lei-q-git/ -e "push '<limit>$limit<enter>'"
 }
 
 alias mgh="mutt -e 'push \"<limit>!~y git.git<enter>\"'"
