@@ -47,6 +47,8 @@
 [diff]
 	compactionHeuristic = true
 	algorithm = patience
+[format]
+	useAutoBase = whenAble
 [gpg]
 	format = ssh
 [gpg "ssh"]
