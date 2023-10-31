@@ -8,6 +8,10 @@
 #
 #   $ git clone --bare https://public-inbox.org/git ~/Mail/git.git
 #
+# (For some reason, the mirror hosted at lore.kernel.org does not seem to work
+# with lei, at least as of 2023-10-31. We'll use the (occasionally flaky)
+# public-inbox one instead).
+#
 # Then create an initial index:
 #
 #   $ cd ~/Mail/git.git && time public-inbox-index -v "$PWD"
@@ -23,6 +27,14 @@
 # ...and the initial indexing:
 #
 #   $ lei up ~/Mail/lei-q-git
+#
+# REMOVING EXISTING SETUPS
+# ========================
+#
+#   $ lei daemon-kill
+#   $ rm -fr ~/.cache/{public-inbox,lei} ~/.local/share/lei ~/.config/lei
+#   $ lei forget-mail-sync
+#   $ lei init
 
 set -xe
 
