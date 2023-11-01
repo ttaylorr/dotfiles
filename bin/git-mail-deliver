@@ -6,19 +6,28 @@
 # First, obtain a clone of the Git mailing list archives from
 # public-inbox.org, if you don't have one already:
 #
-#   $ git clone --bare https://public-inbox.org/git ~/Mail/git.git
-#
-# (For some reason, the mirror hosted at lore.kernel.org does not seem to work
-# with lei, at least as of 2023-10-31. We'll use the (occasionally flaky)
-# public-inbox one instead).
+#   $ mkdir ~/Mail
+#   $ cd ~/Mail
+#   $ git clone --bare --mirror http://lore.kernel.org/git/0 git/git/0.git
+#   $ git clone --bare --mirror http://lore.kernel.org/git/1 git/git/1.git
 #
 # Then create an initial index:
 #
-#   $ cd ~/Mail/git.git && time public-inbox-index -v "$PWD"
+#   $ cd ~/Mail &&
+#   $ public-inbox-init -V2 --ng org.kernel.vger.git \
+#       git ./git http://lore.kernel.org/git \
+#       git@vger.kernel.org
+#
+# This will create a public-inbox using the V2 format, which is
+# described in public-inbox-v2-format(5).
+#
+# Perform the initial indexing from ~/Mail:
+#
+#   $ public-inbox-index ./git
 #
 # Then add the archive as an external:
 #
-#   $ lei add-external ~/Mail/git.git
+#   $ lei add-external ~/Mail/git
 #
 # Do the initial import:
 #
@@ -38,7 +47,8 @@
 
 set -xe
 
-repo=~/Mail/git.git
+maildir="$HOME/Mail/git/git"
+repo="$( cd "$maildir" && ls | sort -t. -k1nr | head -1 | xargs realpath )"
 export GIT_DIR="$repo"
 
 force=
@@ -74,9 +84,7 @@ do
         wait=60
     else
         git update-ref HEAD "$theirs"
-
-        ( cd $repo && public-inbox-index -v "$PWD" )
-
+        public-inbox-index -v "$maildir"
         lei up ~/Mail/lei-q-git/
     fi
 
