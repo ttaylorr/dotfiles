@@ -41,7 +41,7 @@ export PATH="$HOME/.bin:$PATH"
 alias g=git
 if test "Linux" = "$(uname -s)"
 then
-  alias ls="ls --color"
+  alias ls="ls --color=auto"
 else
   alias ls="ls -G"
 fi
