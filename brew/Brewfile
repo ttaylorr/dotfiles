@@ -24,7 +24,7 @@ brew 'ttaylorr/homebrew-mutt/mutt'
 brew 'vim'
 brew 'w3m'
 brew 'watch'
-brew 'yabai'
+brew 'koekeishiya/formulae/yabai'
 brew 'zsh'
 
 cask '1password'
