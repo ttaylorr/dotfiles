@@ -1,3 +1,5 @@
+#!/bin/sh
+
 yabai -m config layout bsp
 
 yabai -m config auto_balance on
@@ -20,3 +22,5 @@ yabai -m rule --add app="Slack" space=1
 yabai -m rule --add app="Alacritty" space=2
 yabai -m rule --add app="Fantastical" space=3
 yabai -m rule --add app="Spotify" space=3
+
+yabai-readjust-vertical

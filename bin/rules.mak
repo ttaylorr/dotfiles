@@ -22,6 +22,7 @@ endif
 
 ifdef MACOS
 INSTALL_PAIRS += bin/edit-clipboard .bin/edit-clipboard
+INSTALL_PAIRS += bin/yabai-readjust-vertical .bin/yabai-readjust-vertical
 endif
 
 INSTALL_PAIRS += $(HOME)/src/git/contrib/git-jump/git-jump .bin/git-jump

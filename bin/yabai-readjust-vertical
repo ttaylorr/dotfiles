@@ -1,0 +1,25 @@
+#!/bin/sh
+
+horizontal_windows () {
+  yabai -m query --windows |
+    jq -r '
+      .[] | select(."split-child" == "first_child" and
+                   ."split-type" == "horizontal") | .id'
+}
+
+if test "$#" -eq 0
+then
+  yabai -m config auto_balance on
+
+  for e in window_focused application_activated
+  do
+    yabai -m signal --add \
+      label="$(basename "$0")_$e" event="$e" action="$(readlink -f "$0")"
+  done
+
+  # when loading the script, convert all existing splits to horizontal
+  for w in $(horizontal_windows)
+  do
+    yabai -m window "$w" --toggle split
+  done
+fi
