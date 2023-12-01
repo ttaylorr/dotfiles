@@ -73,17 +73,15 @@ while true
 do
     wait=1
 
+    before=$(git rev-parse HEAD)
     git fetch
+    after=$(git rev-parse HEAD)
 
-    ours=$(git rev-parse HEAD)
-    theirs=$(git rev-parse FETCH_HEAD)
-
-    if test -z "$force" && test "$ours" = "$theirs"
+    if test -z "$force" && test "$before" = "$after"
     then
         echo >&2 "nothing to update..."
         wait=60
     else
-        git update-ref HEAD "$theirs"
         public-inbox-index -v "$maildir"
         lei up ~/Mail/lei-q-git/
     fi
