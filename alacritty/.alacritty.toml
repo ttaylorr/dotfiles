@@ -1,0 +1,101 @@
+working_directory = "/Users/ttaylorr"
+
+[bell]
+duration = 0
+
+[[colors.indexed_colors]]
+color = "0xdf5320"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xc33ff3"
+index = 17
+
+[[colors.indexed_colors]]
+color = "0xe6e2e0"
+index = 18
+
+[[colors.indexed_colors]]
+color = "0xa8a19f"
+index = 19
+
+[[colors.indexed_colors]]
+color = "0x766e6b"
+index = 20
+
+[[colors.indexed_colors]]
+color = "0x2c2421"
+index = 21
+
+[colors.bright]
+black = "0x9c9491"
+blue = "0x407ee7"
+cyan = "0x3d97b8"
+green = "0x7b9726"
+magenta = "0x6666ea"
+red = "0xf22c40"
+white = "0x1b1918"
+yellow = "0xc38418"
+
+[colors.cursor]
+cursor = "0x68615e"
+text = "0xf1efee"
+
+[colors.normal]
+black = "0xf1efee"
+blue = "0x407ee7"
+cyan = "0x3d97b8"
+green = "0x7b9726"
+magenta = "0x6666ea"
+red = "0xf22c40"
+white = "0x68615e"
+yellow = "0xc38418"
+
+[colors.primary]
+background = "0xf1efee"
+foreground = "0x68615e"
+
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 17.0
+
+[font.bold]
+family = "Inconsolata"
+style = "Bold"
+
+[font.normal]
+family = "Inconsolata"
+style = "Regular"
+
+[[hints.enabled]]
+action = "copy"
+regex = "([0-9a-f]{40}([0-9a-f]{24})?)|([0-9a-f]{7,10})"
+
+[hints.enabled.binding]
+key = "S"
+mods = "control"
+
+[hints.enabled.mouse]
+enabled = true
+
+[[hints.enabled]]
+command = "open"
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.mouse]
+enabled = true
+
+[shell]
+args = ["--login"]
+program = "zsh"

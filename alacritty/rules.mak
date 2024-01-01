@@ -1,1 +1,1 @@
-INSTALL_PAIRS += alacritty/.alacritty.yml .alacritty.yml
+INSTALL_PAIRS += alacritty/.alacritty.toml .alacritty.toml
