@@ -30,5 +30,3 @@ cask '1password'
 cask 'alacritty'
 cask 'fantastical'
 cask 'spotify'
-
-brew 'font-fira-code'
