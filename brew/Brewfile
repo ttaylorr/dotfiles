@@ -1,6 +1,5 @@
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
-tap 'homebrew/core'
 tap 'koekeishiya/formulae'
 tap 'ttaylorr/homebrew-mutt'
 
