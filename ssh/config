@@ -1,0 +1,8 @@
+Host *
+  ServerAliveInterval 300
+  ServerAliveCountMax 2
+  ControlMaster auto
+  ControlPersist yes
+  ControlPath ~/.ssh/sockets/S.%l-%h-%p-%r
+
+Include config.private
