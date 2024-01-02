@@ -1,5 +1,5 @@
 set imap_user = 'ttaylorr@github.com'
-set imap_pass = `pass show imap.gmail.com/github`
+set imap_pass = `pass show imap.gmail.com/github 2>/dev/null`
 set imap_keepalive = 300
 
 set folder = imaps://imap.gmail.com/
