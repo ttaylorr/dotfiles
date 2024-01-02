@@ -31,6 +31,7 @@ include defaults/rules.mak
 include skhd/rules.mak
 include yabai/rules.mak
 endif # MACOS
+include gpg/rules.mak
 
 .PHONY : all
 all : $(PRE_INSTALL) install $(POST_INSTALL)
