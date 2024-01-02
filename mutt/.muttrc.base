@@ -26,7 +26,6 @@ folder-hook ttaylorr.com/ source ~/.mutt/account/ttaylorr.com
 
 macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account/github.com<enter><change-folder>!<enter>'
 macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account/ttaylorr.com<enter><change-folder>!<enter>'
-macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account/cs.washington.edu<enter><change-folder>!<enter>'
 
 bind index gg first-entry
 bind index G last-entry
