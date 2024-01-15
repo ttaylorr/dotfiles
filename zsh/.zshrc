@@ -11,6 +11,7 @@ HISTSIZE=1000000
 HISTFILE="$HOME/.zsh_history"
 
 autoload -U colors && colors
+autoload -Uz compinit && compinit # <- slow
 
 bindkey -v
 
