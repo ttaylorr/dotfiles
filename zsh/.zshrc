@@ -8,22 +8,9 @@ setopt SHARE_HISTORY
 SAVEHIST=1000000
 HISTSIZE=1000000
 
-if test -z "$HISTFILE"
-then
-  HISTFILE="$HOME/.zsh_history"
-fi
-
-if ! test -f "$HISTFILE"
-then
-  echo >&2 "NOTE: \$HISTFILE does not exist, creating it ..."
-
-  mkdir -p "$(dirname "$HISTFILE")"
-  touch $HISTFILE
-fi
-
+HISTFILE="$HOME/.zsh_history"
 
 autoload -U colors && colors
-autoload -Uz compinit && compinit
 
 bindkey -v
 
@@ -85,5 +72,3 @@ parse_git_branch() {
 export PS1='$(abbrev_path)$(on_host)$(parse_git_branch) $ '
 
 test -n "$ALACRITTY_LOG" && printf "\e[?1042l"
-
-export SHELL="$(which zsh)"

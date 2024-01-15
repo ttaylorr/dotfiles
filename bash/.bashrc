@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-if test -d /opt/homebrew/bin
-then
-  eval $(/opt/homebrew/bin/brew shellenv)
-fi
+test -d /opt/homebrew/bin && eval $(/opt/homebrew/bin/brew shellenv)
 
 function manage_gpg_agent () {
   export GPG_TTY="$(tty)"
@@ -29,33 +26,18 @@ export LANG=en_US.UTF-8
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
-test -d "/usr/local/go/bin" && export PATH="$PATH:/usr/local/go/bin"
-if test -d "/usr/local/texlive/2023basic/bin/universal-darwin"
-then
-  export PATH="$PATH:/usr/local/texlive/2023basic/bin/universal-darwin"
-fi
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/local/git/current/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 alias g=git
-if test "Linux" = "$(uname -s)"
-then
-  alias ls="ls --color=auto"
-else
-  alias ls="ls -G"
-fi
+alias ls="ls --color=auto"
 alias grep="grep --color"
 alias vi=vim
 
-for exe in mutt newsboat weechat
-do
-  if test -x "$(which $exe)"
-  then
-    alias $exe="TERM=screen-256color $(which $exe)"
-  fi
-done
-alias news=newsboat
+alias mutt="TERM=screen-256color mutt"
+alias weechat="TERM=screen-256color weechat"
 
 function mgit () {
   local limit="~U"
@@ -78,14 +60,9 @@ alias mtt="mutt -e 'source $HOME/.mutt/account/ttaylorr.com'"
 alias mtoday="mgit --today"
 
 alias maintlog='vi $(find ~/notes/maintlog -type f | sort -rn | head -1)'
-alias ml='maintlog'
+alias ml="maintlog"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-if test "Linux" = "$(uname -s)"
-then
-  alias make="make -j$(nproc)"
-else
-  alias make="make -j$(sysctl -n hw.ncpu)"
-fi
+alias make="make -j$(getconf _NPROCESSORS_ONLN)"
 alias mkae="make"
