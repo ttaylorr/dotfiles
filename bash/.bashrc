@@ -2,6 +2,8 @@
 
 test -d /opt/homebrew/bin && eval $(/opt/homebrew/bin/brew shellenv)
 
+test -d "$HOME/cargo" && source "$HOME/cargo/env"
+
 function manage_gpg_agent () {
   export GPG_TTY="$(tty)"
 
