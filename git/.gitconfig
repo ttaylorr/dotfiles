@@ -63,6 +63,8 @@
 [push]
 	default = current
 	followTags = true
+[rebase]
+	autosquash = 1
 [rerere]
 	enabled = 1
 	autoupdate = 1
