@@ -1,4 +1,4 @@
-pinentry-program /opt/homebrew/bin/pinentry-mac
+pinentry-program /Users/ttaylorr/.bin/pinentry-1password
 
 enable-ssh-support
 default-cache-ttl 0
