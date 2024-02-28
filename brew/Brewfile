@@ -2,6 +2,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'koekeishiya/formulae'
 
+brew '1password-cli'
 brew 'asciidoc'
 brew 'bash'
 brew 'ccache'
