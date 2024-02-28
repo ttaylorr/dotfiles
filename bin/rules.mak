@@ -22,6 +22,7 @@ endif
 
 ifdef MACOS
 INSTALL_PAIRS += bin/edit-clipboard .bin/edit-clipboard
+INSTALL_PAIRS += bin/pinentry-1password .bin/pinentry-1password
 INSTALL_PAIRS += bin/yabai-readjust-vertical .bin/yabai-readjust-vertical
 endif
 
