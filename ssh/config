@@ -3,6 +3,6 @@ Host *
   ServerAliveCountMax 2
   ControlMaster auto
   ControlPersist yes
-  ControlPath ~/.ssh/sockets/S.%l-%h-%p-%r
+  ControlPath ~/.ssh/sockets/S.%h
 
 Include config.private
