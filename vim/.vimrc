@@ -111,6 +111,7 @@ function MaybeInlineCommand(cmd)
 endfunction
 
 command! -nargs=* Git :call MaybeInlineCommand("git always <args>")
+command! -nargs=* Gitc :call MaybeInlineCommand("git.compile always <args>")
 
 nnoremap <silent> <c-h> <c-W><c-h>
 nnoremap <silent> <c-j> <c-W><c-j>
