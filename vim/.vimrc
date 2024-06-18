@@ -19,7 +19,6 @@ set incsearch
 set lazyredraw
 set nomodeline
 set noswapfile
-set shortmess=IAmw
 set smartindent
 set spell
 set ttyfast
