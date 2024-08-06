@@ -115,7 +115,7 @@ command! -nargs=* Gitc :call MaybeInlineCommand("git.compile always <args>")
 nnoremap <c-B> :execute '!TIG_SCRIPT=<(echo :' . line(".") . ') tig blame %'<cr> | redraw!
 
 nnoremap <c-n> :cn<cr>
-nnoremap <c-y> :cp<cr>
+nnoremap <c-m> :cp<cr>
 
 nnoremap <silent> <c-h> <c-W><c-h>
 nnoremap <silent> <c-j> <c-W><c-j>
