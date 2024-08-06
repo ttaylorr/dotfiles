@@ -30,6 +30,7 @@
 	unwip = -c sequence.editor=git-unwip--editor rebase -i
 	w = "!tig"
 	wip = "!git commit -m 'WIP'"
+	wm = when-merged
 	vgrep = jump grep
 	vdiff = jump diff
 	vmerge = jump merge
