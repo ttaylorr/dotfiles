@@ -98,8 +98,8 @@ set include = yes
 unset markers
 
 ignore *
-unignore from: to: cc: date: subject:
-hdr_order from: to: cc: date: subject:
+unignore from: to: cc: date: subject: message-id:
+hdr_order from: to: cc: date: subject: message-id:
 
 bind editor <space> noop
 
