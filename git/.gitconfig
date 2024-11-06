@@ -50,12 +50,16 @@
 	algorithm = patience
 [format]
 	useAutoBase = whenAble
+[gc]
+	auto = false
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = "~/.ssh/allowed_signers"
 [init]
 	defaultBranch = main
+[maintenance]
+	auto = false
 [merge]
 	conflictstyle = diff3
 	log = true
