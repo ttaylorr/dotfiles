@@ -16,6 +16,8 @@ yabai -m rule --add app="Home" manage=off
 yabai -m rule --add app="Calculator" manage=off
 yabai -m rule --add app="Weather" manage=off
 
+yabai -m rule --add app="The Binding of Isaac Afterbirth+" manage=off
+
 yabai -m rule --add app="Google Chrome" space=1
 yabai -m rule --add app="Messages" space=1
 yabai -m rule --add app="Slack" space=1
