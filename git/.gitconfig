@@ -42,9 +42,9 @@
 	excludesfile = ~/.gitignore
 	pager = less -+F
 [pager]
-	log = diff-highlight | less
-	show = diff-highlight | less
-	diff = diff-highlight | less
+	log = "if test -x diff-highlight; then diff-highlight; else cat; fi | less"
+	show = "if test -x diff-highlight; then diff-highlight; else cat; fi | less"
+	diff = "if test -x diff-highlight; then diff-highlight; else cat; fi | less"
 [diff]
 	compactionHeuristic = true
 	algorithm = patience
