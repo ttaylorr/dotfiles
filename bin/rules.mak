@@ -26,11 +26,12 @@ INSTALL_PAIRS += bin/pinentry-1password .bin/pinentry-1password
 INSTALL_PAIRS += bin/yabai-readjust-vertical .bin/yabai-readjust-vertical
 endif
 
-INSTALL_PAIRS += $(HOME)/src/git/contrib/git-jump/git-jump .bin/git-jump
-
+ifdef HAS_GIT
 bin/diff-highlight :
 	make -C $(HOME)/src/git/contrib/diff-highlight
 	ln -s $(HOME)/src/git/contrib/diff-highlight/diff-highlight $@
 PRE_INSTALL += bin/diff-highlight
 
+INSTALL_PAIRS += $(HOME)/src/git/contrib/git-jump/git-jump .bin/git-jump
 INSTALL_PAIRS += bin/diff-highlight .bin/diff-highlight
+endif

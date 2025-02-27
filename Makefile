@@ -3,6 +3,11 @@
 .DEFAULT_GOAL = all
 
 DESTDIR ?= $(HOME)
+ifndef HAS_GIT
+ifeq ($(shell test -d $(HOME)/src/git && echo 1 || echo 0),1)
+HAS_GIT=1
+endif
+endif
 
 ifndef MACOS
 ifeq ($(shell uname -s), Darwin)
