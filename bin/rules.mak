@@ -1,5 +1,6 @@
 INSTALL_PAIRS += bin/best-of-five .bin/best-of-five
 INSTALL_PAIRS += bin/git-apply-to .bin/git-apply-to
+INSTALL_PAIRS += bin/git-cherry-merged .bin/git-cherry-merged
 INSTALL_PAIRS += bin/git-curl .bin/git-curl
 INSTALL_PAIRS += bin/git-find-topic .bin/git-find-topic
 INSTALL_PAIRS += bin/git-format-config .bin/git-format-config
