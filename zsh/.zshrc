@@ -35,7 +35,9 @@ abbrev_path() {
 }
 
 on_host() {
-  echo " [%{$fg[yellow]%}$(hostname)%{$reset_color%}]"
+  local color=yellow
+  test -n "$CODESPACES" && color=blue
+  echo " [%{$fg[$color]%}$(hostname)%{$reset_color%}]"
 }
 
 parse_git_branch() {
