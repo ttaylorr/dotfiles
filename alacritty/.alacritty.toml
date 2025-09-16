@@ -48,6 +48,6 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g
 [hints.enabled.mouse]
 enabled = true
 
-[shell]
+[terminal.shell]
 args = ["--login"]
 program = "zsh"
