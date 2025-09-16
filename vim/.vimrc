@@ -150,24 +150,41 @@ match ErrorMsg '\s\+$'
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
 
-function! s:base16_customize() abort
-  hi clear SpellBad
-  hi clear SpellLocal
-  hi clear SpellCap
-  hi clear SpellRare
+function! s:scheme_customize() abort
+  hi Comment      ctermfg=8
+  hi Conditional  ctermfg=5
+  hi Include      ctermfg=4
+  hi PreProc      ctermfg=1
+  hi Special      ctermfg=6
+  hi StorageClass ctermfg=3
+  hi String       ctermfg=2
+  hi Structure    ctermfg=5
+  hi Type         ctermfg=3
+  hi Statement    ctermfg=1
+  hi Operator     ctermfg=6
+  hi Constant     ctermfg=16
 
-  call Base16hi("SpellBad", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
-  call Base16hi("SpellLocal", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
-  call Base16hi("SpellCap", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
-  call Base16hi("SpellRare", g:base16_gui08, g:base16_gui01, g:base16_cterm08, g:base16_cterm01, "undercurl", "")
+  hi CursorLine  ctermbg=18 cterm=NONE
+  hi ColorColumn ctermbg=18 cterm=NONE
+
+  hi GitGutterAdd    ctermfg=2    ctermbg=NONE
+  hi GitGutterChange ctermfg=3    ctermbg=NONE
+  hi GitGutterDelete ctermfg=1    ctermbg=NONE
+  hi SignColumn      ctermfg=0    ctermbg=0
+
+  hi SpellBad   ctermfg=1  ctermbg=0  cterm=undercurl
+  hi SpellLocal ctermfg=1  ctermbg=0  cterm=undercurl
+  hi SpellCap   ctermfg=1  ctermbg=0  cterm=undercurl
+  hi SpellRare  ctermfg=1  ctermbg=0  cterm=undercurl
 endfunction
 
-set background=light
-set termguicolors
+if exists('+termguicolors')
+  set notermguicolors
+endif
 
-autocmd ColorScheme * call s:base16_customize()
+autocmd ColorScheme * call s:scheme_customize()
 
-colorscheme base16-atelier-forest-light
+colorscheme default
 
 autocmd FileType tex hi clear texItalStyle
 autocmd FileType tex hi clear texBoldStyle
