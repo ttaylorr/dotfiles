@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$1" in
+  dark|light)
+    ;;
+  *)
+    echo >&2 "fatal: unknown colorscheme '$1'"
+    exit 1
+esac
+
+ln -fs ~/.alacritty.d/themes/$1.toml ~/.alacritty.d/themes/current.toml
