@@ -1,7 +1,7 @@
 [general]
 working_directory = "/Users/ttaylorr"
 import = [
-  "/Users/ttaylorr/.alacritty.d/themes/light.toml"
+  "/Users/ttaylorr/.alacritty.d/themes/current.toml"
 ]
 
 [bell]
