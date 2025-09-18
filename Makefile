@@ -33,6 +33,7 @@ include mutt/rules.mak
 endif # NO_MUTT
 ifdef MACOS
 include defaults/rules.mak
+include macos/rules.mak
 include skhd/rules.mak
 include yabai/rules.mak
 endif # MACOS

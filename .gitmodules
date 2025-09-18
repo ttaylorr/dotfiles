@@ -22,3 +22,9 @@
 [submodule "vim/pack/ttaylorr/start/asyncrun.vim"]
 	path = vim/pack/ttaylorr/start/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "bin/dark-mode-notify"]
+	path = macos/dark-mode-notify
+	url = https://github.com/bouk/dark-mode-notify.git
+[submodule "macos/dark-mode-notify"]
+	path = macos/dark-mode-notify
+	url = git@github.com:bouk/dark-mode-notify.git

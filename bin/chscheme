@@ -1,11 +1,28 @@
 #!/bin/sh
 
+from=
+
 case "$1" in
   dark|light)
+    from=~/.alacritty.d/themes/$1.toml
+    ;;
+  "")
+    if test -z "$DARKMODE"
+    then
+      echo >&2 "fatal: missing \$DARKMODE without arguments"
+      exit 1
+    fi
+
+    if test 0 -eq "$DARKMODE"
+    then
+      from=~/.alacritty.d/themes/light.toml
+    else
+      from=~/.alacritty.d/themes/dark.toml
+    fi
     ;;
   *)
     echo >&2 "fatal: unknown colorscheme '$1'"
     exit 1
 esac
 
-ln -fs ~/.alacritty.d/themes/$1.toml ~/.alacritty.d/themes/current.toml
+test -n "$from" && ln -fs "$from" ~/.alacritty.d/themes/current.toml
