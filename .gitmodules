@@ -27,4 +27,4 @@
 	url = https://github.com/bouk/dark-mode-notify.git
 [submodule "macos/dark-mode-notify"]
 	path = macos/dark-mode-notify
-	url = git@github.com:bouk/dark-mode-notify.git
+	url = https://github.com/bouk/dark-mode-notify.git
