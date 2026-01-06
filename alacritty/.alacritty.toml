@@ -49,5 +49,5 @@ regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g
 enabled = true
 
 [terminal.shell]
-args = ["--login"]
 program = "zsh"
+args = ["-lc", "cd ~ && exec zsh"]
