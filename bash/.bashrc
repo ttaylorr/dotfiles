@@ -34,6 +34,9 @@ export PATH="$HOME/local/git/current/bin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 alias g=git
+alias a="git commit --amend"
+alias d="git jump diff"
+alias m="git jump merge"
 alias ls="ls --color=auto"
 alias grep="grep --color"
 alias vi=vim
