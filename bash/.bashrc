@@ -43,6 +43,7 @@ alias vi=vim
 
 alias mutt="TERM=screen-256color mutt"
 alias weechat="TERM=screen-256color weechat"
+alias gh="TERM=xterm-256color gh"
 
 function mgit () {
   local limit="~U"
