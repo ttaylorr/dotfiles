@@ -178,6 +178,8 @@ function! s:scheme_customize() abort
   hi SpellRare  ctermfg=1  ctermbg=0  cterm=undercurl
 
   hi ErrorMsg   ctermfg=9  ctermbg=0
+
+  hi Pmenu                 ctermbg=248
 endfunction
 
 if exists('+termguicolors')
