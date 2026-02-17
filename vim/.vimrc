@@ -176,6 +176,8 @@ function! s:scheme_customize() abort
   hi SpellLocal ctermfg=1  ctermbg=0  cterm=undercurl
   hi SpellCap   ctermfg=1  ctermbg=0  cterm=undercurl
   hi SpellRare  ctermfg=1  ctermbg=0  cterm=undercurl
+
+  hi ErrorMsg   ctermfg=9  ctermbg=0
 endfunction
 
 if exists('+termguicolors')
