@@ -70,5 +70,13 @@ alias ml="maintlog"
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-alias make="make -j$(getconf _NPROCESSORS_ONLN)"
+export _NPROCESSORS_ONLN="$(getconf _NPROCESSORS_ONLN)"
+
+alias make="make -j$_NPROCESSORS_ONLN"
 alias mkae="make"
+
+vmake() {
+  VMAKE_OPTIONS=$* vi -c 'call VMake()'
+}
+
+alias vmkae="vmake"

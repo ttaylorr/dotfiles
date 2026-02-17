@@ -193,3 +193,22 @@ set timeoutlen=1000 ttimeoutlen=0
 
 set mouse=a
 set nowrap
+
+set makeprg=make\ -j$_NPROCESSORS_ONLN\ $VMAKE_OPTIONS
+function QuickFixFoundErrors()
+  for e in getqflist()
+    if e.valid
+      return 1
+    endif
+  endfor
+  return 0
+endfunction
+
+function VMake()
+  silent make
+  redraw!
+  if ! QuickFixFoundErrors()
+    quit
+  endif
+  cc
+endfunction
