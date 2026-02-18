@@ -172,12 +172,12 @@ function! s:scheme_customize() abort
   hi GitGutterDelete ctermfg=1    ctermbg=NONE
   hi SignColumn      ctermfg=0    ctermbg=0
 
-  hi SpellBad   ctermfg=1  ctermbg=0  cterm=undercurl
-  hi SpellLocal ctermfg=1  ctermbg=0  cterm=undercurl
-  hi SpellCap   ctermfg=1  ctermbg=0  cterm=undercurl
-  hi SpellRare  ctermfg=1  ctermbg=0  cterm=undercurl
+  hi SpellBad   ctermfg=1  ctermbg=NONE  cterm=undercurl
+  hi SpellLocal ctermfg=1  ctermbg=NONE  cterm=undercurl
+  hi SpellCap   ctermfg=1  ctermbg=NONE  cterm=undercurl
+  hi SpellRare  ctermfg=1  ctermbg=NONE  cterm=undercurl
 
-  hi ErrorMsg   ctermfg=9  ctermbg=0
+  hi ErrorMsg   ctermfg=1  ctermbg=NONE
 
   hi Pmenu                 ctermbg=248
 endfunction
