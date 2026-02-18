@@ -113,7 +113,7 @@ endfunction
 command! -nargs=* Git :call MaybeInlineCommand("git always <args>")
 command! -nargs=* Gitc :call MaybeInlineCommand("git.compile always <args>")
 
-nnoremap <c-B> :execute '!TIG_SCRIPT=<(echo :' . line(".") . ') tig blame %'<cr><cr>
+nnoremap <c-B> :execute 'silent !TIG_SCRIPT=<(echo :' . line('.') . ') tig blame %' \| redraw!<cr>
 
 nnoremap <c-n> :cn<cr>
 nnoremap <c-m> :cp<cr>
