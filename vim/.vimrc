@@ -170,7 +170,7 @@ function! s:scheme_customize() abort
   hi GitGutterAdd    ctermfg=2    ctermbg=NONE
   hi GitGutterChange ctermfg=3    ctermbg=NONE
   hi GitGutterDelete ctermfg=1    ctermbg=NONE
-  hi SignColumn      ctermfg=0    ctermbg=0
+  hi SignColumn      ctermfg=4    ctermbg=NONE
 
   hi SpellBad   ctermfg=1  ctermbg=NONE  cterm=undercurl
   hi SpellLocal ctermfg=1  ctermbg=NONE  cterm=undercurl
