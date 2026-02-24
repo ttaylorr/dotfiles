@@ -50,7 +50,7 @@ git_reroll__make() {
 }
 
 git_reroll__list() {
-  TIP="$(git rev-parse --abbrev-ref "${1:-HEAD})"
+  TIP="$(git rev-parse --abbrev-ref "${1:-HEAD}")"
   git for-each-ref --format='%(refname:short) %(objectname)' "refs/tags/$TIP.v*"
 }
 
