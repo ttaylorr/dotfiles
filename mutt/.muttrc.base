@@ -103,19 +103,17 @@ hdr_order from: to: cc: date: subject: message-id:
 
 bind editor <space> noop
 
-color normal      color07  color00
+color normal      white    default
 
-color tilde       color08  color00
-color attachment  color08  color00
-color tree        color01  color00
-color markers     color08  color00
+color tilde       color08  default
+color attachment  color08  default
+color tree        color01  default
+color markers     color08  default
 
-color bold        color21  color00
-color underline   color21  color00
+color bold        color21  default
+color underline   color21  default
 
-color index  color08  color00  "~R"
-color index  color21  color00  "(~U|~N|~O)"
-color index  color21  color00  "~v~(~U|~N|~O)"
+color index  white    default "."
 
 color body color08 default ^(diff\ ).*
 color body white default ^---.*
@@ -126,22 +124,22 @@ color body cyan  default ^(@@).*
 color body color08 default ^(.*-by):\ .*
 color body color08 default ^(Cc)
 
-color quoted   color06  color00
-color quoted1  color03  color00
-color quoted2  color04  color00
-color quoted3  color16  color00
-color quoted4  color01  color00
-color quoted5  color17  color00
-color quoted6  color05  color00
-color quoted7  color04  color00
+color quoted   color06  default
+color quoted1  color03  default
+color quoted2  color04  default
+color quoted3  color16  default
+color quoted4  color01  default
+color quoted5  color17  default
+color quoted6  color05  default
+color quoted7  color04  default
 
-color error       color01  color00
-color message     color04  color00
+color error       color01  default
+color message     color04  default
 color search      color08  color03
 color status      color20  color19
 color indicator   color21  color19
 
-color hdrdefault  color07  color00
-color header      color07  color00  "^"
-color header      color21  color00  "^(From)"
-color header      color04  color00  "^(Subject)"
+color hdrdefault  color07 default
+color header      color07 default   "^"
+color header      color21 default   "^(From)"
+color header      color04 default   "^(Subject)"
