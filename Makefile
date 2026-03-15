@@ -39,6 +39,7 @@ include yabai/rules.mak
 endif # MACOS
 include gpg/rules.mak
 include ssh/rules.mak
+include private/rules.mak
 
 .PHONY : all
 all : $(PRE_INSTALL) install $(POST_INSTALL)

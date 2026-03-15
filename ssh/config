@@ -5,4 +5,4 @@ Host *
   ControlPersist yes
   ControlPath ~/.ssh/sockets/S.%h
 
-Include config.private
+Include ~/.private/ssh/config

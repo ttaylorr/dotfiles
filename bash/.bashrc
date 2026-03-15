@@ -4,6 +4,8 @@ test -d /opt/homebrew/bin && eval $(/opt/homebrew/bin/brew shellenv)
 
 test -d "$HOME/cargo" && source "$HOME/cargo/env"
 
+test -f "$HOME/.private/bash/.bashrc" && source "$HOME/.private/bash/.bashrc"
+
 function manage_gpg_agent () {
   export GPG_TTY="$(tty)"
 
