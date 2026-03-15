@@ -16,6 +16,7 @@ INSTALL_PAIRS += bin/git-unwip--editor .bin/git-unwip--editor
 INSTALL_PAIRS += bin/git-who .bin/git-who
 INSTALL_PAIRS += bin/iplog .bin/iplog
 INSTALL_PAIRS += bin/tailserve .bin/tailserve
+INSTALL_PAIRS += bin/tailwake .bin/tailwake
 INSTALL_PAIRS += bin/unwrap .bin/unwrap
 ifneq ("$(wildcard bin/shard)","")
 INSTALL_PAIRS += bin/shard .bin/shard

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+OPTS_SPEC="\
+tailwake --ip=<addr> --mac=<addr> [--relay=<hostname>] [--[no-]quiet] <machine>
+--
+i,ip=addr target LAN addr
+m,mac=addr target MAC addr of a WOL-responsive interface
+r,relay=hostname relay machine
+"
+
+eval "$(echo "$OPTS_SPEC" | git rev-parse --parseopt -- "$@" || echo exit $?)"
+
+ip=
+mac=
+relay="$TAILWAKE_RELAY"
+
+while test $# -gt 0
+do
+  opt="$1"
+  shift
+
+  case "$opt" in
+    -i) ip="$1"; shift; ;;
+    -m) mac="$1"; shift; ;;
+    -r) relay="$1"; shift; ;;
+    --) break; ;;
+  esac
+done
+
+ssh $relay "wakeonlan -i $ip $mac" && tailscale ping -c 0 --timeout .1s $1
