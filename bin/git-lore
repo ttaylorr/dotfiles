@@ -13,7 +13,7 @@ trap "rm -f $mbox" EXIT
 url="$(echo "$1" | sed -e 's/\/T\/.*//' | sed -e 's/\/$//')"
 
 curl -Ss "$url/t.mbox.gz" | gunzip >$mbox
-mutt -f $mbox -F <(cat <<-EOF
+mutt -f $mbox -e "push '<search>~i $(basename "$url")<enter>'" -F <(cat <<-EOF
   source ~/.mutt/base
 
   set from = "me@ttaylorr.com"
