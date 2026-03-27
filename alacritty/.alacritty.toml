@@ -15,6 +15,9 @@ unfocused_hollow = true
 blinking = "On"
 shape = "Beam"
 
+[env]
+TERM = "xterm-256color"
+
 [font]
 size = 17.0
 
