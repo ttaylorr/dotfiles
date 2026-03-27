@@ -41,6 +41,8 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -+F
+	fsmonitor = true
+	untrackedcache = true
 [pager]
 	log = "if test -x diff-highlight; then diff-highlight; else cat; fi | less"
 	show = "if test -x diff-highlight; then diff-highlight; else cat; fi | less"
