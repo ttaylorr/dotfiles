@@ -19,15 +19,19 @@ shape = "Beam"
 TERM = "xterm-256color"
 
 [font]
-size = 17.0
+size = 14.0
 
 [font.bold]
-family = "Inconsolata"
-style = "Bold"
+family = "Monaspace Xenon"
+style = "Light Bold"
+
+[font.italic]
+family = "Monaspace Xenon"
+style = "Light Italic"
 
 [font.normal]
-family = "Inconsolata"
-style = "Regular"
+family = "Monaspace Xenon"
+style = "Light"
 
 [[hints.enabled]]
 action = "copy"
