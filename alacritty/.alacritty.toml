@@ -22,15 +22,15 @@ TERM = "xterm-256color"
 size = 14.0
 
 [font.bold]
-family = "Monaspace Xenon"
+family = "Monaspace Neon"
 style = "Light Bold"
 
 [font.italic]
-family = "Monaspace Xenon"
+family = "Monaspace Neon"
 style = "Light Italic"
 
 [font.normal]
-family = "Monaspace Xenon"
+family = "Monaspace Neon"
 style = "Light"
 
 [[hints.enabled]]
