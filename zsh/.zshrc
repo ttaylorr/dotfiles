@@ -65,10 +65,19 @@ parse_git_branch() {
     branch="%{$fg[green]%}$branch"
   fi
 
-  if test "false" = "$(git rev-parse --is-bare-repository)" &&
-    test "$HOME/github/github" != "$(git rev-parse --show-toplevel)" &&
-    test -n "$(git status -s)"; then
+  if test "false" = "$(git rev-parse --is-bare-repository)"
+  then
+    C="$(git rev-parse --show-toplevel 2>/dev/null)"
+    if test -z "$C"
+    then
+      C="$(git -C .. rev-parse --show-toplevel 2>/dev/null)"
+    fi
+
+    if test "$HOME/github/github" != "$C" &&
+       test -n "$(git -C "$C" status -s)"
+    then
       branch="$branch%{$fg[red]%}!"
+    fi
   fi
 
   echo " ($branch%{$reset_color%})"
