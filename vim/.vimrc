@@ -45,7 +45,7 @@ let g:go_template_autocreate = 0
 let g:go_version_warning = 0
 let g:vim_markdown_folding_disabled = 1
 
-set wildignore+=*.a,*.o,*.so
+set wildignore+=*.a,*.o,*.so,*.gcov,*.gcda
 
 "" 3.e) Smart tab completion (http://vim.wikia.com/wiki/VimTip102)
 function! Smart_TabComplete()

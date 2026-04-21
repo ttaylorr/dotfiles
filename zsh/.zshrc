@@ -22,6 +22,8 @@ bindkey '^[[Z' reverse-menu-complete
 
 zstyle ':completion:*' menu select
 
+fignore=(.o .gcda .gcov)
+
 # Enable history-inc-pattern search in vi-mode
 bindkey '^R' history-incremental-pattern-search-backward
 bindkey "^P" vi-up-line-or-history
