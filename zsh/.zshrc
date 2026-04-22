@@ -43,24 +43,32 @@ on_host() {
 }
 
 parse_git_branch() {
-  branch="$(git branch 2>/dev/null | grep "*")"
-  detached="$(echo "$branch" | grep -E "detached|no branch")"
-  rebasing="$(echo "$branch" | grep "no branch, rebasing")"
+  branch="$(git branch --show-current 2>/dev/null)"; test 0 -ne "$?" && return
+  detached=
+  rebasing=
 
-  if [[ ! -z "$detached" ]] || [[ ! -z "$rebasing" ]]; then
-    branch="$(git rev-parse --short HEAD)"
-  else
-    branch="$(echo "$branch" | awk '{ print $2 }')"
+  if test -z "$branch"; then
+    branch="$(git rev-parse --short HEAD 2>/dev/null)"
+
+    if test -d "$(git rev-parse --git-path rebase-merge 2>/dev/null)" ||
+       test -d "$(git rev-parse --git-path rebase-apply 2>/dev/null)"
+    then
+      rebasing=t
+    elif ! git symbolic-ref -q HEAD >/dev/null 2>&1
+    then
+      detached=t
+    fi
+
+    if test -z "$rebasing" && test -z "$detached"
+    then
+      return
+    fi
   fi
 
-  if [[ -z "$branch" ]]; then
-    return
-  fi
-
-  if [[ ! -z "$detached" ]]; then
-    branch="%{$fg[red]%}$branch"
-  elif [[ ! -z "$rebasing" ]]; then
-    branch="%{$fg[red]%}$branch!"
+  if test -n "$detached"; then
+    branch="%{$fg[magenta]%}$branch"
+  elif test -n "$rebasing"; then
+    branch="%{$fg[red]%}$branch+"
   else
     branch="%{$fg[green]%}$branch"
   fi
